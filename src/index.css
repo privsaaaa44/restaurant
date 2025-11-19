@@ -1,0 +1,35 @@
+html, body {
+  font-family: 'Roboto', Arial, sans-serif !important;
+}
+
+* {
+  font-family: 'Roboto', Arial, sans-serif !important;
+
+}
+.contactsimple {
+    display: flex !important;
+    justify-content: center;
+    /* gpa: 10px; */
+    gap: -30px;
+    gap: 338px;
+    margin-top: 10px;
+    font-size: 13px;
+
+}
+.d-flex.socailmediaicon {
+    margin-top: 2px;
+}
+/* .social-icon {
+  margin: 0 2px;
+  font-size: 13px;
+  cursor: pointer;
+} */
+ nav.bg-dark.navbar.navbar-expand.navbar-light {
+    background: #00000066 !important;
+}
+.container {
+    padding: 20px 20px 20px 20px;
+
+}
+
+
