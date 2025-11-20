@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@fontsource/dancing-script": "^5.2.8",
     "@fontsource/roboto-serif": "^5.2.8",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.8",

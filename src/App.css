@@ -1,8 +1,53 @@
 html, body {
   font-family: 'Roboto', Arial, sans-serif !important;
+  /* background-color: black; */
+  
 }
-
+h1.hero-title.animate-slide-in {
+    margin-bottom: 98px;
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 136.6px;
+    font-weight: 400 !important;
+    color: #fff !important;
+}
 * {
   font-family: 'Roboto', Arial, sans-serif !important;
+/* background-color: black; */
+}
+.nav-links:hover {
+  color: #e52b34;
+}
+.home-hero-img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 600;
 
 }
+
+.carousel-image-wrapper {
+  position: relative;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* black with 40% opacity */
+  z-index: 1; /* behind the caption */
+}
+
+.carousel-caption {
+  z-index: 2; /* text above overlay */
+}
+
+.home-hero-img {
+  display: block;
+  width: 100%;
+}
+

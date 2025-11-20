@@ -6,15 +6,22 @@ html, body {
   font-family: 'Roboto', Arial, sans-serif !important;
 
 }
+
 .contactsimple {
     display: flex !important;
     justify-content: center;
     /* gpa: 10px; */
     gap: -30px;
-    gap: 338px;
-    margin-top: 10px;
+    gap: 410px;
+    margin-top: 15px;
     font-size: 13px;
 
+}
+.gap-3 {
+    gap: 0.5rem !important;
+}
+.nav-links:hover {
+  color: #e52b34 !important;
 }
 .d-flex.socailmediaicon {
     margin-top: 2px;
@@ -33,3 +40,20 @@ html, body {
 }
 
 
+
+.food-title {
+    color: #e52b34;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+}
+
+.line {
+    border-top: 2px solid #e52b34 !important;
+    opacity: 0.7;
+}
+
+.year {
+    color: #e52b34;
+    font-size: 20px;
+    margin: 0;
+}
