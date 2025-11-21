@@ -10,6 +10,7 @@ h1.hero-title.animate-slide-in {
     font-weight: 400 !important;
     color: #fff !important;
 }
+  
 * {
   font-family: 'Roboto', Arial, sans-serif !important;
 /* background-color: black; */
@@ -17,6 +18,38 @@ h1.hero-title.animate-slide-in {
 .nav-links:hover {
   color: #e52b34;
 }
+.miniaboutsection {
+  /* background-image: url("/mnt/data/2e70281f-2763-40a3-8f12-7aa603f55ef7.png"); */
+  background-size: contain; /* changed from cover */
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 550px; 
+  width: 700px;
+}
+.navbar-scrolled {
+  background-color: black !important;
+  transition: background-color 0.3s ease;
+}
+
+.hello {
+      display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+        margin-top: 0;
+    margin-bottom: 1rem;
+width: 60%;
+font-size: 16px;
+    line-height: 2;
+    font-weight: 400;
+    color: gray;
+}
+.d-flex.justify-content-center {
+    gap: 69px;
+}
+
 .home-hero-img {
   height: 100vh;
   object-fit: cover;

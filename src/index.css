@@ -1,5 +1,6 @@
 html, body {
   font-family: 'Roboto', Arial, sans-serif !important;
+  
 }
 
 * {
@@ -32,14 +33,41 @@ html, body {
   cursor: pointer;
 } */
  nav.bg-dark.navbar.navbar-expand.navbar-light {
-    background: #00000066 !important;
+    background: transparent !important;
 }
 .container {
     padding: 20px 20px 20px 20px;
 
 }
+.datepicker-input {
+  width: 280px;          /* Same as other inputs */
+  background: transparent; /* Match your other inputs */
+  color: white;
+  border: 1px solid white;          /* If your other inputs have no border */
+  outline: none;
+  font-size: 14px;       /* Same as other inputs */
+border-radius: 2px;
+}
 
+input {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;  
+  border-radius: 2px;
+}
+h1.text-white.text-center.mt-5 {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+input::placeholder {
+color: white;
+}
 
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  
+}
 
 .food-title {
     color: #e52b34;
@@ -57,3 +85,49 @@ html, body {
     font-size: 20px;
     margin: 0;
 }
+#sumitbutton{
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    font-size: 16px;
+    border-radius: 2px;
+    padding: 16px 24px !important;
+}
+#sumitbutton:hover {
+      border: 1px solid #fff;
+    color: #e52b34;
+}
+button#sumitbutton {
+    padding-top: 13px !important;
+}
+.re {
+ font-family: 'Dancing Script', cursive !important;
+ color: #E52B33;
+     margin-bottom: -22px;
+}
+.re2 {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1.3;
+}
+/* App.css */
+.navbar1 {
+  transition: background-color .25s ease, top .25s ease;
+}
+
+/* जब navbar banner से पहले हो (transparent) तो link थोड़ा हटाकर दिखाना चाहें तो */
+.navbar-before .nav-link {
+  color: rgba(255,255,255,0.95) !important;
+}
+
+/* जब navbar sticky हो और dark background ले तो सामान्य link रंग बरक़रार रखें */
+.navbar-sticky .nav-link {
+  color: #fff !important;
+}
+
+/* optional: अगर logo पर contrast चाहिए तो छोटे tweaks */
+.navbar-before .navbar-brand img { filter: none; }
+.navbar-sticky .navbar-brand img { filter: none; }
