@@ -1,6 +1,8 @@
 html, body {
   font-family: 'Roboto', Arial, sans-serif !important;
   /* background-color: black; */
+  overflow-x: hidden;
+  height: 100000px;
   
 }
 h1.hero-title.animate-slide-in {
@@ -30,6 +32,59 @@ h1.hero-title.animate-slide-in {
   background-color: black !important;
   transition: background-color 0.3s ease;
 }
+.p-3 {
+    margin-left: 56px;
+} 
+
+.absoluteimg {
+    position: relative !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+ width: 1920px;
+    height: 391px;
+
+  
+}
+.menu-item2:hover    {
+  color: #e52b34 !important;
+  border-color: #e52b34 !important;
+}
+
+.menu-item:hover {
+  border: 1px dashed #e52b34 !important; 
+}
+.icon-left {
+    position: absolute;
+    top: -123px;
+    left: -20px;
+    width: 70px !important;
+    height: 70px !important;
+     filter: grayscale(100%);
+     
+}
+.icon-right {
+    position: absolute;
+    top: -123px;
+    right: -31px;
+    width: 70px !important;
+    height: 70px !important;
+}
+
+.menu-item {
+  border: 1px  dashed #d1d1d1;
+  padding-bottom: 15px;
+  margin-bottom: 15px; 
+}
+.menu-item.p-2.py-2.px-2.col-4 {
+    padding: 21px !important;
+}
+.ing{
+    display: flex !important;
+    justify-content: space-between;
+}
+
 
 .hello {
       display: block;

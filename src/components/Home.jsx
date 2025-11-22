@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
-import B1 from "../assets/B1.png";
+import B1 from "../assets/B1.jpg";
 import B2 from "../assets/B2.jpg";
 import "../App.css";
 import "../index.css";
@@ -8,83 +8,67 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FaRegCalendarAlt, FaRegClock } from "react-icons/fa";
 import chef from "../assets/chef.png"
+import sb1 from "../assets/SB1.jpg"
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import breakfast1 from "../assets/breakfast1.jpg"
+import breadicon from "../assets/breadicon.png"
+import foodicon from "../assets/foodicon.png"
 
 const Home = () => {
   
   const [startDate, setStartDate] = useState(null);
   const [startTime, setStartTime] = useState(null);
+const [showPopup, setShowPopup] = useState(false); // to show/hide popup
+const [bookingDetails, setBookingDetails] = useState({}); // store booking info
+
 const [guests, setGuests] = useState("")
-  const handleSubmit = (e) => {
-    const handleSubmit = (e) => {
+
+const handleSubmit = (e) => {
   e.preventDefault();
 
-  // Date validation
   if (!startDate) {
     alert("Please select a check-in date!");
     return;
   }
-  const today = new Date();
-  if (startDate.setHours(0, 0, 0, 0) < today.setHours(0, 0, 0, 0)) {
-    alert("Date cannot be in the past!");
-    return;
-  }
-
-  // Time validation
   if (!startTime) {
     alert("Please select a time!");
     return;
   }
-
-  const selectedHour = startTime.getHours();
-  if (selectedHour < 9 || selectedHour > 22) {
-    alert("Please select a time between 9 AM and 10 PM");
-    return;
-  }
-
-  // Guests validation
   if (!guests) {
     alert("Please select the number of guests!");
     return;
   }
 
-  alert(
-    `Booking confirmed!\nDate: ${startDate.toLocaleDateString()}\nTime: ${startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}\nGuests: ${guests}`
-  );
+  const now = new Date();
+  // Prevent past time on same day
+  if (startDate.toDateString() === now.toDateString() && startTime < now) {
+    alert("You cannot select a past time!");
+    return;
+  }
 
-  // Proceed with form submission logic (API call, etc.)
-};
-    e.preventDefault();
-
-    // Date validation
-    if (!startDate) {
-      alert("Please select a check-in date!");
-      return;
-    }
-    const today = new Date();
-    if (startDate.setHours(0, 0, 0, 0) < today.setHours(0, 0, 0, 0)) {
-      alert("Date cannot be in the past!");
-      return;
-    }
-
-    // Time validation
-    if (!startTime) {
-      alert("Please select a time!");
-      return;
-    }
-
-    // Optional: restrict booking hours (e.g., 9 AM - 10 PM)
-    const selectedHour = startTime.getHours();
-    if (selectedHour < 9 || selectedHour > 22) {
-      alert("Please select a time between 9 AM and 10 PM");
-      return;
-    }
-
-    alert(
-      `Booking confirmed!\nDate: ${startDate.toLocaleDateString()}\nTime: ${startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
-    );
-
-    // Proceed with form submission logic (API call, etc.)
+  // Collect all booking info
+  const booking = {
+    name: document.getElementById("nameInput").value,
+    email: document.getElementById("emailInput").value,
+    phone: document.getElementById("phoneInput").value,
+    date: startDate.toLocaleDateString(),
+    time: startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    guests
   };
+
+  // Save to state for popup
+  setBookingDetails(booking);
+
+  // Save to localStorage
+  localStorage.setItem("lastBooking", JSON.stringify(booking));
+
+  // Show popup
+  setShowPopup(true);
+};
+
+
 
   return (
     <>
@@ -139,45 +123,52 @@ const [guests, setGuests] = useState("")
             style={{ marginRight: "2px", fontSize: "14px" }}
             onSubmit={handleSubmit}
           >
-            <input
-              type="name"
-              className="text-white p-2 py-2 px-2 mt-2"
-              id="nameInput"
-              pattern="[A-Za-z\s]+"
-              title="Only letters and spaces are allowed"
-              required
-              placeholder="Name"
-              style={{ width: "280px" }}
-            />
-            <input
-              className="text-white p-2 py-2 px-2 mt-3"
-              type="email"
-              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com)$"
-              title="Please enter a valid email ending with .com"
-              required
-              placeholder="Email"
-              style={{ width: "280px" }}
-            />
-            <input
-              className="text-white p-2 py-2 px-2 mt-3"
-              type="tel"
-              pattern="[0-9]{11}"
-              title="Please enter an 11-digit phone number"
-              id="phone"
-              required
-              placeholder="Phone"
-              style={{ width: "280px" }}
-            />
+<input
+  type="text"
+  id="nameInput"
+  className="text-white p-2 py-2 px-2 mt-2"
+  pattern="[A-Za-z\s]+"
+  title="Only letters and spaces are allowed"
+  required
+  placeholder="Name"
+  style={{ width: "280px" }}
+/>
+
+<input
+  type="email"
+  id="emailInput"
+  className="text-white p-2 py-2 px-2 mt-3"
+  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com)$"
+  title="Please enter a valid email ending with .com"
+  required
+  placeholder="Email"
+  style={{ width: "280px" }}
+/>
+
+<input
+  type="tel"
+  id="phoneInput"
+  className="text-white p-2 py-2 px-2 mt-3"
+  pattern="[0-9]{11}"
+  title="Please enter an 11-digit phone number"
+  required
+  placeholder="Phone"
+  style={{ width: "280px" }}
+/>
+
 
             {/* Date Picker */}
             <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-              <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                placeholderText="Check in"
-                className="text-white p-2 pe-5 px-2 datepicker-input"
-                style={{ width: "100%" }}
-              />
+<DatePicker
+  selected={startDate}
+  onChange={(date) => setStartDate(date)}
+  placeholderText="Check in"
+  className="text-white p-2 pe-5 px-2 datepicker-input"
+  style={{ width: "100%" }}
+  minDate={new Date()}  // prevents past dates
+/>
+
+
               <FaRegCalendarAlt
                 className="position-absolute"
                 style={{
@@ -192,18 +183,24 @@ const [guests, setGuests] = useState("")
 
             {/* Time Picker */}
             <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-              <DatePicker
-                selected={startTime}
-                onChange={(time) => setStartTime(time)}
-                showTimeSelect
-                showTimeSelectOnly
-                timeIntervals={15}
-                timeCaption="Time"
-                dateFormat="h:mm aa"
-                placeholderText="Select time"
-                className="text-white p-2 pe-5 px-2 datepicker-input"
-                style={{ width: "100%" }}
-              />
+         <DatePicker
+  selected={startTime}
+  onChange={(time) => setStartTime(time)}
+  showTimeSelect
+  showTimeSelectOnly
+  timeIntervals={15}
+  timeCaption="Time"
+  dateFormat="h:mm aa"
+  placeholderText="Select time"
+  className="text-white p-2 pe-5 px-2 datepicker-input"
+  minTime={
+    startDate && startDate.toDateString() === new Date().toDateString()
+      ? new Date() // current time if today
+      : new Date().setHours(9, 0) // else 9 AM
+  }
+  maxTime={new Date().setHours(22, 0)} // 10 PM
+/>
+
               <FaRegClock
                 className="position-absolute"
                 style={{
@@ -283,6 +280,227 @@ const [guests, setGuests] = useState("")
         </div> */}
       </div>
       </div>
+      {showPopup && (
+  <div className="booking-popup" style={{
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    backgroundColor: "#E52B33",
+    color: "#fff",
+    padding: "30px",
+    borderRadius: "10px",
+    textAlign: "center",
+    zIndex: 9999,
+    minWidth: "300px"
+  }}>
+    <h2>Booking Confirmed!</h2>
+    <p>Date: {bookingDetails.date}</p>
+    <p>Time: {bookingDetails.time}</p>
+    <p>Guests: {bookingDetails.guests}</p>
+{showPopup && (
+  <>
+    {/* Overlay */}
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "rgba(0,0,0,0.5)",
+        zIndex: 9998,
+      }}
+    ></div>
+
+    {/* Centered Popup */}
+    <div
+      className="booking-popup"
+      style={{
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        backgroundColor: "#E52B33",
+        color: "#fff",
+        padding: "30px",
+        borderRadius: "10px",
+        textAlign: "center",
+        zIndex: 9999,
+        minWidth: "300px",
+        boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+      }}
+    >
+      <h2>Booking Confirmed!</h2>
+      <p>Name: {bookingDetails.name}</p>
+      <p>Email: {bookingDetails.email}</p>
+      <p>Phone: {bookingDetails.phone}</p>
+      <p>Date: {bookingDetails.date}</p>
+      <p>Time: {bookingDetails.time}</p>
+      <p>Guests: {bookingDetails.guests}</p>
+
+      <button
+        onClick={() => {
+          setShowPopup(false);          // hide popup
+          setBookingDetails({});         // clear popup info
+          setStartDate(null);            // reset form
+          setStartTime(null);
+          setGuests("");
+          localStorage.removeItem("lastBooking"); // remove from storage
+        }}
+        style={{
+          marginTop: "20px",
+          background: "black",
+          color: "white",
+          border: "none",
+          padding: "8px 20px",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        Close
+      </button>
+    </div>
+  </>
+)}
+
+  </div>
+)}
+
+      <div>
+<section
+  className="position-relative absoluteimg"
+  style={{
+    backgroundImage: `url(${sb1})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "400px",
+    width: "100%"
+  }}
+>
+  <div className="overlay"></div>
+
+  <div
+    style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      zIndex: 2,
+      color: "white",
+      textAlign: "center",
+      width: "100%"
+    }}
+  >
+    <h1 className="" style={{ textTransform: "uppercase", fontSize: "16px", letterSpacing: "5px", fontWeight: "700" }}>
+      Now Bookings
+    </h1>
+    <h1 style={{fontWeight: "700", fontSize: "40px"}}>Private Dinners & Happy Hours</h1>
+  </div>
+</section>
+      </div>
+      <div>
+        <section>
+          <div className="text-center" style={{marginTop: "100px"}}>
+           <h1 className="re">Specialties</h1>
+          <h1 className="re2">Our Menu</h1>
+<Container style={{ marginTop: "50px" }}>
+  {/* ROW 1 */}
+  <div style={{ marginBottom: "50px" }}> {/* Gap between rows */}
+    <Row className="bg-white gx-4 gy-3">
+      {[1, 2, 3].map((col, colIndex) => (
+        <Col xs={12} md={4} key={colIndex} className="menu-item p-2" style={{ background: "#fcfcfc", borderRadius: "2px" }}>
+          <h1 className="mt-4" style={{ fontSize: "22px", fontWeight: "700", textTransform: "uppercase", marginBottom: "2em" }}>
+            Breakfast
+          </h1>
+
+          {[1, 2, 3].map((item, index) => (
+            <div key={index} className="menu-item2" style={{ position: "relative", marginBottom: "1rem" }}>
+              {index === 0 && (
+                <>
+                  <img src={breadicon} alt="breadicon" className="icon-left border-2 border-gray" />
+                  <img src={foodicon} alt="" className="icon-right" />
+                </>
+              )}
+              <div className="d-flex ing">
+                <div>
+                  <img src={breakfast1} alt={`Breakfast ${item}`} className="img111" />
+                </div>
+                <div>
+                  <h3 style={{ fontSize: "17px", fontWeight: "500", marginRight: "83px" }}>
+                    Beef Roast
+                    <br />
+                    <span style={{ marginRight: "28px" }}>Source</span>
+                  </h3>
+                  <p style={{ color: "#000000cc", marginRight: "15px" }}>
+                    Meat, Potatoes, Rice,
+                    <br />
+                    <span style={{ marginRight: "83px" }}>Tomatoe</span>
+                  </p>
+                </div>
+                <div>
+                  <p style={{ color: "#e52b34", fontSize: "20px", fontWeight: "600", lineHeight: "1.3" }}>$29</p>
+                </div>
+              </div>
+              {index < 2 && <hr className="firsthr" />}
+            </div>
+          ))}
+        </Col>
+      ))}
+    </Row>
+  </div>
+
+  {/* ROW 2 */}
+  <div style={{ marginBottom: "50px" }}>
+    <Row className="bg-white gx-4 gy-3">
+      {[1, 2, 3].map((col, colIndex) => (
+        <Col xs={12} md={4} key={colIndex} className="menu-item p-2" style={{ background: "#fcfcfc", borderRadius: "2px" }}>
+          <h1 className="mt-4" style={{ fontSize: "22px", fontWeight: "700", textTransform: "uppercase", marginBottom: "2em" }}>
+            Breakfast
+          </h1>
+
+          {[1, 2, 3].map((item, index) => (
+            <div key={index} className="menu-item2" style={{ position: "relative", marginBottom: "1rem" }}>
+              {index === 0 && (
+                <>
+                  <img src={breadicon} alt="breadicon" className="icon-left border-2 border-gray" />
+                  <img src={foodicon} alt="" className="icon-right" />
+                </>
+              )}
+              <div className="d-flex ing">
+                <div>
+                  <img src={breakfast1} alt={`Breakfast ${item}`} className="img111" />
+                </div>
+                <div>
+                  <h3 style={{ fontSize: "17px", fontWeight: "500", marginRight: "83px" }}>
+                    Beef Roast
+                    <br />
+                    <span style={{ marginRight: "28px" }}>Source</span>
+                  </h3>
+                  <p style={{ color: "#000000cc", marginRight: "15px" }}>
+                    Meat, Potatoes, Rice,
+                    <br />
+                    <span style={{ marginRight: "83px" }}>Tomatoe</span>
+                  </p>
+                </div>
+                <div>
+                  <p style={{ color: "#e52b34", fontSize: "20px", fontWeight: "600", lineHeight: "1.3" }}>$29</p>
+                </div>
+              </div>
+              {index < 2 && <hr className="firsthr" />}
+            </div>
+          ))}
+        </Col>
+      ))}
+    </Row>
+  </div>
+</Container>
+
+            </div>
+ 
+        </section>
+      </div>
+      
     </>
   );
 };
