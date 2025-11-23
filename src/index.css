@@ -18,6 +18,12 @@ html, body {
     font-size: 13px;
 
 }
+section.position-relative.absoluteimg.newone {
+    /* width: 400px; */
+    height: 610px !important;
+}
+
+
 .gap-3 {
     gap: 0.5rem !important;
 }
@@ -43,6 +49,24 @@ h1,h2,h3,h4,h5,h6,p {
 }
 .booking-popup {
     margin-left: 23px;
+}
+.p-2 {
+    padding: 2.5rem !important;
+}
+.bg-white.gx-4.gy-3.row {
+    margin-left: 13px;
+}
+.menu-item.p-2.Col {
+    width: 334px;
+}
+h3.abcdefghijk {
+    margin-left: -81px;
+}
+p.abcf {
+    margin-left: -16px;
+}
+span.ayaan {
+    margin-left: -85px;
 }
 /* .social-icon {
   margin: 0 2px;

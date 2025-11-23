@@ -3,6 +3,12 @@ import { Carousel } from "react-bootstrap";
 import B1 from "../assets/B1.jpg";
 import B2 from "../assets/B2.jpg";
 import "../App.css";
+import {
+  MDBCarousel,
+  MDBCarouselItem
+} from "mdb-react-ui-kit";
+import { MDBBtn } from 'mdb-react-ui-kit';
+
 import "../index.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -15,58 +21,131 @@ import Col from 'react-bootstrap/Col';
 import breakfast1 from "../assets/breakfast1.jpg"
 import breadicon from "../assets/breadicon.png"
 import foodicon from "../assets/foodicon.png"
+import breakfast2 from "../assets/breakfast2.jpg"
+import breakfast3 from "../assets/breakfast3.jpg"
+import lunch1 from "../assets/lunch1.jpg"
+import sb2 from "../assets/sb2.jpg"
+
 
 const Home = () => {
-  
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const [startDate, setStartDate] = useState(null);
   const [startTime, setStartTime] = useState(null);
-const [showPopup, setShowPopup] = useState(false); // to show/hide popup
-const [bookingDetails, setBookingDetails] = useState({}); // store booking info
+  const [guests, setGuests] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [bookingDetails, setBookingDetails] = useState({});
+  const [errors, setErrors] = useState({ date: "", time: "", guests: "" });
+const breakfastItems = [
+  {
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice, ",
+    source2: "Tomatoe",
+    price: "$29",
+    img: breakfast1
+  },
+  {
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice,",
+    source2: "Tomatoe",
+    price: "$30",
+    img: breakfast2
+  },
+  {
+  name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice, ",
+    source2: "Tomatoe",
+    price: "$29",
+    img: breakfast3
+  }
+];
 
-const [guests, setGuests] = useState("")
+// const lunchItems = [
+//   {
+//     name: "Beef Roast",
+//     source: "Source",
+//     details: "Meat, Potatoes, Rice, ",
+//     source2: "Tomatoe",
+//     price: "$29",
+//     img1: lunch1
+//   },
+//   {
+//     name: "Beef Roast",
+//     source: "Source",
+//     details: "Meat, Potatoes, Rice,",
+//     source2: "Tomatoe",
+//     price: "$30",
+//     img: breakfast2
+//   },
+//   {
+//   name: "Beef Roast",
+//     source: "Source",
+//     details: "Meat, Potatoes, Rice, ",
+//     source2: "Tomatoe",
+//     price: "$29",
+//     img: breakfast3
+//   }
+// ];
+
+
 
 const handleSubmit = (e) => {
+    const carouselElement = document.getElementById("carouselBasicExample");
+    if (carouselElement && window.mdb) {
+      new window.mdb.Carousel(carouselElement);
+    }
   e.preventDefault();
 
+  let valid = true;
+  const newErrors = { date: "", time: "", guests: "" };
+
   if (!startDate) {
-    alert("Please select a check-in date!");
-    return;
+    newErrors.date = "Please select a check-in date!";
+    valid = false;
   }
+
   if (!startTime) {
-    alert("Please select a time!");
-    return;
+    newErrors.time = "Please select a time!";
+    valid = false;
   }
+
   if (!guests) {
-    alert("Please select the number of guests!");
-    return;
+    newErrors.guests = "Please select the number of guests!";
+    valid = false;
   }
 
   const now = new Date();
-  // Prevent past time on same day
-  if (startDate.toDateString() === now.toDateString() && startTime < now) {
-    alert("You cannot select a past time!");
-    return;
+  if (startDate && startDate.toDateString() === now.toDateString() && startTime < now) {
+    newErrors.time = "You cannot select a past time!";
+    valid = false;
   }
 
-  // Collect all booking info
+  setErrors(newErrors);
+  if (!valid) return;
+
   const booking = {
     name: document.getElementById("nameInput").value,
     email: document.getElementById("emailInput").value,
     phone: document.getElementById("phoneInput").value,
     date: startDate.toLocaleDateString(),
-    time: startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-    guests
+    time: startTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    guests,
   };
 
-  // Save to state for popup
+  // Save booking in state
   setBookingDetails(booking);
 
-  // Save to localStorage
+  // Save booking to localStorage
   localStorage.setItem("lastBooking", JSON.stringify(booking));
 
   // Show popup
   setShowPopup(true);
 };
+
 
 
 
@@ -138,7 +217,7 @@ const handleSubmit = (e) => {
   type="email"
   id="emailInput"
   className="text-white p-2 py-2 px-2 mt-3"
-  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com)$"
+  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com"
   title="Please enter a valid email ending with .com"
   required
   placeholder="Email"
@@ -157,115 +236,67 @@ const handleSubmit = (e) => {
 />
 
 
-            {/* Date Picker */}
+             {/* Date Picker */}
             <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-<DatePicker
-  selected={startDate}
-  onChange={(date) => setStartDate(date)}
-  placeholderText="Check in"
-  className="text-white p-2 pe-5 px-2 datepicker-input"
-  style={{ width: "100%" }}
-  minDate={new Date()}  // prevents past dates
-/>
-
-
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                placeholderText="Check in"
+                className="text-white p-2 pe-5 px-2 datepicker-input"
+                minDate={new Date()}
+              />
               <FaRegCalendarAlt
                 className="position-absolute"
-                style={{
-                  right: "10px",
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  pointerEvents: "none",
-                  color: "white",
-                }}
+                style={{ right: "10px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "white" }}
               />
+              {errors.date && <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.date}</p>}
             </div>
 
             {/* Time Picker */}
             <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-         <DatePicker
-  selected={startTime}
-  onChange={(time) => setStartTime(time)}
-  showTimeSelect
-  showTimeSelectOnly
-  timeIntervals={15}
-  timeCaption="Time"
-  dateFormat="h:mm aa"
-  placeholderText="Select time"
-  className="text-white p-2 pe-5 px-2 datepicker-input"
-  minTime={
-    startDate && startDate.toDateString() === new Date().toDateString()
-      ? new Date() // current time if today
-      : new Date().setHours(9, 0) // else 9 AM
-  }
-  maxTime={new Date().setHours(22, 0)} // 10 PM
-/>
-
+              <DatePicker
+                selected={startTime}
+                onChange={(time) => setStartTime(time)}
+                showTimeSelect
+                showTimeSelectOnly
+                timeIntervals={15}
+                timeCaption="Time"
+                dateFormat="h:mm aa"
+                placeholderText="Select time"
+                className="text-white p-2 pe-5 px-2 datepicker-input"
+                minTime={startDate && startDate.toDateString() === new Date().toDateString() ? new Date() : new Date().setHours(9, 0)}
+                maxTime={new Date().setHours(22, 0)}
+              />
               <FaRegClock
                 className="position-absolute"
-                style={{
-                  right: "10px",
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  pointerEvents: "none",
-                  color: "white",
-                  fontSize: "16px",
-                }}
+                style={{ right: "10px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "white", fontSize: "16px" }}
               />
+              {errors.time && <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.time}</p>}
             </div>
-{/* Guests Select */}
-<div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-<select
-  className="text-white p-2 px-2 datepicker-input"
-  style={{
-    width: "100%",
-    background: "transparent",
-    border: "1px solid white",
-    borderRadius: "2px",
-    appearance: "none",
-    WebkitAppearance: "none",
-    MozAppearance: "none",
-    color: "white",
-    paddingRight: "30px",
-  }}
-  value={guests}
-  onChange={(e) => setGuests(e.target.value)}
-  required
->
-  <option value="" disabled>
-    Guests
-  </option>
-  <option value="1" className="text-dark">1 Guest</option>
-  <option value="2" className="text-dark">2 Guests</option>
-  <option value="3" className="text-dark">3 Guests</option>
-  <option value="4" className="text-dark">4 Guests</option>
-  <option value="5" className="text-dark">5 Guests</option>
-</select>
 
+            {/* Guests Select */}
+            <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
+              <select
+                className="text-white p-2 px-2 datepicker-input"
+                value={guests}
+                onChange={(e) => setGuests(e.target.value)}
+                style={{ width: "100%", background: "transparent", border: "1px solid white", borderRadius: "2px", appearance: "none" }}
+              >
+                <option value="" disabled>Guests</option>
+                <option value="1" className="text-dark">1 Guest</option>
+                <option value="2" className="text-dark">2 Guests</option>
+                <option value="3" className="text-dark">3 Guests</option>
+                <option value="4" className="text-dark">4 Guests</option>
+                <option value="5" className="text-dark">5 Guests</option>
+              </select>
+              <span style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "white", fontSize: "16px" }}>▼</span>
+              {errors.guests && <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.guests}</p>}
+            </div>
 
-  {/* Optional: Add a dropdown arrow icon like date/time pickers */}
-  <span
-    style={{
-      position: "absolute",
-      right: "10px",
-      top: "50%",
-      transform: "translateY(-50%)",
-      pointerEvents: "none",
-      color: "white",
-      fontSize: "16px",
-    }}
-  >
-    ▼
-  </span>
-</div>
-
-            <button id="sumitbutton"
-              type="submit"
-              className="mt-3"
-              style={{ width: "280px", height: "50px", outline: "none", boxShadow: 'none' }}
-            >
+            <button id="sumitbutton" type="submit" className="mt-3" style={{ width: "280px", height: "50px", outline: "none", boxShadow: "none" }}>
               Book Your Table Now
             </button>
+
           </form>
         </div>
         <div className="miniaboutsection"   style={{ backgroundImage: `url(${chef})`, marginBottom: "-100px" }}>
@@ -280,24 +311,6 @@ const handleSubmit = (e) => {
         </div> */}
       </div>
       </div>
-      {showPopup && (
-  <div className="booking-popup" style={{
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "#E52B33",
-    color: "#fff",
-    padding: "30px",
-    borderRadius: "10px",
-    textAlign: "center",
-    zIndex: 9999,
-    minWidth: "300px"
-  }}>
-    <h2>Booking Confirmed!</h2>
-    <p>Date: {bookingDetails.date}</p>
-    <p>Time: {bookingDetails.time}</p>
-    <p>Guests: {bookingDetails.guests}</p>
 {showPopup && (
   <>
     {/* Overlay */}
@@ -313,7 +326,7 @@ const handleSubmit = (e) => {
       }}
     ></div>
 
-    {/* Centered Popup */}
+    {/* Single Popup Card */}
     <div
       className="booking-popup"
       style={{
@@ -339,33 +352,37 @@ const handleSubmit = (e) => {
       <p>Time: {bookingDetails.time}</p>
       <p>Guests: {bookingDetails.guests}</p>
 
-      <button
-        onClick={() => {
-          setShowPopup(false);          // hide popup
-          setBookingDetails({});         // clear popup info
-          setStartDate(null);            // reset form
-          setStartTime(null);
-          setGuests("");
-          localStorage.removeItem("lastBooking"); // remove from storage
-        }}
-        style={{
-          marginTop: "20px",
-          background: "black",
-          color: "white",
-          border: "none",
-          padding: "8px 20px",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-      >
-        Close
-      </button>
+ <button
+  onClick={() => {
+    setShowPopup(false);          
+    setBookingDetails({});        
+    setStartDate(null);           
+    setStartTime(null);           
+    setGuests("");                
+    setErrors({ date: "", time: "", guests: "" });
+    document.getElementById("nameInput").value = "";  
+    document.getElementById("emailInput").value = ""; 
+    document.getElementById("phoneInput").value = ""; 
+    localStorage.removeItem("lastBooking");
+  }}
+  style={{
+    marginTop: "20px",
+    background: "black",
+    color: "white",
+    border: "none",
+    padding: "8px 20px",
+    borderRadius: "5px",
+    cursor: "pointer",
+  }}
+>
+  Close
+</button>
+
+
     </div>
   </>
 )}
 
-  </div>
-)}
 
       <div>
 <section
@@ -404,103 +421,305 @@ const handleSubmit = (e) => {
           <div className="text-center" style={{marginTop: "100px"}}>
            <h1 className="re">Specialties</h1>
           <h1 className="re2">Our Menu</h1>
-<Container style={{ marginTop: "50px" }}>
+<div style={{ marginTop: "50px" }}>
+
   {/* ROW 1 */}
-  <div style={{ marginBottom: "50px" }}> {/* Gap between rows */}
-    <Row className="bg-white gx-4 gy-3">
-      {[1, 2, 3].map((col, colIndex) => (
-        <Col xs={12} md={4} key={colIndex} className="menu-item p-2" style={{ background: "#fcfcfc", borderRadius: "2px" }}>
-          <h1 className="mt-4" style={{ fontSize: "22px", fontWeight: "700", textTransform: "uppercase", marginBottom: "2em" }}>
-            Breakfast
-          </h1>
+  <div
+    className="Row bg-white gx-4 gy-3"
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      marginBottom: "50px"
+    }}
+  >
+    {[1, 2, 3].map((col, colIndex) => (
+      <div
+        key={colIndex}
+        className="menu-item p-2 Col"
+        style={{
+          background: "#fcfcfc",
+          borderRadius: "2px",
+          padding: "20px",
+          margin: "0 20px"
+        }}
+      >
+        <h1
+          className="mt-4"
+          style={{
+            fontSize: "22px",
+            fontWeight: "700",
+            textTransform: "uppercase",
+            marginBottom: "2em"
+          }}
+        >
+          Breakfast
+        </h1>
 
-          {[1, 2, 3].map((item, index) => (
-            <div key={index} className="menu-item2" style={{ position: "relative", marginBottom: "1rem" }}>
-              {index === 0 && (
-                <>
-                  <img src={breadicon} alt="breadicon" className="icon-left border-2 border-gray" />
-                  <img src={foodicon} alt="" className="icon-right" />
-                </>
-              )}
-              <div className="d-flex ing">
-                <div>
-                  <img src={breakfast1} alt={`Breakfast ${item}`} className="img111" />
-                </div>
-                <div>
-                  <h3 style={{ fontSize: "17px", fontWeight: "500", marginRight: "83px" }}>
-                    Beef Roast
-                    <br />
-                    <span style={{ marginRight: "28px" }}>Source</span>
-                  </h3>
-                  <p style={{ color: "#000000cc", marginRight: "15px" }}>
-                    Meat, Potatoes, Rice,
-                    <br />
-                    <span style={{ marginRight: "83px" }}>Tomatoe</span>
-                  </p>
-                </div>
-                <div>
-                  <p style={{ color: "#e52b34", fontSize: "20px", fontWeight: "600", lineHeight: "1.3" }}>$29</p>
-                </div>
+        {breakfastItems.map((item, index) => (
+          <div
+            key={index}
+            className="menu-item2"
+            style={{ position: "relative", marginBottom: "1rem" }}
+          >
+            <div className="d-flex ing">
+              <div>
+                <img src={item.img} alt={item.name} className="img111" />
               </div>
-              {index < 2 && <hr className="firsthr" />}
+
+              <div style={{ marginLeft: "10px", flexGrow: 1 }}>
+                <h3 className="abcdefghijk" style={{ fontSize: "17px", fontWeight: "500" }}>
+                  {item.name}
+                  <br />
+                  <span className="lemon">{item.source}</span>
+                </h3>
+
+                <p className="abcf" style={{ color: "#000000cc" }}>
+                  {item.details}
+                  <br />
+                  <span className="ayaan">{item.source2}</span>
+
+                </p>
+              </div>
+
+              <div>
+                <p
+                  style={{
+                    color: "#e52b34",
+                    fontSize: "20px",
+                    fontWeight: "600",
+                    lineHeight: "1.3"
+                  }}
+                >
+                  {item.price}
+                </p>
+              </div>
             </div>
-          ))}
-        </Col>
-      ))}
-    </Row>
+
+            {index < 2 && <hr className="firsthr" />}
+          </div>
+        ))}
+      </div>
+    ))}
   </div>
 
-  {/* ROW 2 */}
-  <div style={{ marginBottom: "50px" }}>
-    <Row className="bg-white gx-4 gy-3">
-      {[1, 2, 3].map((col, colIndex) => (
-        <Col xs={12} md={4} key={colIndex} className="menu-item p-2" style={{ background: "#fcfcfc", borderRadius: "2px" }}>
-          <h1 className="mt-4" style={{ fontSize: "22px", fontWeight: "700", textTransform: "uppercase", marginBottom: "2em" }}>
-            Breakfast
-          </h1>
+  {/* ROW 2 – SAME STRUCTURE */}
+  <div
+    className="Row bg-white gx-4 gy-3"
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      marginBottom: "50px"
+    }}
+  >
+    {[1, 2, 3].map((col, colIndex) => (
+      <div
+        key={colIndex}
+        className="menu-item p-2 Col"
+        style={{
+          background: "#fcfcfc",
+          borderRadius: "2px",
+          padding: "20px",
+          margin: "0 20px"
+        }}
+      >
+        <h1
+          className="mt-4"
+          style={{
+            fontSize: "22px",
+            fontWeight: "700",
+            textTransform: "uppercase",
+            marginBottom: "2em"
+          }}
+        >
+          Breakfast
+        </h1>
 
-          {[1, 2, 3].map((item, index) => (
-            <div key={index} className="menu-item2" style={{ position: "relative", marginBottom: "1rem" }}>
-              {index === 0 && (
-                <>
-                  <img src={breadicon} alt="breadicon" className="icon-left border-2 border-gray" />
-                  <img src={foodicon} alt="" className="icon-right" />
-                </>
-              )}
-              <div className="d-flex ing">
-                <div>
-                  <img src={breakfast1} alt={`Breakfast ${item}`} className="img111" />
-                </div>
-                <div>
-                  <h3 style={{ fontSize: "17px", fontWeight: "500", marginRight: "83px" }}>
-                    Beef Roast
-                    <br />
-                    <span style={{ marginRight: "28px" }}>Source</span>
-                  </h3>
-                  <p style={{ color: "#000000cc", marginRight: "15px" }}>
-                    Meat, Potatoes, Rice,
-                    <br />
-                    <span style={{ marginRight: "83px" }}>Tomatoe</span>
-                  </p>
-                </div>
-                <div>
-                  <p style={{ color: "#e52b34", fontSize: "20px", fontWeight: "600", lineHeight: "1.3" }}>$29</p>
-                </div>
+        {breakfastItems.map((item, index) => (
+          <div
+            key={index}
+            className="menu-item2"
+            style={{ position: "relative", marginBottom: "1rem" }}
+          >
+            <div className="d-flex ing">
+              <div>
+                <img src={item.img} alt={item.name} className="img111" />
               </div>
-              {index < 2 && <hr className="firsthr" />}
+
+              <div style={{ marginLeft: "10px", flexGrow: 1 }}>
+                               <h3 className="abcdefghijk" style={{ fontSize: "17px", fontWeight: "500" }}>
+
+                  {item.name}
+                  <br />
+                                   <span className="lemon">{item.source}</span>
+
+                </h3>
+
+                 <p className="abcf" style={{ color: "#000000cc" }}>
+                  {item.details}
+                  <br />
+                  <span className="ayaan">{item.source2}</span>
+
+                </p>
+              </div>
+
+              <div>
+                <p
+                  style={{
+                    color: "#e52b34",
+                    fontSize: "20px",
+                    fontWeight: "600",
+                    lineHeight: "1.3"
+                  }}
+                >
+                  {item.price}
+                </p>
+              </div>
             </div>
-          ))}
-        </Col>
-      ))}
-    </Row>
+
+            {index < 2 && <hr className="firsthr" />}
+          </div>
+        ))}
+      </div>
+    ))}
   </div>
-</Container>
+
+</div>
+
 
             </div>
  
         </section>
       </div>
-      
+            <div>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+<section
+  className="position-relative absoluteimg newone"
+  style={{
+    backgroundImage: `url(${sb2})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "400px",
+    width: "100%"
+  }}
+>
+  <div className="overlay"></div>
+
+  <div
+    style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      zIndex: 2,
+      color: "white",
+      textAlign: "center",
+      width: "100%"
+    }}
+  >
+    <div className="contenb">
+ <h1 className="re">Testimony</h1>
+          <h1 className="re2 fw-bold">Happy Customer</h1>         
+          </div>
+<br />
+<br />
+      <div className="row text-center">
+        <div className="col-md-12">
+          {/* Carousel wrapper */}
+          <div
+            id="carouselBasicExample"
+            className="carousel slide carousel-dark"
+            data-mdb-ride="carousel"
+            data-mdb-carousel-init
+          >
+            {/* Inner */}
+            <div className="carousel-inner">
+              {/* Single item */}
+              <div className="carousel-item active">
+                <p className="lead font-italic mx-4 mx-md-5 text-justify">
+               Far far away, behind the word mountains, far from the countries
+               <br /> Vokalia and Consonantia, there live the blind texts.
+                </p>
+                <div className="mt-5 mb-4">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+                    className="rounded-circle img-fluid shadow-1-strong"
+                    alt="sample image"
+                    width="100"
+                    height="100"
+                  />
+                </div>
+       <p className="text-white fs-4">- Teresa May</p>
+                <p className="text-secondary fs-6">Customer</p>
+              </div>
+
+              {/* Single item */}
+              <div className="carousel-item">
+                  <p className="lead font-italic mx-4 mx-md-5 text-justify">
+               Far far away, behind the word mountains, far from the countries
+               <br /> Vokalia and Consonantia, there live the blind texts.
+                </p>
+                <div className="mt-5 mb-4">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp"
+                    className="rounded-circle img-fluid shadow-1-strong"
+                    alt="sample image"
+                    width="100"
+                    height="100"
+                  />
+                </div>
+                <p className="text-white fs-4">- Teresa May</p>
+                <p className="text-secondary fs-6">Customer</p>
+              </div>
+
+              {/* Single item */}
+              <div className="carousel-item">
+              <p className="lead font-italic mx-4 mx-md-5 text-justify">
+               Far far away, behind the word mountains, far from the countries
+               <br /> Vokalia and Consonantia, there live the blind texts.
+                </p>
+                <div className="mt-5 mb-4">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                    className="rounded-circle img-fluid shadow-1-strong"
+                    alt="sample image"
+                    width="100"
+                    height="100"
+                  />
+                </div>
+                  <p className="text-white fs-4">- Teresa May</p>
+                <p className="text-secondary fs-6">Customer</p>
+              </div>
+            </div>
+            {/* Inner */}
+
+            {/* Controls */}
+            <button className="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev" data-mdb-button-init>
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next" data-mdb-button-init>
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+          </div>
+          {/* Carousel wrapper */}
+        </div>
+      </div>
+  
+
+
+
+  </div>
+  
+</section>
+      </div>
+       
+
     </>
   );
 };

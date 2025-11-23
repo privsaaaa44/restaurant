@@ -1,7 +1,7 @@
 html, body {
   font-family: 'Roboto', Arial, sans-serif !important;
   /* background-color: black; */
-  overflow-x: hidden;
+  overflow-x: hidden; 
   height: 100000px;
   
 }
@@ -63,6 +63,10 @@ h1.hero-title.animate-slide-in {
     height: 70px !important;
      filter: grayscale(100%);
      
+
+}
+span.lemon {
+    margin-left: -31px;
 }
 .icon-right {
     position: absolute;
