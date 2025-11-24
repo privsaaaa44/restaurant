@@ -12,7 +12,10 @@ h1.hero-title.animate-slide-in {
     font-weight: 400 !important;
     color: #fff !important;
 }
-  
+  p.jbhj {
+    text-align: justify;
+    color: gray;
+}
 * {
   font-family: 'Roboto', Arial, sans-serif !important;
 /* background-color: black; */

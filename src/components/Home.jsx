@@ -1,8 +1,13 @@
+import { TbTriangleInverted } from "react-icons/tb";
+
+import chef4 from "../assets/chef4.png"
 import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import B1 from "../assets/B1.jpg";
 import B2 from "../assets/B2.jpg";
 import "../App.css";
+import chef2 from "../assets/chef2.png"
+import chef3 from "../assets/chef3.png"
 import {
   MDBCarousel,
   MDBCarouselItem
@@ -25,6 +30,7 @@ import breakfast2 from "../assets/breakfast2.jpg"
 import breakfast3 from "../assets/breakfast3.jpg"
 import lunch1 from "../assets/lunch1.jpg"
 import sb2 from "../assets/sb2.jpg"
+import chef1 from "../assets/chef1.png"
 
 
 const Home = () => {
@@ -94,12 +100,16 @@ const breakfastItems = [
 
 
 const handleSubmit = (e) => {
-    const carouselElement = document.getElementById("carouselBasicExample");
-    if (carouselElement && window.mdb) {
-      new window.mdb.Carousel(carouselElement);
-    }
   e.preventDefault();
 
+  // Email validation
+  const email = document.getElementById("emailInput").value;
+  if (!email.endsWith(".com")) {
+    alert("Email must end with .com");
+    return;
+  }
+
+  // Initialize validation
   let valid = true;
   const newErrors = { date: "", time: "", guests: "" };
 
@@ -119,7 +129,11 @@ const handleSubmit = (e) => {
   }
 
   const now = new Date();
-  if (startDate && startDate.toDateString() === now.toDateString() && startTime < now) {
+  if (
+    startDate &&
+    startDate.toDateString() === now.toDateString() &&
+    startTime < now
+  ) {
     newErrors.time = "You cannot select a past time!";
     valid = false;
   }
@@ -127,9 +141,10 @@ const handleSubmit = (e) => {
   setErrors(newErrors);
   if (!valid) return;
 
+  // Prepare booking object
   const booking = {
     name: document.getElementById("nameInput").value,
-    email: document.getElementById("emailInput").value,
+    email,
     phone: document.getElementById("phoneInput").value,
     date: startDate.toLocaleDateString(),
     time: startTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
@@ -141,10 +156,21 @@ const handleSubmit = (e) => {
 
   // Save booking to localStorage
   localStorage.setItem("lastBooking", JSON.stringify(booking));
+  console.log("Booking saved:", booking); // Debug
 
   // Show popup
   setShowPopup(true);
+
+  // Optionally, reset inputs (without clearing localStorage)
+  document.getElementById("nameInput").value = "";
+  document.getElementById("emailInput").value = "";
+  document.getElementById("phoneInput").value = "";
+  setStartDate(null);
+  setStartTime(null);
+  setGuests("");
+  setErrors({ date: "", time: "", guests: "" });
 };
+
 
 
 
@@ -217,12 +243,14 @@ const handleSubmit = (e) => {
   type="email"
   id="emailInput"
   className="text-white p-2 py-2 px-2 mt-3"
-  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com"
   title="Please enter a valid email ending with .com"
   required
   placeholder="Email"
   style={{ width: "280px" }}
 />
+
+
+
 
 <input
   type="tel"
@@ -288,9 +316,18 @@ const handleSubmit = (e) => {
                 <option value="3" className="text-dark">3 Guests</option>
                 <option value="4" className="text-dark">4 Guests</option>
                 <option value="5" className="text-dark">5 Guests</option>
+                <option value="6" className="text-dark">6 Guests</option>
+                <option value="7" className="text-dark">7 Guests</option>
+                <option value="8" className="text-dark">8 Guests</option>
+                <option value="9" className="text-dark">9 Guests</option>
+                <option value="10" className="text-dark">10 Guests</option>
+                <option value="11" className="text-dark">11 Guests</option>
               </select>
-              <span style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "white", fontSize: "16px" }}>▼</span>
-              {errors.guests && <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.guests}</p>}
+     <TbTriangleInverted 
+                className="position-absolute"
+                style={{ right: "10px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "white", fontSize: "16px" }}
+              />
+                            {errors.guests && <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.guests}</p>}
             </div>
 
             <button id="sumitbutton" type="submit" className="mt-3" style={{ width: "280px", height: "50px", outline: "none", boxShadow: "none" }}>
@@ -417,7 +454,7 @@ const handleSubmit = (e) => {
 </section>
       </div>
       <div>
-        <section>
+        <section className="text-center">
           <div className="text-center" style={{marginTop: "100px"}}>
            <h1 className="re">Specialties</h1>
           <h1 className="re2">Our Menu</h1>
@@ -718,7 +755,48 @@ const handleSubmit = (e) => {
   
 </section>
       </div>
-       
+       <div>
+        <section className="text-center" style={{marginTop: "100px"}}>
+              <h1 className="re">Chef</h1>
+          <h1 className="re2 fw-bold">Our Master Chef</h1>
+      <div className="col" style={{marginTop: "80px"}}>
+  <div className="row d-flex justify-content-center gap-4">
+    <div className="col-1" >
+      <img src={chef1} alt="chefimg1" className="chefimg1" />
+      <h3 className="firstthralkf">John Gustavo</h3>
+      <h4 className="WDAVSKM">CEO, Co Founder</h4>
+      <div className="para13">
+      <p className="jbhj">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+      </div>      </div>
+     <div className="col-1">
+      <img src={chef2} alt="chefimg2" className="chefimg1" />
+      <h3 className="firstthralkf">John Gustavo</h3>
+      <h4 className="WDAVSKM">CEO, Co Founder</h4>
+      <div className="para13">
+      <p className="jbhj">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+      </div>
+      </div>
+     <div className="col-1" >
+      <img src={chef3} alt="chefimg1" className="chefimg1" />
+      <h3 className="firstthralkf">John Gustavo</h3>
+      <h4 className="WDAVSKM">CEO, Co Founder</h4>
+      <div className="para13">
+      <p className="jbhj">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+      </div>      </div>
+  <div className="col-1" >
+      <img src={chef4} alt="chefimg1" className="chefimg1" />
+      <h3 className="firstthralkf">John Gustavo</h3>
+      <h4 className="WDAVSKM">CEO, Co Founder</h4>
+      <div className="para13">
+      <p className="jbhj">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+      </div>      </div>
+  </div>
+</div>
+
+        </section>
+       </div>
+
+ 
 
     </>
   );
