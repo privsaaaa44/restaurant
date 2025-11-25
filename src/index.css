@@ -18,6 +18,12 @@ html, body {
     font-size: 13px;
 
 }
+img.i1 {
+    width: 279px;
+}
+img.i2 {
+    width: 319px;
+}
 section.position-relative.absoluteimg.newone {
     /* width: 400px; */
     height: 610px !important;
@@ -52,22 +58,23 @@ h4.WDAVSKM {
 p.lead.font-italic.mx-4.mx-md-5.text-justify {
     color: white;
 }
-
-
-
 .col-1 {
+      background-size: cover;
+    background-repeat: no-repeat;
+  background-position: top center !important;
+        height: 350px;
+        width: 251px;
+            width: 17.50% !important;
 
-    width: 18.89% !important;
-    
-    background-color: white !important;
-  border: 1px solid white !important;
-  /* border-radius: 10px; */
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)
- !important;
+
 }
-/* .row.d-flex.justify-content-center.gap-4 {
-    gap: 20px !important;
-} */
+.areone {
+      font-size: 16px;
+    line-height: 2;
+    font-weight: 400;
+    color: gray;
+}
+
 img.chefimg1 {
     
     margin-left: -11.9px;

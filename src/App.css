@@ -111,7 +111,10 @@ font-size: 16px;
 .d-flex.justify-content-center {
     gap: 69px;
 }
-
+p.text-justify.areone {
+    margin-left: 1px;
+    margin-right: 60px;
+}
 .home-hero-img {
   height: 100vh;
   object-fit: cover;

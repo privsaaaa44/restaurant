@@ -1,5 +1,6 @@
 import { TbTriangleInverted } from "react-icons/tb";
-
+import i1 from "../assets/i1.png"
+import i2 from "../assets/i2.png"
 import chef4 from "../assets/chef4.png"
 import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
@@ -755,48 +756,21 @@ const handleSubmit = (e) => {
   
 </section>
       </div>
-       <div>
-        <section className="text-center" style={{marginTop: "100px"}}>
-              <h1 className="re">Chef</h1>
-          <h1 className="re2 fw-bold">Our Master Chef</h1>
-      <div className="col" style={{marginTop: "80px"}}>
-  <div className="row d-flex justify-content-center gap-4">
-    <div className="col-1" >
-      <img src={chef1} alt="chefimg1" className="chefimg1" />
-      <h3 className="firstthralkf">John Gustavo</h3>
-      <h4 className="WDAVSKM">CEO, Co Founder</h4>
-      <div className="para13">
-      <p className="jbhj">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-      </div>      </div>
-     <div className="col-1">
-      <img src={chef2} alt="chefimg2" className="chefimg1" />
-      <h3 className="firstthralkf">John Gustavo</h3>
-      <h4 className="WDAVSKM">CEO, Co Founder</h4>
-      <div className="para13">
-      <p className="jbhj">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-      </div>
-      </div>
-     <div className="col-1" >
-      <img src={chef3} alt="chefimg1" className="chefimg1" />
-      <h3 className="firstthralkf">John Gustavo</h3>
-      <h4 className="WDAVSKM">CEO, Co Founder</h4>
-      <div className="para13">
-      <p className="jbhj">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-      </div>      </div>
-  <div className="col-1" >
-      <img src={chef4} alt="chefimg1" className="chefimg1" />
-      <h3 className="firstthralkf">John Gustavo</h3>
-      <h4 className="WDAVSKM">CEO, Co Founder</h4>
-      <div className="para13">
-      <p className="jbhj">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-      </div>      </div>
-  </div>
+<div>
+  <section>
+    <div className="row">
+   <div 
+  className="col-1" 
+  style={{ backgroundImage: `url(${chef1})` }} 
+>
 </div>
 
-        </section>
-       </div>
-
- 
+      <div className="col-1"  style={{ backgroundImage: `url(${chef2})` }} ></div>
+      <div className="col-1"  style={{ backgroundImage: `url(${chef3})` }} ></div>
+      <div className="col-1"  style={{ backgroundImage: `url(${chef4})` }} ></div>
+    </div>
+  </section>
+</div>
 
     </>
   );
