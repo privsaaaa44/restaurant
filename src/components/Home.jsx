@@ -1,4 +1,6 @@
 import { TbTriangleInverted } from "react-icons/tb";
+import { FcBookmark } from "react-icons/fc";
+
 import i1 from "../assets/i1.png"
 import i2 from "../assets/i2.png"
 import chef4 from "../assets/chef4.png"
@@ -264,72 +266,75 @@ const handleSubmit = (e) => {
   style={{ width: "280px" }}
 />
 
+{/* Wrapper for Input + Icon */}
+<div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
+  <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
+    <DatePicker
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+      placeholderText="Check in"
+      className="text-white p-2 pe-5 px-2 datepicker-input"
+      minDate={new Date()}
+      style={{ flex: 1 }}
+    />
+    <FaRegCalendarAlt
+      style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none" }}
+    />
+  </div>
+  {errors.date && (
+    <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.date}</p>
+  )}
+</div>
 
-             {/* Date Picker */}
-            <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-              <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                placeholderText="Check in"
-                className="text-white p-2 pe-5 px-2 datepicker-input"
-                minDate={new Date()}
-              />
-              <FaRegCalendarAlt
-                className="position-absolute"
-                style={{ right: "10px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "white" }}
-              />
-              {errors.date && <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.date}</p>}
-            </div>
+{/* Time Picker */}
+<div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
+  <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
+    <DatePicker
+      selected={startTime}
+      onChange={(time) => setStartTime(time)}
+      showTimeSelect
+      showTimeSelectOnly
+      timeIntervals={15}
+      timeCaption="Time"
+      dateFormat="h:mm aa"
+      placeholderText="Select time"
+      className="text-white p-2 pe-5 px-2 datepicker-input"
+      minTime={startDate && startDate.toDateString() === new Date().toDateString() ? new Date() : new Date().setHours(9, 0)}
+      maxTime={new Date().setHours(22, 0)}
+      style={{ flex: 1 }}
+    />
+    <FaRegClock
+      style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none", fontSize: "16px" }}
+    />
+  </div>
+  {errors.time && (
+    <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.time}</p>
+  )}
+</div>
 
-            {/* Time Picker */}
-            <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-              <DatePicker
-                selected={startTime}
-                onChange={(time) => setStartTime(time)}
-                showTimeSelect
-                showTimeSelectOnly
-                timeIntervals={15}
-                timeCaption="Time"
-                dateFormat="h:mm aa"
-                placeholderText="Select time"
-                className="text-white p-2 pe-5 px-2 datepicker-input"
-                minTime={startDate && startDate.toDateString() === new Date().toDateString() ? new Date() : new Date().setHours(9, 0)}
-                maxTime={new Date().setHours(22, 0)}
-              />
-              <FaRegClock
-                className="position-absolute"
-                style={{ right: "10px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "white", fontSize: "16px" }}
-              />
-              {errors.time && <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.time}</p>}
-            </div>
+{/* Guests Select */}
+<div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
+  <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
+    <select
+      className="text-white p-2 px-2 datepicker-input"
+      value={guests}
+      onChange={(e) => setGuests(e.target.value)}
+      style={{ flex: 1, background: "transparent", border: "1px solid white", borderRadius: "2px", appearance: "none" }}
+    >
+      <option value="" disabled>Guests</option>
+      {Array.from({ length: 11 }, (_, i) => (
+        <option key={i+1} value={i+1} className="text-dark">{i+1} Guest{i > 0 ? 's' : ''}</option>
+      ))}
+    </select>
+    <TbTriangleInverted
+      style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none", fontSize: "16px" }}
+    />
+  </div>
+  {errors.guests && (
+    <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.guests}</p>
+  )}
+</div>
 
-            {/* Guests Select */}
-            <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-              <select
-                className="text-white p-2 px-2 datepicker-input"
-                value={guests}
-                onChange={(e) => setGuests(e.target.value)}
-                style={{ width: "100%", background: "transparent", border: "1px solid white", borderRadius: "2px", appearance: "none" }}
-              >
-                <option value="" disabled>Guests</option>
-                <option value="1" className="text-dark">1 Guest</option>
-                <option value="2" className="text-dark">2 Guests</option>
-                <option value="3" className="text-dark">3 Guests</option>
-                <option value="4" className="text-dark">4 Guests</option>
-                <option value="5" className="text-dark">5 Guests</option>
-                <option value="6" className="text-dark">6 Guests</option>
-                <option value="7" className="text-dark">7 Guests</option>
-                <option value="8" className="text-dark">8 Guests</option>
-                <option value="9" className="text-dark">9 Guests</option>
-                <option value="10" className="text-dark">10 Guests</option>
-                <option value="11" className="text-dark">11 Guests</option>
-              </select>
-     <TbTriangleInverted 
-                className="position-absolute"
-                style={{ right: "10px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "white", fontSize: "16px" }}
-              />
-                            {errors.guests && <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.guests}</p>}
-            </div>
 
             <button id="sumitbutton" type="submit" className="mt-3" style={{ width: "280px", height: "50px", outline: "none", boxShadow: "none" }}>
               Book Your Table Now
@@ -757,21 +762,80 @@ const handleSubmit = (e) => {
 </section>
       </div>
 <div>
-  <section>
-    <div className="row">
-   <div 
-  className="col-1" 
-  style={{ backgroundImage: `url(${chef1})` }} 
+  <section style={{background: "#FAFAFA", paddingTop: "100px", paddingBottom: "100px"}}>
+  <div style={{paddingBottom: "50px"}}>
+         <h1 className="re text-center">Chef</h1>
+          <h1 className="re2 fw-bold text-center">Our Master Chef</h1>
+  </div>
+    <div className="row justify-content-center">
+      <div className="col-1">
+        <div className="chef-img"  style={{ backgroundImage: `url(${chef1})` }}
 >
-</div>
 
-      <div className="col-1"  style={{ backgroundImage: `url(${chef2})` }} ></div>
-      <div className="col-1"  style={{ backgroundImage: `url(${chef3})` }} ></div>
-      <div className="col-1"  style={{ backgroundImage: `url(${chef4})` }} ></div>
+        </div>
+        <div className="chef-info">
+<h1 className="firstchefname mt-2">John Gustavo</h1>
+<h3 className="firstchefname1 mt-2">CEO, Co Founder</h3>
+<p className="firstchefname3 mt-3 text-justify">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+
+        </div>
+      </div>
+     <div className="col-1">
+        <div className="chef-img"  style={{ backgroundImage: `url(${chef2})` }}
+>
+
+        </div>
+        <div className="chef-info">
+<h1 className="firstchefname mt-2">John Gustavo</h1>
+<h3 className="firstchefname1 mt-2">CEO, Co Founder</h3>
+<p className="firstchefname3 mt-3 text-justify">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+
+        </div>
+      </div>
+        <div className="col-1">
+        <div className="chef-img"  style={{ backgroundImage: `url(${chef3})` }}
+>
+
+        </div>
+        <div className="chef-info">
+<h1 className="firstchefname mt-2">John Gustavo</h1>
+<h3 className="firstchefname1 mt-2">CEO, Co Founder</h3>
+<p className="firstchefname3 mt-3 text-justify">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+
+        </div>
+      </div>
+      <div className="col-1">
+        <div className="chef-img"  style={{ backgroundImage: `url(${chef4})` }}
+>
+
+        </div>
+        <div className="chef-info">
+<h1 className="firstchefname mt-2">John Gustavo</h1>
+<h3 className="firstchefname1 mt-2">CEO, Co Founder</h3>
+<p className="firstchefname3 mt-3 text-justify">I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+
+        </div>
+      </div>
     </div>
   </section>
 </div>
-
+<div>
+  <section>
+        <div className="row row2">
+          <div className="i1img" style={{ backgroundImage: `url(${i1})` }}></div>
+          <div className="i2img" style={{backgroundImage: `url(${i2})`}}></div>
+          <div className="icontent ms-5 mt-5" style={{width: "548px"}}>
+              <h1 className="re">This is our secrets</h1>
+          <h1 className="re2">Perfect Ingredients</h1>
+          <p className="helloiamfirstone text-justify lh-lg text-secondary w-auto" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <button className="btn btn-outline-danger newbtn">
+          Learn More
+        </button>
+          </div>
+        </div>
+  
+  </section>
+</div>
     </>
   );
 };

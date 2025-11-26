@@ -7,7 +7,91 @@ html, body {
   font-family: 'Roboto', Arial, sans-serif !important;
 
 }
+.col-1 {
+  width: 18% !important;
+  height: 500px;
+  background-color: #fff;
+box-shadow: 0 0px 4px 10px  rgba(255, 255, 255, 0);
+border-radius: 2px;
+}
+/* svg.position-absolute {
+    margin-bottom: -29px;
+    margin-top: -3px;
+} */
+.i1img {
+  background-size: cover;
+  background-position: center  !important;
+  width: 262px !important;
+  height: 422px !important; /* or whatever height you want */
+  /* margin-left: -14px !important; */
+}
+.i2img {
+    background-size: cover !important;
+  background-position: center  !important;
+  width: 262px !important;
+  height: 422px !important; /* or whatever height you want */
+  /* margin-left: -14px !important; */
+}
+.firstchefname {
+      font-size: 18px;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.firstchefname3 {
+      display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    letter-spacing: 1px;
+    color: gray;
+} 
+.helloiamfirstone{
+        display: block  !important;
+    margin-block-start: 1em  !important;
+    margin-block-end: 1em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+    unicode-bidi: isolate !important;
+    letter-spacing: 1px !important;
+    color: gray !important;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.firstchefname1 {
+      font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+    display: block;
+}
+.chef-img {
+  background-size: contain;
+  background-position: center left !important;
+  width: 250px;
+  height: 350px; /* or whatever height you want */
+  margin-left: -14px !important;
+}
 
+.row {
+  gap: 32px;
+}
+.row2 {
+    position: absolute !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    align-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    --bs-gutter-x: -16.2rem !important;
+    gap: 15px !important;
+}
+p.helloiamfirstone.text-justify.lh-lg.text-secondary.w-auto {
+    width: 479px !important;
+}
+.newbtn {
+    text-transform: capitalize;
+}
 .contactsimple {
     display: flex !important;
     justify-content: center;
@@ -17,12 +101,6 @@ html, body {
     margin-top: 15px;
     font-size: 13px;
 
-}
-img.i1 {
-    width: 279px;
-}
-img.i2 {
-    width: 319px;
 }
 section.position-relative.absoluteimg.newone {
     /* width: 400px; */
@@ -58,16 +136,9 @@ h4.WDAVSKM {
 p.lead.font-italic.mx-4.mx-md-5.text-justify {
     color: white;
 }
-.col-1 {
-      background-size: cover;
-    background-repeat: no-repeat;
-  background-position: top center !important;
-        height: 350px;
-        width: 251px;
-            width: 17.50% !important;
 
 
-}
+
 .areone {
       font-size: 16px;
     line-height: 2;
@@ -132,9 +203,7 @@ h1,h2,h3,h4,h5,h6,p {
 .p-2 {
     padding: 2.5rem !important;
 }
-.bg-white.gx-4.gy-3.row {
-    margin-left: 13px;
-}
+
 .menu-item.p-2.Col {
     width: 334px;
 }
