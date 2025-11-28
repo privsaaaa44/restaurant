@@ -1,12 +1,57 @@
 html, body {
   font-family: 'Roboto', Arial, sans-serif !important;
+  /* overflow-x: hidden !important; */
   
+}
+.l1 {
+    background-size: cover;
+    background-position: center !important;
+    width: 1351px !important;
+    height: 212px !important;
 }
 
 * {
   font-family: 'Roboto', Arial, sans-serif !important;
+  /* overflow-x: hidden !important; */
+
 
 }
+#newheading {
+    /* margin-top: -15px !important; */
+    position: absolute !important;
+    margin-top: 61px !important;
+    text-align: center;
+    margin-left: 376px;
+}
+.error-text {
+  position: absolute;
+  top: 120%;
+  left: 10%;
+  right: 50%; /* align to right */
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: white;
+  /* background-color: white; */
+  white-space: nowrap;
+}
+
+.NEWONEDABHJ {
+    POSITION: absolute;
+    margin-left: 637px;
+    margin-top: 122px;
+    text-transform: capitalize;
+}
+.NEWONEDABHJ:hover {
+  color: #e52b34 !important;
+}
+#sumitbutton {
+  width: 280px !important;
+  text-transform: capitalize;
+}
+ #sumitbutton:hover {
+  color: #e52b34 !important;
+
+ }
 .col-1 {
   width: 18% !important;
   height: 500px;
@@ -288,7 +333,7 @@ input:focus {
     font-size: 20px;
     margin: 0;
 }
-#sumitbutton{
+/* #sumitbutton{
     color: rgb(0, 0, 0);
     background: rgb(255, 255, 255);
     border-width: 1px;
@@ -298,14 +343,14 @@ input:focus {
     font-size: 16px;
     border-radius: 2px;
     padding: 16px 24px !important;
-}
-#sumitbutton:hover {
+} */
+/* #sumitbutton:hover {
       border: 1px solid #fff;
     color: #e52b34;
-}
-button#sumitbutton {
+} */
+/* button#sumitbutton {
     padding-top: 13px !important;
-}
+} */
 .re {
  font-family: 'Dancing Script', cursive !important;
  color: #E52B33;

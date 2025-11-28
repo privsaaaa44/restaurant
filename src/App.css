@@ -1,8 +1,9 @@
 html, body {
   font-family: 'Roboto', Arial, sans-serif !important;
   /* background-color: black; */
-  overflow-x: hidden; 
-  height: 100000px;
+  /* overflow-x: hidden !important;  */
+  /* height: 100000px; */
+  overflow-x: hidden;
   
 }
 h1.hero-title.animate-slide-in {

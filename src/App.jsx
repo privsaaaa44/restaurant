@@ -11,6 +11,7 @@ import "@fontsource/dancing-script/500.css";
 import "@fontsource/dancing-script/600.css"; 
 // Bold
 import "@fontsource/dancing-script/700.css"; 
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
     <div>
    <Home/>
    <Navbar/>
+   <Footer/>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { TbTriangleInverted } from "react-icons/tb";
 import { FcBookmark } from "react-icons/fc";
-
+import l1 from "../assets/l1.png"
 import i1 from "../assets/i1.png"
 import i2 from "../assets/i2.png"
 import chef4 from "../assets/chef4.png"
@@ -111,11 +111,11 @@ const handleSubmit = (e) => {
     alert("Email must end with .com");
     return;
   }
-
+  
   // Initialize validation
   let valid = true;
   const newErrors = { date: "", time: "", guests: "" };
-
+  
   if (!startDate) {
     newErrors.date = "Please select a check-in date!";
     valid = false;
@@ -223,124 +223,127 @@ const handleSubmit = (e) => {
 </div>
       <div className="d-flex justify-content-center" style={{ background: "#fff", height: "550px" }}>
         <div className="p-3 " style={{ width: "380px", background: "#E52B33"}}>
-          <h1 className="text-white text-center mt-5" style={{ fontSize: "22px", marginRight: "91px" }}>
-            Book Your Table
-          </h1>
-          <form
-            className="text-center"
-            style={{ marginRight: "2px", fontSize: "14px" }}
-            onSubmit={handleSubmit}
-          >
-<input
-  type="text"
-  id="nameInput"
-  className="text-white p-2 py-2 px-2 mt-2"
-  pattern="[A-Za-z\s]+"
-  title="Only letters and spaces are allowed"
-  required
-  placeholder="Name"
-  style={{ width: "280px" }}
-/>
+          <h1 className="text-white text-center mt-5" style={{ fontSize: "22px", marginRight: "91px" }}>    Book Your Table
+</h1>
+  <form
+  className="text-center"
+  style={{ marginRight: "2px", fontSize: "14px" }}
+  onSubmit={handleSubmit}
+>
+  {/* Name Input */}
+  <input
+    type="text"
+    id="nameInput"
+    className="text-white p-2 py-2 px-2 mt-2"
+    pattern="[A-Za-z\s]+"
+    title="Only letters and spaces are allowed"
+    required
+    placeholder="Name"
+    style={{ width: "280px" }}
+  />
 
-<input
-  type="email"
-  id="emailInput"
-  className="text-white p-2 py-2 px-2 mt-3"
-  title="Please enter a valid email ending with .com"
-  required
-  placeholder="Email"
-  style={{ width: "280px" }}
-/>
+  {/* Email Input */}
+  <input
+    type="email"
+    id="emailInput"
+    className="text-white p-2 py-2 px-2 mt-3"
+    title="Please enter a valid email ending with .com"
+    required
+    placeholder="Email"
+    style={{ width: "280px" }}
+  />
 
+  {/* Phone Input */}
+  <input
+    type="tel"
+    id="phoneInput"
+    className="text-white p-2 py-2 px-2 mt-3"
+    pattern="[0-9]{11}"
+    title="Please enter an 11-digit phone number"
+    required
+    placeholder="Phone"
+    style={{ width: "280px" }}
+  />
 
-
-
-<input
-  type="tel"
-  id="phoneInput"
-  className="text-white p-2 py-2 px-2 mt-3"
-  pattern="[0-9]{11}"
-  title="Please enter an 11-digit phone number"
-  required
-  placeholder="Phone"
-  style={{ width: "280px" }}
-/>
-
-{/* Wrapper for Input + Icon */}
-<div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-  <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
-    <DatePicker
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
-      placeholderText="Check in"
-      className="text-white p-2 pe-5 px-2 datepicker-input"
-      minDate={new Date()}
-      style={{ flex: 1 }}
-    />
-    <FaRegCalendarAlt
-      style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none" }}
-    />
+  {/* Check-in Date Picker */}
+  <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
+    <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
+      <DatePicker
+        selected={startDate}
+        onChange={(date) => setStartDate(date)}
+        placeholderText="Check in"
+        className="text-white p-2 pe-5 px-2 datepicker-input"
+        minDate={new Date()}
+        style={{ flex: 1 }}
+      />
+      <FaRegCalendarAlt
+        style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none" }}
+      />
+    </div>
+    {errors.date && <p className="error-text">{errors.date}</p>}
   </div>
-  {errors.date && (
-    <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.date}</p>
-  )}
-</div>
 
-{/* Time Picker */}
-<div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-  <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
-    <DatePicker
-      selected={startTime}
-      onChange={(time) => setStartTime(time)}
-      showTimeSelect
-      showTimeSelectOnly
-      timeIntervals={15}
-      timeCaption="Time"
-      dateFormat="h:mm aa"
-      placeholderText="Select time"
-      className="text-white p-2 pe-5 px-2 datepicker-input"
-      minTime={startDate && startDate.toDateString() === new Date().toDateString() ? new Date() : new Date().setHours(9, 0)}
-      maxTime={new Date().setHours(22, 0)}
-      style={{ flex: 1 }}
-    />
-    <FaRegClock
-      style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none", fontSize: "16px" }}
-    />
+  {/* Time Picker */}
+  <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
+    <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
+      <DatePicker
+        selected={startTime}
+        onChange={(time) => setStartTime(time)}
+        showTimeSelect
+        showTimeSelectOnly
+        timeIntervals={15}
+        timeCaption="Time"
+        dateFormat="h:mm aa"
+        placeholderText="Select time"
+        className="text-white p-2 pe-5 px-2 datepicker-input"
+        minTime={
+          startDate && startDate.toDateString() === new Date().toDateString()
+            ? new Date()
+            : new Date().setHours(9, 0)
+        }
+        maxTime={new Date().setHours(22, 0)}
+        style={{ flex: 1 }}
+      />
+      <FaRegClock
+        style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none", fontSize: "16px" }}
+      />
+    </div>
+    {errors.time && <p className="error-text">{errors.time}</p>}
   </div>
-  {errors.time && (
-    <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.time}</p>
-  )}
-</div>
 
-{/* Guests Select */}
-<div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
-  <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
-    <select
-      className="text-white p-2 px-2 datepicker-input"
-      value={guests}
-      onChange={(e) => setGuests(e.target.value)}
-      style={{ flex: 1, background: "transparent", border: "1px solid white", borderRadius: "2px", appearance: "none" }}
-    >
-      <option value="" disabled>Guests</option>
-      {Array.from({ length: 11 }, (_, i) => (
-        <option key={i+1} value={i+1} className="text-dark">{i+1} Guest{i > 0 ? 's' : ''}</option>
-      ))}
-    </select>
-    <TbTriangleInverted
-      style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none", fontSize: "16px" }}
-    />
+  {/* Guests Select */}
+  <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
+    <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
+      <select
+        className="text-white p-2 px-2 datepicker-input"
+        value={guests}
+        onChange={(e) => setGuests(e.target.value)}
+        style={{
+          flex: 1,
+          background: "transparent",
+          border: "1px solid white",
+          borderRadius: "2px",
+          appearance: "none"
+        }}
+      >
+        <option value="" disabled>Guests</option>
+        {Array.from({ length: 11 }, (_, i) => (
+          <option key={i+1} value={i+1} className="text-dark">{i+1} Guest{i > 0 ? 's' : ''}</option>
+        ))}
+      </select>
+      <TbTriangleInverted
+        style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none", fontSize: "16px" }}
+      />
+    </div>
+    {errors.guests && <p className="error-text">{errors.guests}</p>}
   </div>
-  {errors.guests && (
-    <p className="text-white mt-1" style={{ fontSize: "12px", color: "yellow" }}>{errors.guests}</p>
-  )}
-</div>
 
+  {/* Submit Button */}
+  <button id="sumitbutton" type="submit" className="mt-4 w-75 btn btn-outline-light ">
+    Book Your Table Now
+  </button>
+</form>
 
-            <button id="sumitbutton" type="submit" className="mt-3" style={{ width: "280px", height: "50px", outline: "none", boxShadow: "none" }}>
-              Book Your Table Now
-            </button>
-
-          </form>
         </div>
         <div className="miniaboutsection"   style={{ backgroundImage: `url(${chef})`, marginBottom: "-100px" }}>
         <div  style={{marginTop: "100px"}}>
@@ -820,7 +823,7 @@ const handleSubmit = (e) => {
   </section>
 </div>
 <div>
-  <section>
+  <section style={{paddingBottom: "100px"}}>
         <div className="row row2">
           <div className="i1img" style={{ backgroundImage: `url(${i1})` }}></div>
           <div className="i2img" style={{backgroundImage: `url(${i2})`}}></div>
@@ -834,6 +837,33 @@ const handleSubmit = (e) => {
           </div>
         </div>
   
+  </section>
+</div>
+<div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+  <section className="neonwjafjk">
+          <div className="l1" style={{backgroundImage: `url(${l1})`}}>
+
+    <h1 className="text-white text-center fw-bold" id="newheading">We Make Delicious & Nutritious Food</h1>
+    <button className="btn btn-outline-light NEWONEDABHJ">Book A Table Now</button>
+          </div>
   </section>
 </div>
     </>
