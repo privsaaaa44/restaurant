@@ -6,12 +6,24 @@ html, body {
   overflow-x: hidden;
   
 }
+.col12 {
+    width: 44% !important;
+    height: 200px !important;
+}
 h1.hero-title.animate-slide-in {
     margin-bottom: 98px;
     font-family: 'Dancing Script', cursive !important;
     font-size: 136.6px;
     font-weight: 400 !important;
     color: #fff !important;
+}
+.bikulnewone:hover {
+color: #e52b34 !important;
+}
+footer {
+  border-top: 1px solid black;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
   p.jbhj {
     text-align: justify;

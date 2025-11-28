@@ -8,7 +8,8 @@ import "@fontsource/roboto-serif/400.css"; // Regular
 import "@fontsource/roboto-serif/500.css"; // Medium
 import "@fontsource/roboto-serif/700.css"; // Bold
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
-
+    import AOS from 'aos';
+    import 'aos/dist/aos.css';
 // Import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';

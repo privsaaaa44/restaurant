@@ -16,6 +16,14 @@ html, body {
 
 
 }
+.footerhr {
+    color: #000000 !important;
+    /* width: 7px !important; */
+    color: 1px solid black !important;
+    /* border: 1px springgreen; */
+    width: 1163px !important;
+    border: 1px solid #000000 !important;
+}
 #newheading {
     /* margin-top: -15px !important; */
     position: absolute !important;
@@ -33,6 +41,9 @@ html, body {
   color: white;
   /* background-color: white; */
   white-space: nowrap;
+}
+.socailmediaicon {
+    margin-top: -7px !important;
 }
 
 .NEWONEDABHJ {

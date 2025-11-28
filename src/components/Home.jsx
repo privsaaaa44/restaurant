@@ -1,5 +1,22 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import { TbTriangleInverted } from "react-icons/tb";
 import { FcBookmark } from "react-icons/fc";
+import lunch2 from "../assets/lunch2.jpg"
+import lunch3 from "../assets/lunch3.jpg"
+import dinner1 from "../assets/dinner1.jpg"
+import dinner2 from "../assets/dinner2.jpg"
+import dinner3 from "../assets/dinner3.jpg"
+import dessert1 from "../assets/dessert1.jpg"
+import dessert2 from "../assets/dessert2.jpg"
+import dessert3 from "../assets/dessert3.jpg"
+import wine1 from "../assets/wine1.jpg"
+import wine2 from "../assets/wine2.jpg"
+import wine3 from "../assets/wine3.jpg"
+import tea1 from "../assets/tea1.jpg"
+import tea2 from "../assets/tea2.jpg"
+import tea3 from "../assets/tea3.jpg"
 import l1 from "../assets/l1.png"
 import i1 from "../assets/i1.png"
 import i2 from "../assets/i2.png"
@@ -46,32 +63,181 @@ const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [bookingDetails, setBookingDetails] = useState({});
   const [errors, setErrors] = useState({ date: "", time: "", guests: "" });
+useEffect(() => {
+  AOS.init({
+    duration: 500, // animation duration
+    easing: "ease-in-out", // animation easing
+    once: true, // animation happens only once
+  });
+}, []);
+// BREAKFAST
 const breakfastItems = [
   {
-    name: "Beef Roast",
-    source: "Source",
-    details: "Meat, Potatoes, Rice, ",
-    source2: "Tomatoe",
-    price: "$29",
+    name: "Pad Thai",
+    source: "Noodles",
+    details: "meat, tofu, sauces",
+    source2: "chili",
+    price: "$12",
     img: breakfast1
   },
   {
-    name: "Beef Roast",
-    source: "Source",
-    details: "Meat, Potatoes, Rice,",
-    source2: "Tomatoe",
-    price: "$30",
+    name: "Grilled Cheese",
+    source: "Salad",
+    details: "Greens, Cheese, Veggies",
+    source2: "Dressing",
+    price: "$10",
     img: breakfast2
   },
   {
-  name: "Beef Roast",
-    source: "Source",
-    details: "Meat, Potatoes, Rice, ",
-    source2: "Tomatoe",
-    price: "$29",
+    name: "Banana Oatmeal",
+    source: "Porridge",
+    details: "Oatmeal, Banana, Flax",
+    source2: "Honey",
+    price: "$8",
     img: breakfast3
   }
 ];
+
+// LUNCH
+const lunchItems = [
+  {
+    name: "Grilled Salmon",
+    source: "Salad",
+    details: "Salmon, Greens, Tomato",
+    source2: "Tomato",
+    price: "$25",
+    img: lunch1
+  },
+  {
+    name: "Veg Pasta",
+    source: "Italian",
+    details: "Pasta, Veggies, Cheese",
+    source2: "Oregano",
+    price: "$18",
+    img: lunch2
+  },
+  {
+    name: "Beef Steak",
+    source: "Grill",
+    details: "Beef, Pepper Sauce",
+    source2: "Potatoes",
+    price: "$32",
+    img: lunch3
+  }
+];
+
+// DINNER
+const dinnerItems = [
+  {
+    name: "Grilled Salmon",
+    source: "Fresh Catch",
+    details: "Salmon, Lemon, Herbs",
+    source2: "Butter Sauce",
+    price: "$28",
+    img: dinner1
+  },
+  {
+    name: "Vietnamese noodle ",
+    source: "soup",
+    details: "Meat, Onion, Herbs",
+    source2: "Noodles",
+    price: "$24",
+    img: dinner2
+  },
+  {
+    name: "Lamb Chops",
+    source: "Signature",
+    details: "Lamb, Rosemary",
+    source2: "Mashed Potato",
+    price: "$35",
+    img: dinner3
+  }
+];
+
+// DESSERT
+const dessertItems = [
+  {
+    name: "Chocolate Cake",
+    source: "Bakery",
+    details: "Chocolate, Cream",
+    source2: "Cherry",
+    price: "$14",
+    img: dessert1
+  },
+  {
+    name: "Ice Cream",
+    source: "Dairy",
+    details: "Milk, Vanilla",
+    source2: "Caramel",
+    price: "$10",
+    img: dessert2
+  },
+  {
+    name: "Fruit Salad",
+    source: "Fresh",
+    details: "Seasonal Fruits",
+    source2: "Mint",
+    price: "$12",
+    img: dessert3
+  }
+];
+
+// WINE
+const wineItems = [
+  {
+    name: "Red Wine",
+    source: "France",
+    details: "Dry, Full Body",
+    source2: "Grapes",
+    price: "$40",
+    img: wine1
+  },
+  {
+    name: "White Wine",
+    source: "Italy",
+    details: "Crisp & Fresh",
+    source2: "Grapes",
+    price: "$35",
+    img: wine2
+  },
+  {
+    name: "Rose Wine",
+    source: "Spain",
+    details: "Soft & Smooth",
+    source2: "Floral",
+    price: "$38",
+    img: wine3
+  }
+];
+
+// DRINK & TEA
+const drinkTeaItems = [
+  {
+    name: "Green Tea",
+    source: "Organic",
+    details: "Tea Leaves",
+    source2: "Honey",
+    price: "$8",
+    img: tea1
+  },
+  {
+    name: "Iced Coffee",
+    source: "Brewed",
+    details: "Coffee, Ice",
+    source2: "Milk",
+    price: "$10",
+    img: tea2
+  },
+  {
+    name: "Orange Juice",
+    source: "Fresh",
+    details: "Oranges",
+    source2: "Mint",
+    price: "$9",
+    img: tea3
+  }
+];
+
 
 // const lunchItems = [
 //   {
@@ -188,16 +354,19 @@ const handleSubmit = (e) => {
           <div className="carousel-image-wrapper">
             <img src={B1} className="d-block w-100 home-hero-img" alt="slide1" />
             <div className="carousel-overlay"></div>
-            <Carousel.Caption className="hero-caption">
-              <h1 className="hero-title animate-slide-in">Cooking Since</h1>
-              <div className="food-section text-center my-4">
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="flex-grow-1 line"></div>
-                  <span className="px-3 food-title">1950</span>
-                  <div className="flex-grow-1 line"></div>
-                </div>
-              </div>
-            </Carousel.Caption>
+       <Carousel.Caption className="hero-caption">
+  <div data-aos="fade-up">
+    <h1 className="hero-title animate-slide-in">Cooking Since</h1>
+    <div className="food-section text-center my-4">
+      <div className="d-flex align-items-center justify-content-center">
+        <div className="flex-grow-1 line"></div>
+        <span className="px-3 food-title">1950</span>
+        <div className="flex-grow-1 line"></div>
+      </div>
+    </div>
+  </div>
+</Carousel.Caption>
+
           </div>
         </Carousel.Item>
 
@@ -206,16 +375,19 @@ const handleSubmit = (e) => {
           <div className="carousel-image-wrapper">
             <img src={B2} className="d-block w-100 home-hero-img" alt="slide2" />
             <div className="carousel-overlay"></div>
-            <Carousel.Caption className="hero-caption">
-              <h1 className="hero-title animate-slide-in">Best Quality</h1>
-              <div className="food-section text-center my-4">
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="flex-grow-1 line"></div>
-                  <span className="px-3 food-title">FOOD</span>
-                  <div className="flex-grow-1 line"></div>
-                </div>
-              </div>
-            </Carousel.Caption>
+    <Carousel.Caption className="hero-caption">
+  <div data-aos="fade-up">
+    <h1 className="hero-title animate-slide-in">Best Quality</h1>
+    <div className="food-section text-center my-4">
+      <div className="d-flex align-items-center justify-content-center">
+        <div className="flex-grow-1 line"></div>
+        <span className="px-3 food-title">FOOD</span>
+        <div className="flex-grow-1 line"></div>
+      </div>
+    </div>
+  </div>
+</Carousel.Caption>
+
           </div>
         </Carousel.Item>
       </Carousel>
@@ -345,13 +517,16 @@ const handleSubmit = (e) => {
 </form>
 
         </div>
-        <div className="miniaboutsection"   style={{ backgroundImage: `url(${chef})`, marginBottom: "-100px" }}>
-        <div  style={{marginTop: "100px"}}>
-          <h1 className="re">About</h1>
-          <h1 className="re2">Welcome to <br />
-            Flavora</h1>
-            <p className="hello">On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-        </div>
+        <div className="miniaboutsection"  data-aos="fade-up"
+  data-aos-delay="200"   style={{ backgroundImage: `url(${chef})`, marginBottom: "-100px" }}>
+      <div style={{marginTop: "100px"}} data-aos="fade-up"  data-aos-delay="200">
+  <h1 className="re">About</h1>
+  <h1 className="re2">Welcome to <br /> Flavora</h1>
+  <p className="hello">
+  Flavora Restaurant creates an experience where every plate carries its own narrative. Influenced by world cuisines and built on fresh, seasonal produce, Flavora presents thoughtfully crafted dishes, attentive service, and a warm setting. From slow-developed entrées to lively small bites, each recipe is made to emphasize harmony, fragrance, and depth. The environment is shaped for comfort, conversation, and lasting memories.
+  </p>
+</div>
+
         {/* <div>
           <img className="chefimg" src={chef} alt="chefimage" width={66}  />
         </div> */}
@@ -469,16 +644,25 @@ const handleSubmit = (e) => {
           <h1 className="re2">Our Menu</h1>
 <div style={{ marginTop: "50px" }}>
 
-  {/* ROW 1 */}
-  <div
-    className="Row bg-white gx-4 gy-3"
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      marginBottom: "50px"
-    }}
-  >
-    {[1, 2, 3].map((col, colIndex) => (
+{/* ROW 1 */}
+<div
+  className="Row bg-white gx-4 gy-3"
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "50px"
+  }}
+>
+  {[1, 2, 3].map((col, colIndex) => {
+    const mapping = [
+      { title: "Breakfast", data: breakfastItems },
+      { title: "Lunch", data: lunchItems },
+      { title: "Dinner", data: dinnerItems }
+    ];
+
+    const { title, data } = mapping[colIndex];
+
+    return (
       <div
         key={colIndex}
         className="menu-item p-2 Col"
@@ -488,6 +672,8 @@ const handleSubmit = (e) => {
           padding: "20px",
           margin: "0 20px"
         }}
+          data-aos="fade-up"
+  data-aos-delay={colIndex * 200} 
       >
         <h1
           className="mt-4"
@@ -498,22 +684,16 @@ const handleSubmit = (e) => {
             marginBottom: "2em"
           }}
         >
-          Breakfast
+          {title}
         </h1>
 
-        {breakfastItems.map((item, index) => (
-          <div
-            key={index}
-            className="menu-item2"
-            style={{ position: "relative", marginBottom: "1rem" }}
-          >
+        {data.map((item, index) => (
+          <div key={index} className="menu-item2" style={{ marginBottom: "1rem" }}>
             <div className="d-flex ing">
-              <div>
-                <img src={item.img} alt={item.name} className="img111" />
-              </div>
+              <img src={item.img} alt={item.name} className="img111" />
 
               <div style={{ marginLeft: "10px", flexGrow: 1 }}>
-                <h3 className="abcdefghijk" style={{ fontSize: "17px", fontWeight: "500" }}>
+                <h3 style={{ fontSize: "17px", fontWeight: "500" }}>
                   {item.name}
                   <br />
                   <span className="lemon">{item.source}</span>
@@ -523,41 +703,44 @@ const handleSubmit = (e) => {
                   {item.details}
                   <br />
                   <span className="ayaan">{item.source2}</span>
-
                 </p>
               </div>
 
-              <div>
-                <p
-                  style={{
-                    color: "#e52b34",
-                    fontSize: "20px",
-                    fontWeight: "600",
-                    lineHeight: "1.3"
-                  }}
-                >
-                  {item.price}
-                </p>
-              </div>
+              <p style={{ color: "#e52b34", fontSize: "20px", fontWeight: "600" }}>
+                {item.price}
+              </p>
             </div>
 
             {index < 2 && <hr className="firsthr" />}
           </div>
         ))}
       </div>
-    ))}
-  </div>
+    );
+  })}
+</div>
+
+
 
   {/* ROW 2 – SAME STRUCTURE */}
-  <div
-    className="Row bg-white gx-4 gy-3"
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      marginBottom: "50px"
-    }}
-  >
-    {[1, 2, 3].map((col, colIndex) => (
+<div
+  className="Row bg-white gx-4 gy-3"
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "50px"
+  }}
+  
+>
+  {[1, 2, 3].map((col, colIndex) => {
+    const mapping = [
+      { title: "Dessert", data: dessertItems },
+      { title: "Wine", data: wineItems },
+      { title: "Drink & Tea", data: drinkTeaItems }
+    ];
+
+    const { title, data } = mapping[colIndex];
+
+    return (
       <div
         key={colIndex}
         className="menu-item p-2 Col"
@@ -567,6 +750,8 @@ const handleSubmit = (e) => {
           padding: "20px",
           margin: "0 20px"
         }}
+          data-aos="fade-up"
+      data-aos-delay={colIndex * 200}
       >
         <h1
           className="mt-4"
@@ -577,57 +762,41 @@ const handleSubmit = (e) => {
             marginBottom: "2em"
           }}
         >
-          Breakfast
+          {title}
         </h1>
 
-        {breakfastItems.map((item, index) => (
-          <div
-            key={index}
-            className="menu-item2"
-            style={{ position: "relative", marginBottom: "1rem" }}
-          >
+        {data.map((item, index) => (
+          <div key={index} className="menu-item2" style={{ marginBottom: "1rem" }}>
             <div className="d-flex ing">
-              <div>
-                <img src={item.img} alt={item.name} className="img111" />
-              </div>
+              <img src={item.img} alt={item.name} className="img111" />
 
               <div style={{ marginLeft: "10px", flexGrow: 1 }}>
-                               <h3 className="abcdefghijk" style={{ fontSize: "17px", fontWeight: "500" }}>
-
+                <h3 style={{ fontSize: "17px", fontWeight: "500" }}>
                   {item.name}
                   <br />
-                                   <span className="lemon">{item.source}</span>
-
+                  <span className="lemon">{item.source}</span>
                 </h3>
 
-                 <p className="abcf" style={{ color: "#000000cc" }}>
+                <p className="abcf" style={{ color: "#000000cc" }}>
                   {item.details}
                   <br />
                   <span className="ayaan">{item.source2}</span>
-
                 </p>
               </div>
 
-              <div>
-                <p
-                  style={{
-                    color: "#e52b34",
-                    fontSize: "20px",
-                    fontWeight: "600",
-                    lineHeight: "1.3"
-                  }}
-                >
-                  {item.price}
-                </p>
-              </div>
+              <p style={{ color: "#e52b34", fontSize: "20px", fontWeight: "600" }}>
+                {item.price}
+              </p>
             </div>
 
             {index < 2 && <hr className="firsthr" />}
           </div>
         ))}
       </div>
-    ))}
-  </div>
+    );
+  })}
+</div>
+
 
 </div>
 
@@ -667,13 +836,13 @@ const handleSubmit = (e) => {
       width: "100%"
     }}
   >
-    <div className="contenb">
+    <div className="contenb" data-aos="fade-up" data-aos-delay="200">
  <h1 className="re">Testimony</h1>
           <h1 className="re2 fw-bold">Happy Customer</h1>         
           </div>
 <br />
 <br />
-      <div className="row text-center">
+      <div className="row text-center" data-aos="fade-up" data-aos-delay="200">
         <div className="col-md-12">
           {/* Carousel wrapper */}
           <div
@@ -766,12 +935,12 @@ const handleSubmit = (e) => {
       </div>
 <div>
   <section style={{background: "#FAFAFA", paddingTop: "100px", paddingBottom: "100px"}}>
-  <div style={{paddingBottom: "50px"}}>
+  <div style={{paddingBottom: "50px"}} data-aos="fade-up">
          <h1 className="re text-center">Chef</h1>
           <h1 className="re2 fw-bold text-center">Our Master Chef</h1>
   </div>
     <div className="row justify-content-center">
-      <div className="col-1">
+      <div className="col-1" data-aos="fade-up" >
         <div className="chef-img"  style={{ backgroundImage: `url(${chef1})` }}
 >
 
@@ -783,7 +952,7 @@ const handleSubmit = (e) => {
 
         </div>
       </div>
-     <div className="col-1">
+     <div className="col-1" data-aos="fade-up">
         <div className="chef-img"  style={{ backgroundImage: `url(${chef2})` }}
 >
 
@@ -795,7 +964,7 @@ const handleSubmit = (e) => {
 
         </div>
       </div>
-        <div className="col-1">
+        <div className="col-1" data-aos="fade-up">
         <div className="chef-img"  style={{ backgroundImage: `url(${chef3})` }}
 >
 
@@ -807,7 +976,7 @@ const handleSubmit = (e) => {
 
         </div>
       </div>
-      <div className="col-1">
+      <div className="col-1" data-aos="fade-up">
         <div className="chef-img"  style={{ backgroundImage: `url(${chef4})` }}
 >
 
@@ -827,7 +996,7 @@ const handleSubmit = (e) => {
         <div className="row row2">
           <div className="i1img" style={{ backgroundImage: `url(${i1})` }}></div>
           <div className="i2img" style={{backgroundImage: `url(${i2})`}}></div>
-          <div className="icontent ms-5 mt-5" style={{width: "548px"}}>
+          <div className="icontent ms-5 mt-5" style={{width: "548px"}} data-aos="fade-up" data-aos-delay="200">
               <h1 className="re">This is our secrets</h1>
           <h1 className="re2">Perfect Ingredients</h1>
           <p className="helloiamfirstone text-justify lh-lg text-secondary w-auto" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
