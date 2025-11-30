@@ -1,27 +1,60 @@
 html, body {
-  font-family: 'Roboto', Arial, sans-serif !important;
-  /* overflow-x: hidden !important; */
-  
+  font-family: 'Roboto', Arial, sans-serif !important;  
+}
+body {
+  overflow-x: hidden !important;
+  /* width: 130px; */
+}
+.row.row2 {
+    margin-left: 128px !important;
 }
 .l1 {
     background-size: cover;
     background-position: center !important;
-    width: 1351px !important;
-    height: 212px !important;
+    width: 100% !important;
+    max-width: 100%;
+    /* height: 212px !important; */
 }
 
 * {
   font-family: 'Roboto', Arial, sans-serif !important;
-  /* overflow-x: hidden !important; */
-
-
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ /* outline: 1px solid red; */
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+/* section {
+    width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+} */
+.jhshfbg {
+    /* margin-left: -76px !important; */
+    /* margin-left: 0; */
+    /* position: relative !important; */
+    /* left: -40px  !important; */
+    left: 0;
+} 
+
 .footerhr {
     color: #000000 !important;
     /* width: 7px !important; */
     color: 1px solid black !important;
     /* border: 1px springgreen; */
-    width: 1163px !important;
+    /* width: 1163px !important; */
+    width: 100%;
     border: 1px solid #000000 !important;
 }
 #newheading {
@@ -29,8 +62,17 @@ html, body {
     position: absolute !important;
     margin-top: 61px !important;
     text-align: center;
-    margin-left: 376px;
+   left: 50%;
+       transform: translateX(-50%);
 }
+@media (max-width: 768px) {
+  * {
+    margin-left: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
 .error-text {
   position: absolute;
   top: 120%;
@@ -42,13 +84,34 @@ html, body {
   /* background-color: white; */
   white-space: nowrap;
 }
+
 .socailmediaicon {
     margin-top: -7px !important;
 }
 
+@media (max-width: 480px) {
+  
+}
+@media (max-width: 480px) {
+
+  .contactsimple p {
+    font-size: 12px !important;
+  }
+
+  .navbar1 img {
+    width: 60px !important;
+  }
+
+  .nav-links .nav-link {
+    font-size: 14px !important;
+  }
+}
+
 .NEWONEDABHJ {
     POSITION: absolute;
-    margin-left: 637px;
+    /* margin-left: 637px; */
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 122px;
     text-transform: capitalize;
 }
@@ -70,6 +133,7 @@ html, body {
 box-shadow: 0 0px 4px 10px  rgba(255, 255, 255, 0);
 border-radius: 2px;
 }
+
 /* svg.position-absolute {
     margin-bottom: -29px;
     margin-top: -3px;
@@ -136,10 +200,11 @@ border-radius: 2px;
     display: flex !important;
     justify-content: space-around !important;
     align-content: flex-start !important;
-    flex-wrap: nowrap !important;
+    /* flex-wrap: nowrap !important; */
     flex-direction: row !important;
     align-items: stretch !important;
-    --bs-gutter-x: -16.2rem !important;
+    --bs-gutter-x: 0 !important;
+  flex-wrap: wrap;
     gap: 15px !important;
 }
 p.helloiamfirstone.text-justify.lh-lg.text-secondary.w-auto {
@@ -277,6 +342,21 @@ span.ayaan {
   font-size: 13px;
   cursor: pointer;
 } */
+ @media (min-width: 1024px) {
+    p.text-justify.mt-2 {
+        margin-left: 18px;
+    }
+hr.footerhr {
+    width: 86%;
+}
+.aDVOUH {
+    margin-right: 39px;
+}
+h3.jhshfbg {
+    margin-left: -75px;
+}
+}
+
  nav.bg-dark.navbar.navbar-expand.navbar-light {
     background: transparent !important;
 }
@@ -390,3 +470,68 @@ input:focus {
 /* optional: अगर logo पर contrast चाहिए तो छोटे tweaks */
 .navbar-before .navbar-brand img { filter: none; }
 .navbar-sticky .navbar-brand img { filter: none; }
+/* Mobile dropdown menu styling */
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background-color: black !important; /* black background */
+    width: 100%;                        /* match navbar container width */
+    position: absolute;                  /* make it appear below the navbar */
+    left: 0;                             /* align with navbar start */
+    top: 100%;                           /* just below navbar */
+    padding: 0.5rem 1rem;                /* optional padding */
+    z-index: 20;
+  }
+
+  .navbar-collapse .nav-link {
+    color: gray !important;             /* gray text */
+    text-align: left;                    /* left aligned */
+    padding: 0.5rem 0;                  /* spacing between links */
+  }
+}
+/* Mobile layout for carousel */
+@media (max-width: 767px) {
+  .home-hero-img {
+    height: 100vh; /* full viewport height */
+    object-fit: cover;
+  }
+
+  .carousel-overlay {
+    background: rgba(0, 0, 0, 0.4); /* dark overlay for readability */
+  }
+
+  .hero-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    padding: 0 10px;
+  }
+
+  .hero-title {
+    font-size: 2rem; /* adjust as needed */
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .food-section {
+    display: flex;
+    flex-direction: column; /* stack line + text + line vertically */
+    align-items: center;
+    margin: 1rem 0;
+  }
+
+  .food-title {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0.5rem 0;
+  }
+
+  .line {
+    width: 60%; /* full width line for mobile stacked layout */
+    height: 2px;
+    background: #fff;
+    margin: 0.2rem 0;
+  }
+}

@@ -10,6 +10,7 @@ import logo from '../assets/logo.png';
 
 function AppNavbar() {
   const [scrolled, setScrolled] = useState(false);
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,23 +27,25 @@ function AppNavbar() {
 
   return (
     <>
-      {/* Top Contact Bar */}
+      {/* Top Contact Bar (hidden on mobile) */}
       <div
-        className="d-flex contactsimple px-3 py-2"
+        className="d-none d-md-flex contactsimple px-3 py-2"
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '100%',
-          zIndex: 20
+          width: '1200px',
+          zIndex: 20,
+          marginLeft: '84px'
         }}
       >
         <div className="d-flex gap-3">
           <p style={{ color: '#ffffff99', margin: 0 }}>
-            Phone no: <span className="text-white ml-1"><a href="" className="text-decoration-none text-white">+923152453522</a></span> or email us: 
+            Phone no: <span className="text-white ml-1"><a href="" className="text-decoration-none text-white">+923152453522</a></span> or email us:
             <span className="text-white ml-1"><a href="" className="text-decoration-none text-white">flavora44@email.com</a></span>
           </p>
         </div>
+
         <div className="d-flex align-items-center gap-3">
           <p style={{ color: '#ffffff99', margin: 0 }}>
             Mon - Fri / 9:00-21:00, Sat - Sun / 10:00-20:00
@@ -58,40 +61,78 @@ function AppNavbar() {
 
       {/* Navbar */}
       <Navbar
-        className={`mx-auto navbar1 p-2 py-2 px-2`}
+        expand="lg"
+        className={`navbar1 px-3`}
         style={{
           width: scrolled ? "100%" : "82%",
-          borderRadius: scrolled ? "0" : "5px",
+          borderRadius: scrolled ? "0" : "0px",
           height: "80px",
           position: scrolled ? "fixed" : "absolute",
           top: scrolled ? "0px" : "45px",
           left: scrolled ? "0" : "50%",
           transform: scrolled ? "none" : "translateX(-50%)",
           zIndex: 15,
-          backgroundColor: scrolled ? "white" : "transparent",
-          boxShadow: scrolled ? "4px 4px 15px 4px rgba(0,0,0,0.3)" : "none",
-          transition: "all 0.3s ease"
+
+          /* Mobile: always black navbar */
+          backgroundColor: scrolled
+            ? "white"
+            : "transparent",
+
+          /* Force mobile black */
+          /* On mobile (max-width: 767px), override background */
         }}
         data-bs-theme={scrolled ? "light" : "dark"}
       >
         <Container>
-          <Navbar.Brand href="#home"><img src={logo} alt="" width={"80px"} /></Navbar.Brand>
-          <Nav className="nav-links">
-            {["Home", "About", "Chef", "Menu", "Reservation", "Contact"].map((link, index) => (
-              <Nav.Link
-                href={`#${link.toLowerCase()}`}
-                key={index}
-                className={`mx-3 nav-links ${scrolled ? 'text-dark' : 'text-white'}`}
-              >
-                {link}
-              </Nav.Link>
-            ))}
-          </Nav>
+          <Navbar.Brand href="#home">
+            <img src={logo} alt="" width={"70px"} />
+          </Navbar.Brand>
+
+          {/* Mobile Toggle Button */}
+      <Navbar.Toggle
+  aria-controls="basic-navbar-nav"
+  className="menu-toggle-btn"
+>
+MENU
+</Navbar.Toggle>
+
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto nav-links text-center text-lg-start">
+              {["Home", "About", "Chef", "Menu", "Reservation", "Contact"].map((link, index) => (
+                <Nav.Link
+                  href={`#${link.toLowerCase()}`}
+                  key={index}
+                  className={`mx-3 nav-links ${scrolled ? 'text-dark' : 'text-white'}`}
+                >
+                  {link}
+                </Nav.Link>
+              ))}
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      {/* Mobile Styles */}
+      <style>
+        {`
+          @media (max-width: 767px) {
+            .navbar1 {
+              width: 100% !important;
+              left: 0 !important;
+              transform: none !important;
+              top: 0 !important;
+              background-color: black !important;
+              box-shadow: none !important;
+            }
+
+            .nav-links a {
+              color: white !important;
+            }
+          }
+        `}
+      </style>
     </>
   );
 }
 
 export default AppNavbar;
-  

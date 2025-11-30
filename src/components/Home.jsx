@@ -73,26 +73,26 @@ useEffect(() => {
 // BREAKFAST
 const breakfastItems = [
   {
-    name: "Pad Thai",
-    source: "Noodles",
-    details: "meat, tofu, sauces",
-    source2: "chili",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$12",
     img: breakfast1
   },
   {
-    name: "Grilled Cheese",
-    source: "Salad",
-    details: "Greens, Cheese, Veggies",
-    source2: "Dressing",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$10",
     img: breakfast2
   },
   {
-    name: "Banana Oatmeal",
-    source: "Porridge",
-    details: "Oatmeal, Banana, Flax",
-    source2: "Honey",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$8",
     img: breakfast3
   }
@@ -101,26 +101,26 @@ const breakfastItems = [
 // LUNCH
 const lunchItems = [
   {
-    name: "Grilled Salmon",
-    source: "Salad",
-    details: "Salmon, Greens, Tomato",
-    source2: "Tomato",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$25",
     img: lunch1
   },
   {
-    name: "Veg Pasta",
-    source: "Italian",
-    details: "Pasta, Veggies, Cheese",
-    source2: "Oregano",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$18",
     img: lunch2
   },
   {
-    name: "Beef Steak",
-    source: "Grill",
-    details: "Beef, Pepper Sauce",
-    source2: "Potatoes",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$32",
     img: lunch3
   }
@@ -129,26 +129,26 @@ const lunchItems = [
 // DINNER
 const dinnerItems = [
   {
-    name: "Grilled Salmon",
-    source: "Fresh Catch",
-    details: "Salmon, Lemon, Herbs",
-    source2: "Butter Sauce",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$28",
     img: dinner1
   },
   {
-    name: "Vietnamese noodle ",
-    source: "soup",
-    details: "Meat, Onion, Herbs",
-    source2: "Noodles",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$24",
     img: dinner2
   },
   {
-    name: "Lamb Chops",
-    source: "Signature",
-    details: "Lamb, Rosemary",
-    source2: "Mashed Potato",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$35",
     img: dinner3
   }
@@ -157,26 +157,26 @@ const dinnerItems = [
 // DESSERT
 const dessertItems = [
   {
-    name: "Chocolate Cake",
-    source: "Bakery",
-    details: "Chocolate, Cream",
-    source2: "Cherry",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$14",
     img: dessert1
   },
   {
-    name: "Ice Cream",
-    source: "Dairy",
-    details: "Milk, Vanilla",
-    source2: "Caramel",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$10",
     img: dessert2
   },
   {
-    name: "Fruit Salad",
-    source: "Fresh",
-    details: "Seasonal Fruits",
-    source2: "Mint",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$12",
     img: dessert3
   }
@@ -185,26 +185,26 @@ const dessertItems = [
 // WINE
 const wineItems = [
   {
-    name: "Red Wine",
-    source: "France",
-    details: "Dry, Full Body",
-    source2: "Grapes",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$40",
     img: wine1
   },
   {
-    name: "White Wine",
-    source: "Italy",
-    details: "Crisp & Fresh",
-    source2: "Grapes",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$35",
     img: wine2
   },
   {
-    name: "Rose Wine",
-    source: "Spain",
-    details: "Soft & Smooth",
-    source2: "Floral",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$38",
     img: wine3
   }
@@ -213,30 +213,31 @@ const wineItems = [
 // DRINK & TEA
 const drinkTeaItems = [
   {
-    name: "Green Tea",
-    source: "Organic",
-    details: "Tea Leaves",
-    source2: "Honey",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$8",
     img: tea1
   },
   {
-    name: "Iced Coffee",
-    source: "Brewed",
-    details: "Coffee, Ice",
-    source2: "Milk",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$10",
     img: tea2
   },
   {
-    name: "Orange Juice",
-    source: "Fresh",
-    details: "Oranges",
-    source2: "Mint",
+    name: "Beef Roast",
+    source: "Source",
+    details: "Meat, Potatoes, Rice",
+    source2: "Tomatoe",
     price: "$9",
     img: tea3
   }
 ];
+
 
 
 // const lunchItems = [
@@ -359,9 +360,9 @@ const handleSubmit = (e) => {
     <h1 className="hero-title animate-slide-in">Cooking Since</h1>
     <div className="food-section text-center my-4">
       <div className="d-flex align-items-center justify-content-center">
-        <div className="flex-grow-1 line"></div>
+        <div className="line"></div>
         <span className="px-3 food-title">1950</span>
-        <div className="flex-grow-1 line"></div>
+        <div className="line"></div>
       </div>
     </div>
   </div>
@@ -380,9 +381,9 @@ const handleSubmit = (e) => {
     <h1 className="hero-title animate-slide-in">Best Quality</h1>
     <div className="food-section text-center my-4">
       <div className="d-flex align-items-center justify-content-center">
-        <div className="flex-grow-1 line"></div>
+        <div className="line"></div>
         <span className="px-3 food-title">FOOD</span>
-        <div className="flex-grow-1 line"></div>
+        <div className="line"></div>
       </div>
     </div>
   </div>
@@ -693,7 +694,7 @@ const handleSubmit = (e) => {
               <img src={item.img} alt={item.name} className="img111" />
 
               <div style={{ marginLeft: "10px", flexGrow: 1 }}>
-                <h3 style={{ fontSize: "17px", fontWeight: "500" }}>
+                <h3 className="jhshfbg" style={{ fontSize: "17px", fontWeight: "500" }}>
                   {item.name}
                   <br />
                   <span className="lemon">{item.source}</span>
@@ -761,7 +762,7 @@ const handleSubmit = (e) => {
             textTransform: "uppercase",
             marginBottom: "2em"
           }}
-        >
+        > 
           {title}
         </h1>
 
@@ -771,7 +772,7 @@ const handleSubmit = (e) => {
               <img src={item.img} alt={item.name} className="img111" />
 
               <div style={{ marginLeft: "10px", flexGrow: 1 }}>
-                <h3 style={{ fontSize: "17px", fontWeight: "500" }}>
+                <h3 className="jhshfbg" style={{ fontSize: "17px", fontWeight: "500" }}>
                   {item.name}
                   <br />
                   <span className="lemon">{item.source}</span>
@@ -1027,13 +1028,13 @@ const handleSubmit = (e) => {
 <br />
 <br />
 <br />
-  <section className="neonwjafjk">
+  {/* <section className="neonwjafjk">
           <div className="l1" style={{backgroundImage: `url(${l1})`}}>
 
     <h1 className="text-white text-center fw-bold" id="newheading">We Make Delicious & Nutritious Food</h1>
     <button className="btn btn-outline-light NEWONEDABHJ">Book A Table Now</button>
           </div>
-  </section>
+  </section> */}
 </div>
     </>
   );
