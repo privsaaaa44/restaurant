@@ -64,7 +64,7 @@ function AppNavbar() {
         expand="lg"
         className={`navbar1 px-3`}
         style={{
-          width: scrolled ? "100%" : "82%",
+          width: scrolled ? "100%" : "100%",
           borderRadius: scrolled ? "0" : "0px",
           height: "80px",
           position: scrolled ? "fixed" : "absolute",
@@ -123,8 +123,14 @@ MENU
               top: 0 !important;
               background-color: black !important;
               box-shadow: none !important;
+                    background-color: ${scrolled ? "white" : "black"} !important;
             }
-
+div#basic-navbar-nav {
+                    background-color: ${scrolled ? "white" : "black"} !important;
+}
+                    a.mx-3.nav-links.text-dark.nav-link{
+                    color: ${scrolled ? "black" : "gray"} !important;
+                    }
             .nav-links a {
               color: white !important;
             }

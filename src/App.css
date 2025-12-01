@@ -1,6 +1,7 @@
 /* html, body {
   font-family: 'Roboto', Arial, sans-serif !important;
   
+  
 } */
 .col12 {
     width: 44% !important;
@@ -211,16 +212,13 @@ p.text-justify.areone {
       /* border-radius: 5px; */
       height: 72px;
       background-color: transparent ;
-      width: 95% !important;
+      width: 100% !important;
   }
 }
 .menu-toggle-btn:hover {
   box-shadow: none !important;
 }
-a.1234 {
-    margin-top: -4px;
-}
-  
+
 .menu-toggle-btn {
 font-size: 20px !important;
 }
