@@ -1,8 +1,107 @@
+/* Additional targeted mobile fixes to improve alignment and override inline widths */
+@media (max-width: 991px) {
+  /* Allow menu rows to wrap on tablets */
+  .Row { flex-wrap: wrap; }
+}
+@media (max-width: 767px) {
+  /* booking-card: remove fixed width and stack nicely */
+  .booking-card {
+    width: 100% !important;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 1rem !important;
+    box-sizing: border-box;
+    height: auto !important;
+  }
+
+  /* ensure form inputs and selects expand to container width */
+  .booking-card input,
+  .booking-card select,
+  .booking-card .datepicker-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    display: block;
+  }
+
+  /* override inline DatePicker containers that had left margins */
+  .booking-card .position-relative {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* stack the booking card and about section */
+  .d-flex.justify-content-center { flex-direction: column; gap: 1rem; align-items: stretch; }
+
+  /* prevent miniaboutsection overlap caused by negative margin */
+  .miniaboutsection { margin-bottom: 0 !important; transform: none !important; }
+
+  /* menu items become full width */
+  .menu-item.p-2.Col { width: 100% !important; padding: 12px !important; margin: 8px 0 !important; }
+
+  /* hero caption centered and contained */
+  .hero-caption { width: 100% !important; left: 50% !important; transform: translate(-50%, -50%) !important; padding: 0 1rem !important; }
+
+  /* chef cards stack cleanly */
+  .col-1 { width: 100% !important; height: auto !important; margin-bottom: 1rem; }
+  .chef-img { width: 100% !important; height: auto !important; margin-left: 0 !important; background-size: cover !important; }
+
+  /* carousel indicators/spacing cleanup */
+  .carousel-indicators { bottom: 10px !important; }
+}
+
+/* Remove leftover left-margin and container padding on small screens */
+@media (max-width: 767px) {
+  html, body, #root {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Reset any heavy left offsets used in desktop layout */
+  .row.row2, .jhshfbg, .NEWONEDABHJ, #newheading, .aDVOUH {
+    margin-left: 0 !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  .d-flex.justify-content-center {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Make wide sections span full viewport width */
+  section.position-relative.absoluteimg, section.position-relative.absoluteimg.newone {
+    width: 100vw !important;
+    left: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Ensure menu rows don't keep desktop gutters */
+  .Row { padding: 0 0.5rem !important; margin: 0 !important; }
+}
+@media (max-width: 575px) {
+  /* tighten paddings on small phones */
+  .booking-card { padding: 0.75rem !important; }
+  .hero-title { font-size: 1.9rem !important; }
+  .miniaboutsection { padding: 1rem !important; }
+}
+
 /* html, body {
   font-family: 'Roboto', Arial, sans-serif !important;
   
   
 } */
+ 
 .col12 {
     width: 44% !important;
     height: 200px !important;
@@ -33,44 +132,6 @@ footer {
   border-top: 1px solid black;
   padding-top: 50px;
   padding-bottom: 50px;
-}
-@media (max-width: 768px) {
-
-  /* remove all left shifts */
-  * {
-    left: 0 !important;
-    margin-left: 0 !important;
-    max-width: 100% !important;
-  }
-
-  .jhshfbg,
-  .row2,
-  #newheading,
-  .NEWONEDABHJ {
-    position: static !important;
-  }
-
-  /* fix images and blocks */
-  img, .i1img, .i2img, .chefimg1 {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  /* fix text blocks */
-  p.helloiamfirstone,
-  .menu-item.p-2.Col {
-    width: 100% !important;
-  }
-
-  .footerhr {
-    width: 100% !important;
-  }
-}
-@media (max-width: 480px) {
-    .navbar1 img {
-        width: 45px !important;
-        margin-top: -7px !important;
-    }
 }
 * {
   font-family: 'Roboto', Arial, sans-serif !important;
@@ -123,8 +184,8 @@ max-width: 100%;
     height: 70px !important;
      filter: grayscale(100%);
      
-
-}
+     
+    }
 span.lemon {
   margin-left: -31px;
 }
@@ -231,3 +292,437 @@ img.footerlogo.mt-3 {
   }
   
 } */
+ 
+  @media (max-width: 768px) {
+    .food-title {
+    color: #e52b34 !important;
+}
+   .w-100 {
+        width: 100% !important;
+        height: auto !important; /* Let height adjust automatically */
+        margin-left: 0 !important;
+    }  .carousel.slide.carousel-fade {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 90% !important; /* Use percentage for responsiveness */
+    }    h1.hero-title.animate-slide-in {
+        margin-left: 0 !important;
+        text-align: center; /* Center for mobile */
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }    span.px-3.food-title {
+        margin-left: 0 !important;
+        display: block; /* Make it take full width */
+        text-align: center;
+        font-size: 1rem;
+    }
+
+ .carousel-indicators {
+    margin-bottom: 351px !important;
+    margin-left: 17px !important;
+}
+    /* remove all left shifts */
+    * {
+      left: 0 !important;
+      margin-left: 0 !important;
+      max-width: 100% !important;
+    }
+  
+    .jhshfbg,
+    .row2,
+    #newheading,
+    .NEWONEDABHJ {
+      position: static !important;
+    }
+  
+    /* fix images and blocks */
+    img, .i1img, .i2img, .chefimg1 {
+      width: 100% !important;
+      height: auto !important;
+    }
+  
+    /* fix text blocks */
+    p.helloiamfirstone,
+    .menu-item.p-2.Col {
+      width: 100% !important;
+    }
+  
+    .footerhr {
+      width: 100% !important;
+    }
+  }
+    @media (max-width: 480px) {
+      .navbar1 img {
+            width: 45px !important;
+            margin-top: -7px !important;
+        }
+        .w-100 {
+        width: 100% !important;
+        height: 894px !important;
+        /* margin-left: 0px !important; */
+      }.carousel.slide.carousel-fade {
+        margin-left: 21px !important;
+        width: 527px !important;
+    }h1.hero-title.animate-slide-in {
+     margin-left: 197px !important;
+         font-size: 46px !important;
+        margin-top: 105px;
+        width: 100%;  
+    }span.px-3.food-title {
+        margin-left: 372px !important;
+         margin-top: -80px !important;
+    }
+ .carousel-indicators {
+    margin-bottom: 351px !important;
+    margin-left: 17px !important;
+}
+    
+    }
+    /* Responsive Styles */
+
+/* Tablet Styles (768px and below) */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .food-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .re {
+    font-size: 14px !important;
+  }
+  
+  .re2 {
+    font-size: 1.8rem !important;
+  }
+  
+  .hello {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Menu items adjustment */
+  .menu-item {
+    margin: 10px 0 !important;
+  }
+  
+  .img111 {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  
+  /* Carousel caption adjustment */
+  .carousel-caption {
+    padding-bottom: 30px !important;
+  }
+  
+  /* Chef section adjustment */
+  .chef-img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .firstchefname {
+    font-size: 1.1rem !important;
+  }
+  
+  .firstchefname1 {
+    font-size: 0.9rem !important;
+  }
+  
+  .firstchefname3 {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Mobile Styles (576px and below) */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  
+  .food-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .re2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .miniaboutsection {
+    min-height: 400px !important;
+    padding: 1.5rem !important;
+  }
+  
+  /* Booking form adjustments */
+  .datepicker-input {
+    font-size: 14px !important;
+  }
+  
+  /* Menu section adjustments */
+  .menu-item {
+    padding: 15px !important;
+  }
+  
+  .img111 {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  /* Chef section */
+  .chef-img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  /* Testimonial section */
+  .carousel-item p {
+    font-size: 0.9rem !important;
+    padding: 0 10px !important;
+  }
+  
+  /* Perfect ingredients section */
+  .i1img, .i2img {
+    height: 200px !important;
+  }
+  
+  .helloiamfirstone {
+    font-size: 14px !important;
+  }
+}
+
+/* Small Mobile Styles (375px and below) */
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .re2 {
+    font-size: 1.3rem !important;
+  }
+  
+  .menu-item h1 {
+    font-size: 18px !important;
+  }
+  
+  .img111 {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .chef-img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  /* Input fields */
+  input, select {
+    font-size: 13px !important;
+  }
+  
+  #sumitbutton {
+    font-size: 14px !important;
+    padding: 8px 15px !important;
+  }
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utility classes */
+.d-none-mobile {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .d-none-mobile {
+    display: block !important;
+  }
+}
+
+/* Responsive text alignment */
+@media (max-width: 768px) {
+  .text-center-mobile {
+    text-align: center !important;
+  }
+}
+
+/* Container padding for mobile */
+@media (max-width: 768px) {
+  .container-padding-mobile {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+/* Menu grid responsiveness */
+@media (max-width: 992px) {
+  .menu-grid-item {
+    margin-bottom: 30px !important;
+  }
+}
+
+/* Chef card responsiveness */
+@media (max-width: 576px) {
+  .chef-card {
+    margin-bottom: 30px !important;
+  }
+}
+
+/* Ensure booking form is properly spaced on mobile */
+@media (max-width: 768px) {
+  .booking-form-container {
+    padding: 20px 15px !important;
+  }
+}
+
+/* Responsive button sizes */
+@media (max-width: 576px) {
+  .btn-responsive {
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Adjust line heights for better mobile readability */
+@media (max-width: 768px) {
+  p, .hello, .helloiamfirstone {
+    line-height: 1.6 !important;
+  }
+}
+
+/* Responsive carousel controls */
+@media (max-width: 576px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+@media (max-width: 480px) {
+      h1.hero-title.animate-slide-in {
+        margin-left: -4px !important;
+        font-size: 46px !important;
+        margin-top: 149px !important;
+        width: 100% !important;
+    }
+        .carousel-indicators {
+        margin-bottom: 21px !important;
+        margin-left: 43px !important;
+        gap: 11px;
+    }
+    .line {
+    display: none;
+}
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0px !important;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+    * {
+        left: -11px !important;
+    }
+    .p-3 {
+        margin-top: 798px !important; 
+    min-height: 100vh;
+    width: 100% !important;
+    margin: 0;
+    padding: 0 !important;
+}
+img.d-block.w-100.home-hero-img {
+    min-height: 100vh !important;
+}
+    span.px-3.food-title {
+        margin-left: 15px !important;
+        margin-top: -85px !important;
+    }
+    div#basic-navbar-nav {
+    width: 441px !important;
+}
+.position-relative.mt-3 {
+    margin-left: 91px !important;
+}
+svg.newicon {
+    /* margin-left: 8px; */
+    margin-left: 255px !important;
+}
+select.text-white.p-2.px-2.datepicker-input {
+    margin-left: -8px !important;
+    margin-right: 10px !important;
+}
+
+}
+@media (max-width: 768px) {
+     h1.hero-title.animate-slide-in {
+        margin-left: -4px !important;
+        font-size: 46px !important;
+        margin-top: 149px !important;
+        width: 100% !important;
+    }
+        span.px-3.food-title {
+        margin-left: 15px !important;
+        margin-top: -85px !important;
+    }
+    select.text-white.p-2.px-2.datepicker-input {
+    margin-left: -8px !important;
+    margin-right: 10px !important;
+}
+
+    .position-relative.mt-3 {
+    margin-left: 91px !important;
+}
+svg.newicon {
+    /* margin-left: 8px; */
+    margin-left: 255px !important;
+}
+    .line {
+    display: none;
+}
+      .carousel-overlay {
+        position: absolute;
+        top: 0;
+        left: 16px !important;
+        width: 451px !important;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+        /* right: 48px !important; */
+    }
+    * {
+        left: -11px !important;
+                max-width: 104% !important;
+    }
+        .carousel-indicators {
+        margin-bottom: 21px !important;
+        margin-left: 43px !important;
+        gap: 11px;
+    }
+        .w-100 {
+        width: 100% !important;
+        height: auto !important;
+        margin-left: 21px !important;
+        width: 100px !important;
+        width: 116% !important;
+    }
+    img.d-block.w-100.home-hero-img {
+    min-height: 100vh !important;
+}
+div#basic-navbar-nav {
+    width: 441px !important;
+}
+    .p-3 {
+        margin-top: 798px !important; 
+    min-height: 100vh;
+    width: 100% !important;
+    margin: 0;
+    padding: 0 !important;
+}
+}

@@ -69,7 +69,7 @@ function AppNavbar() {
           height: "80px",
           position: scrolled ? "fixed" : "absolute",
           top: scrolled ? "0px" : "45px",
-          left: scrolled ? "0" : "50%",
+          left: scrolled ? "0%" : "50%",
           transform: scrolled ? "none" : "translateX(-50%)",
           zIndex: 15,
 
@@ -83,7 +83,7 @@ function AppNavbar() {
         }}
         data-bs-theme={scrolled ? "light" : "dark"}
       >
-        <Container>
+        <Container  className="navbar-container">
           <Navbar.Brand href="#home">
             <img src={logo} alt="" width={"70px"} />
           </Navbar.Brand>
@@ -121,10 +121,15 @@ MENU
               left: 0 !important;
               transform: none !important;
               top: 0 !important;
-              background-color: black !important;
+              // background-color: black !important;
               box-shadow: none !important;
                     background-color: ${scrolled ? "white" : "black"} !important;
             }
+                        .navbar-container {
+      max-width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
 div#basic-navbar-nav {
                     background-color: ${scrolled ? "white" : "black"} !important;
 }

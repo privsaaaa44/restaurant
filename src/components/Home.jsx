@@ -449,7 +449,7 @@
                     minDate={new Date()}
                     style={{ flex: 1 }}
                   />
-                  <FaRegCalendarAlt
+                  <FaRegCalendarAlt className="newicon"
                     style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none" }}
                   />
                 </div>
@@ -477,7 +477,7 @@
                     maxTime={new Date().setHours(22, 0)}
                     style={{ flex: 1 }}
                   />
-                  <FaRegClock
+                  <FaRegClock className="newicon"
                     style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none", fontSize: "16px" }}
                   />
                 </div>
@@ -504,7 +504,7 @@
                       <option key={i+1} value={i+1} className="text-dark">{i+1} Guest{i > 0 ? 's' : ''}</option>
                     ))}
                   </select>
-                  <TbTriangleInverted
+                  <TbTriangleInverted className="newicon"
                     style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none", fontSize: "16px" }}
                   />
                 </div>

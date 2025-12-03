@@ -19,10 +19,7 @@ body {
 
 * {
   font-family: 'Roboto', Arial, sans-serif !important;
- box-sizing: border-box;
- margin: 0;
- padding: 0;
- /* outline: 1px solid red; */
+  box-sizing: border-box;
 }
 
 
@@ -67,13 +64,8 @@ img {
    left: 50%;
        transform: translateX(-50%);
 }
-@media (max-width: 768px) {
-  * {
-    margin-left: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-  }
-}
+/* Removed aggressive global mobile reset (it caused layout shifts).
+   Mobile-specific adjustments are handled in component CSS and App.css. */
 
 .error-text {
   position: absolute;
@@ -537,3 +529,12 @@ input:focus {
     margin: 0.2rem 0;
   }
 }
+
+
+
+
+
+
+/* carousel and hero styles are defined in App.css to keep carousel layout
+   centralized. Index.css keeps structural rules only. */
+
