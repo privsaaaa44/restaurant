@@ -396,13 +396,13 @@
             </div>
                   <div className="d-flex justify-content-center" style={{ background: "#fff", height: "550px" }}>
                     <div className="p-3 " style={{ width: "380px", background: "#E52B33"}}>
-                      <h1 className="text-white text-center mt-5" style={{ fontSize: "22px", marginRight: "91px" }}>    Book Your Table
-            </h1>
               <form
               className="text-center"
               style={{ marginRight: "2px", fontSize: "14px" }}
               onSubmit={handleSubmit}
             >
+                      <h1 className="text-white text-center mt-5" style={{ fontSize: "22px", marginRight: "91px" }}>    Book Your Table
+            </h1>
               {/* Name Input */}
               <input
                 type="text"
@@ -439,7 +439,7 @@
               />
 
               {/* Check-in Date Picker */}
-              <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
+              <div className="position-relative mt-3 mx-auto" style={{ width: "280px"}}>
                 <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
                   <DatePicker
                     selected={startDate}
@@ -521,9 +521,9 @@
                     <div className="miniaboutsection"  data-aos="fade-up"
               data-aos-delay="200"   style={{ backgroundImage: `url(${chef})`, marginBottom: "-100px" }}>
                   <div style={{marginTop: "100px"}} data-aos="fade-up"  data-aos-delay="200">
-              <h1 className="re">About</h1>
-              <h1 className="re2">Welcome to <br /> Flavora</h1>
-              <p className="hello">
+              <h1 className="re aboutheading">About</h1>
+              <h1 className="re2 welcomeheading">Welcome to <br /> Flavora</h1>
+              <p className="hello aboutpara">
               Flavora Restaurant creates an experience where every plate carries its own narrative. Influenced by world cuisines and built on fresh, seasonal produce, Flavora presents thoughtfully crafted dishes, attentive service, and a warm setting. From slow-developed entrées to lively small bites, each recipe is made to emphasize harmony, fragrance, and depth. The environment is shaped for comfort, conversation, and lasting memories.
               </p>
             </div>
@@ -537,6 +537,7 @@
               <>
                 {/* Overlay */}
                 <div
+                className="bookingoverlay"
                   style={{
                     position: "fixed",
                     top: 0,
@@ -574,7 +575,7 @@
                   <p>Time: {bookingDetails.time}</p>
                   <p>Guests: {bookingDetails.guests}</p>
 
-            <button
+            <button className="formclosepoppingbutton"
               onClick={() => {
                 setShowPopup(false);          
                 setBookingDetails({});        
@@ -620,6 +621,7 @@
               <div className="overlay"></div>
 
               <div
+              className="sb1mg"
                 style={{
                   position: "absolute",
                   top: "50%",
@@ -631,18 +633,18 @@
                   width: "100%"
                 }}
               >
-                <h1 className="" style={{ textTransform: "uppercase", fontSize: "16px", letterSpacing: "5px", fontWeight: "700" }}>
+                <h1 className="sb1h1" style={{ textTransform: "uppercase", fontSize: "16px", letterSpacing: "5px", fontWeight: "700" }}>
                   Now Bookings
                 </h1>
-                <h1 style={{fontWeight: "700", fontSize: "40px"}}>Private Dinners & Happy Hours</h1>
+                <h1 className="sb1h11" style={{fontWeight: "700", fontSize: "40px"}}>Private Dinners & Happy Hours</h1>
               </div>
             </section>
                   </div>
                   <div>
                     <section className="text-center">
                       <div className="text-center" style={{marginTop: "100px"}}>
-                      <h1 className="re">Specialties</h1>
-                      <h1 className="re2">Our Menu</h1>
+                      <h1 className="re specialties heading">Specialties</h1>
+                      <h1 className="re2  ourmenuheading">Our Menu</h1>
             <div style={{ marginTop: "50px" }}>
 
             {/* ROW 1 */}
@@ -838,8 +840,8 @@
                 }}
               >
                 <div className="contenb" data-aos="fade-up" data-aos-delay="200">
-            <h1 className="re">Testimony</h1>
-                      <h1 className="re2 fw-bold">Happy Customer</h1>         
+            <h1 className="re testominalheading">Testimony</h1>
+                      <h1 className="re2 fw-bold happycustomerheading">Happy Customer</h1>         
                       </div>
             <br />
             <br />
@@ -998,10 +1000,10 @@
                       <div className="i1img" style={{ backgroundImage: `url(${i1})` }}></div>
                       <div className="i2img" style={{backgroundImage: `url(${i2})`}}></div>
                       <div className="icontent ms-5 mt-5" style={{width: "548px"}} data-aos="fade-up" data-aos-delay="200">
-                          <h1 className="re">This is our secrets</h1>
-                      <h1 className="re2">Perfect Ingredients</h1>
-                      <p className="helloiamfirstone text-justify lh-lg text-secondary w-auto" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    <button className="btn btn-outline-danger newbtn">
+                          <h1 className="re thisisoursecretsheading">This is our secrets</h1>
+                      <h1 className="re2 perfectingredientsheading">Perfect Ingredients</h1>
+                      <p className="helloiamfirstone text-justify lh-lg text-secondary w-auto secretpara" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                    <button className="btn btn-outline-danger newbtn secretbutton">
                       Learn More
                     </button>
                       </div>
