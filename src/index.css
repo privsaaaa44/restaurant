@@ -1,6 +1,7 @@
 html, body {
   font-family: 'Roboto', Arial, sans-serif !important;  
 }
+
 body {
   overflow-x: hidden !important;
   /* width: 130px; */
@@ -354,6 +355,17 @@ h3.jhshfbg {
 
  nav.bg-dark.navbar.navbar-expand.navbar-light {
     background: transparent !important;
+}
+::after {
+    display: none !important;
+}
+@media (min-width: 1024px) {
+.homenavbar {
+  padding-top: 500px !important;
+}
+.Row.bg-white.gx-4.gy-3 {
+    margin-left: -9px !important;
+}
 }
 .container {
     padding: 20px 20px 20px 20px;

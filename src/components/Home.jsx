@@ -709,7 +709,7 @@
                             </p>
                           </div>
 
-                          <p style={{ color: "#e52b34", fontSize: "20px", fontWeight: "600" }}>
+                          <p className="priccepara" style={{ color: "#e52b34", fontSize: "20px", fontWeight: "600" }}>
                             {item.price}
                           </p>
                         </div>
@@ -787,7 +787,7 @@
                             </p>
                           </div>
 
-                          <p style={{ color: "#e52b34", fontSize: "20px", fontWeight: "600" }}>
+                          <p className="priccepara" style={{ color: "#e52b34", fontSize: "20px", fontWeight: "600" }}>
                             {item.price}
                           </p>
                         </div>
@@ -939,8 +939,8 @@
             <div>
               <section style={{background: "#FAFAFA", paddingTop: "100px", paddingBottom: "100px"}}>
               <div style={{paddingBottom: "50px"}} data-aos="fade-up">
-                    <h1 className="re text-center">Chef</h1>
-                      <h1 className="re2 fw-bold text-center">Our Master Chef</h1>
+                    <h1 className="re text-center chefheading">Chef</h1>
+                      <h1 className="re2 fw-bold text-center masterchefheading">Our Master Chef</h1>
               </div>
                 <div className="row justify-content-center">
                   <div className="col-1" data-aos="fade-up" >
@@ -995,7 +995,7 @@
               </section>
             </div>
             <div>
-              <section style={{paddingBottom: "100px"}}>
+              <section className="oursecretssection">
                     <div className="row row2">
                       <div className="i1img" style={{ backgroundImage: `url(${i1})` }}></div>
                       <div className="i2img" style={{backgroundImage: `url(${i2})`}}></div>
@@ -1012,6 +1012,7 @@
               </section>
             </div>
             <div>
+            {/* <br />
             <br />
             <br />
             <br />
@@ -1028,15 +1029,7 @@
             <br />
             <br />
             <br />
-            <br />
-            <br />
-              {/* <section className="neonwjafjk">
-                      <div className="l1" style={{backgroundImage: `url(${l1})`}}>
-
-                <h1 className="text-white text-center fw-bold" id="newheading">We Make Delicious & Nutritious Food</h1>
-                <button className="btn btn-outline-light NEWONEDABHJ">Book A Table Now</button>
-                      </div>
-              </section> */}
+            <br /> */}
             </div>
                 </>
               );

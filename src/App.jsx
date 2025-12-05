@@ -17,11 +17,16 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
+   <>
     <div>
    <Home/>
    <Navbar/>
-   <Footer/>
     </div>
+    <div  className='homenavbar'>
+      <Footer/>
+
+    </div>
+      </>
   )
 }
 
