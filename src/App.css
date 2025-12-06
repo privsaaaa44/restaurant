@@ -333,7 +333,9 @@ img.footerlogo.mt-3 {
     .NEWONEDABHJ {
       position: static !important;
     }
-  
+  .lastsectionimg {
+    display: none !important;
+}
     /* fix images and blocks */
     img, .i1img, .i2img, .chefimg1 {
       width: 100% !important;
@@ -355,6 +357,9 @@ img.footerlogo.mt-3 {
             width: 45px !important;
             margin-top: -7px !important;
         }
+        .lastsectionimg {
+    display: none !important;
+}
         .w-100 {
         width: 100% !important;
         height: 894px !important;
@@ -719,6 +724,7 @@ div#basic-navbar-nav {
     background-repeat: no-repeat;
     min-height: 52vh !important;
 }
+
 section.position-relative.absoluteimg {
     /* width: 84px !important; */
     height: 366px !important;

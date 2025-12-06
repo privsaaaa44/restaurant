@@ -10,6 +10,24 @@ body {
 .row.row2 {
     margin-left: 128px !important;
 }
+
+.lastbutton {
+  text-transform: capitalize !important;
+}
+.lastbutton:hover {
+  color: #E52B34 !important;
+}
+.lastsectionimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 224px !important;
+    text-align: center;
+        padding-top: 60px !important;
+
+}
 .l1 {
     background-size: cover;
     background-position: center !important;
@@ -341,7 +359,9 @@ span.ayaan {
     p.text-justify.mt-2 {
         margin-left: 18px;
     }
-    
+    .lastdiv {
+  margin-top: 500px !important;
+}
 hr.footerhr {
     width: 86%;
 }
@@ -360,9 +380,9 @@ h3.jhshfbg {
     display: none !important;
 }
 @media (min-width: 1024px) {
-.homenavbar {
-  padding-top: 500px !important;
-}
+/* .homenavbar {
+  padding-top: 150px !important;
+} */
 .Row.bg-white.gx-4.gy-3 {
     margin-left: -9px !important;
 }

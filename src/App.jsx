@@ -1,33 +1,33 @@
-import { useState } from 'react'
-import './App.css'
-import './index.css'
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-// Default weight 400
-import "@fontsource/dancing-script/400.css"; 
-// Medium
-import "@fontsource/dancing-script/500.css"; 
-// Semi-bold
-import "@fontsource/dancing-script/600.css"; 
-// Bold
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
+import './index.css';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import About from './components/About';
+import Chef from './components/Chef';
+import Menu from './components/Menu';
+import Reservation from './components/Reservation';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 import "@fontsource/dancing-script/700.css"; 
-import Footer from './components/Footer'
-
+import "@fontsource/dancing-script/600.css";
+import "@fontsource/dancing-script/400.css";
+import "@fontsource/dancing-script/500.css";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-   <>
-    <div>
-   <Home/>
-   <Navbar/>
-    </div>
-    <div  className='homenavbar'>
-      <Footer/>
-
-    </div>
-      </>
-  )
+    <BrowserRouter basename="/website">
+      <Navbar />
+      <Routes>
+        <Route path="/Home" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Chef" element={<Chef />} />
+        <Route path="/Menu" element={<Menu />} />
+        <Route path="/Reservation" element={<Reservation />} />
+        <Route path="/Contact" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

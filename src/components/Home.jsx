@@ -994,6 +994,7 @@
                 </div>
               </section>
             </div>
+         
             <div>
               <section className="oursecretssection">
                     <div className="row row2">
@@ -1011,27 +1012,16 @@
               
               </section>
             </div>
-            <div>
-            {/* <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br /> */}
-            </div>
+                <div className="lastdiv">
+                  <section className="lastsection" >
+                  <div  style={{backgroundImage: `url(${l1})`}} className="lastsectionimg" >
+                   <h1 className="text-white fw-bold">We Make Delicious & Nutritious Food</h1>
+                   <button className="btn btn-outline-light lastbutton mt-1">Book a Table Now</button>
+                  </div>
+                  </section>
+                </div>
                 </>
+                
               );
             };
 

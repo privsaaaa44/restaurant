@@ -1,3 +1,10 @@
+import { Link } from "react-router-dom";
+import Home from './Home'
+import About from './About';
+import Chef from './Chef';
+import Menu from './Menu';
+import Reservation from './Reservation';
+import Contact from './Contact';
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import '../App.css';
@@ -96,19 +103,28 @@ function AppNavbar() {
 MENU
 </Navbar.Toggle>
 
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto nav-links text-center text-lg-start">
-              {["Home", "About", "Chef", "Menu", "Reservation", "Contact"].map((link, index) => (
-                <Nav.Link
-                  href={`#${link.toLowerCase()}`}
-                  key={index}
-                  className={`mx-3 nav-links ${scrolled ? 'text-dark' : 'text-white'}`}
-                >
-                  {link}
-                </Nav.Link>
-              ))}
-            </Nav>
-          </Navbar.Collapse>
+     <Navbar.Collapse id="basic-navbar-nav">
+  <Nav className="ms-auto nav-links text-center text-lg-start">
+    {[
+      { name: "Home", path: "/Home" },
+      { name: "About", path: "/About" },
+      { name: "Chef", path: "/Chef" },
+      { name: "Menu", path: "/Menu" },
+      { name: "Reservation", path: "/Reservation" },
+      { name: "Contact", path: "/Contact" }
+    ].map((link, index) => (
+      <Nav.Link
+        as={Link}
+        to={link.path}
+        key={index}
+        className={`mx-3 nav-links ${scrolled ? 'text-dark' : 'text-white'}`}
+      >
+        {link.name}
+      </Nav.Link>
+    ))}
+  </Nav>
+</Navbar.Collapse>
+
         </Container>
       </Navbar>
 
