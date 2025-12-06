@@ -39,7 +39,7 @@
             import "react-datepicker/dist/react-datepicker.css";
             import { FaRegCalendarAlt, FaRegClock } from "react-icons/fa";
             import chef from "../assets/chef.png"
-            import SB1 from "../assets/SB1.jpg"
+            import Sb1 from "../assets/Sb1.jpg"
             import Container from 'react-bootstrap/Container';
             import Row from 'react-bootstrap/Row';
             import Col from 'react-bootstrap/Col';
@@ -611,7 +611,7 @@
             <section
               className="position-relative absoluteimg"
               style={{
-                backgroundImage: `url(${SB1})`,
+                backgroundImage: `url(${Sb1})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 height: "400px",
