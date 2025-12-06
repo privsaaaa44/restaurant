@@ -1,4 +1,5 @@
-            import AOS from "aos";
+import sb1 from "../assets/sb1.jpg"
+import AOS from "aos";
             import "aos/dist/aos.css";
             import { useEffect } from "react";
             import { TbTriangleInverted } from "react-icons/tb";
@@ -39,6 +40,7 @@
             import "react-datepicker/dist/react-datepicker.css";
             import { FaRegCalendarAlt, FaRegClock } from "react-icons/fa";
             import chef from "../assets/chef.png"
+            // import sb1 from "../assets/sb1.jpg"
             // import sb1 from "../assets/sb1.jpg"
             import Container from 'react-bootstrap/Container';
             import Row from 'react-bootstrap/Row';
@@ -608,16 +610,16 @@
 
 
                   <div>
-            <section
-              className="position-relative absoluteimg"
-              style={{
-                backgroundImage: `url(/sb1.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                height: "400px",
-                width: "100%"
-              }}
-            >
+<section
+  className="position-relative absoluteimg"
+  style={{
+  backgroundImage: `url(${sb1})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "400px",
+    width: "100%"
+  }}
+>
               <div className="overlay"></div>
 
               <div
