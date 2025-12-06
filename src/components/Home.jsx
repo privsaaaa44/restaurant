@@ -1,4 +1,4 @@
-import sb1 from "../assets/sb1.jpg"
+import Sb1 from "../assets/Sb1.jpg"
 import AOS from "aos";
             import "aos/dist/aos.css";
             import { useEffect } from "react";
@@ -613,7 +613,7 @@ import AOS from "aos";
 <section
   className="position-relative absoluteimg"
   style={{
-  backgroundImage: `url(${sb1})`,
+backgroundImage: `url(${Sb1})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: "400px",
