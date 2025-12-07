@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Home from './Home'
 import About from './About';
 import Chef from './Chef';
@@ -17,7 +17,7 @@ import logo from '../assets/logo.png';
 
 function AppNavbar() {
   const [scrolled, setScrolled] = useState(false);
-  
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +31,10 @@ function AppNavbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <>
@@ -71,7 +75,7 @@ function AppNavbar() {
         expand="lg"
         className={`navbar1 px-3`}
         style={{
-          width: scrolled ? "100%" : "100%",
+          width: scrolled ? "100%" : "1120px",
           borderRadius: scrolled ? "0" : "0px",
           height: "80px",
           position: scrolled ? "fixed" : "absolute",
@@ -79,51 +83,55 @@ function AppNavbar() {
           left: scrolled ? "0%" : "50%",
           transform: scrolled ? "none" : "translateX(-50%)",
           zIndex: 15,
-
-          /* Mobile: always black navbar */
-          backgroundColor: scrolled
-            ? "white"
-            : "transparent",
-
-          /* Force mobile black */
-          /* On mobile (max-width: 767px), override background */
+          backgroundColor: scrolled ? "white" : "#12070747",
         }}
         data-bs-theme={scrolled ? "light" : "dark"}
       >
-        <Container  className="navbar-container">
+        <Container className="navbar-container">
           <Navbar.Brand href="#home">
+            <Link to="/Home">
             <img src={logo} alt="" width={"70px"} />
+            </Link>
           </Navbar.Brand>
 
           {/* Mobile Toggle Button */}
-      <Navbar.Toggle
-  aria-controls="basic-navbar-nav"
-  className="menu-toggle-btn"
->
-MENU
-</Navbar.Toggle>
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className="menu-toggle-btn"
+          >
+            MENU
+          </Navbar.Toggle>
 
-     <Navbar.Collapse id="basic-navbar-nav">
-  <Nav className="ms-auto nav-links text-center text-lg-start">
-    {[
-      { name: "Home", path: "/Home" },
-      { name: "About", path: "/About" },
-      { name: "Chef", path: "/Chef" },
-      { name: "Menu", path: "/Menu" },
-      { name: "Reservation", path: "/Reservation" },
-      { name: "Contact", path: "/Contact" }
-    ].map((link, index) => (
-      <Nav.Link
-        as={Link}
-        to={link.path}
-        key={index}
-        className={`mx-3 nav-links ${scrolled ? 'text-dark' : 'text-white'}`}
-      >
-        {link.name}
-      </Nav.Link>
-    ))}
-  </Nav>
-</Navbar.Collapse>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto nav-links text-center text-lg-start">
+              {[
+                { name: "Home", path: "/Home" },
+                { name: "About", path: "/About" },
+                { name: "Chef", path: "/Chef" },
+                { name: "Menu", path: "/Menu" },
+                { name: "Reservation", path: "/Reservation" },
+                { name: "Contact", path: "/Contact" }
+              ].map((link, index) => (
+                <Nav.Link
+                  as={Link}
+                  to={link.path}
+                  key={index}
+                  className={`mx-3 nav-links ${
+                    isActive(link.path)
+                      ? 'text-danger'
+                      : scrolled ? 'text-dark' : 'text-white'
+                  }`}
+                  style={
+                    isActive(link.path)
+                      ? { fontWeight: 'bold', textDecoration: 'underline' }
+                      : {}
+                  }
+                >
+                  {link.name}
+                </Nav.Link>
+              ))}
+            </Nav>
+          </Navbar.Collapse>
 
         </Container>
       </Navbar>
@@ -131,27 +139,33 @@ MENU
       {/* Mobile Styles */}
       <style>
         {`
+        a.mx-3.nav-links.text-danger.nav-link {
+   color: #E52B33 !important;
+}
+
+a.mx-3.nav-links.text-danger.nav-link {
+    text-decoration: none !important;
+}
           @media (max-width: 767px) {
             .navbar1 {
               width: 100% !important;
               left: 0 !important;
               transform: none !important;
               top: 0 !important;
-              // background-color: black !important;
               box-shadow: none !important;
-                    background-color: ${scrolled ? "white" : "black"} !important;
+              background-color: ${scrolled ? "white" : "black"} !important;
             }
-                        .navbar-container {
-      max-width: 100% !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-div#basic-navbar-nav {
-                    background-color: ${scrolled ? "white" : "black"} !important;
-}
-                    a.mx-3.nav-links.text-dark.nav-link{
-                    color: ${scrolled ? "black" : "gray"} !important;
-                    }
+            .navbar-container {
+              max-width: 100% !important;
+              padding-left: 0 !important;
+              padding-right: 0 !important;
+            }
+            div#basic-navbar-nav {
+              background-color: ${scrolled ? "white" : "black"} !important;
+            }
+            a.mx-3.nav-links.text-dark.nav-link {
+              color: ${scrolled ? "black" : "gray"} !important;
+            }
             .nav-links a {
               color: white !important;
             }

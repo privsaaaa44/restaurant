@@ -1,7 +1,7 @@
 import { LuFacebook } from "react-icons/lu";
 import { FaInstagram } from "react-icons/fa6";
 import { FiTwitter } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import React from "react";
 import logo from "../assets/logo.png";
@@ -9,6 +9,21 @@ import emailicon from "../assets/emailicon.png";
 import phoneicon from "../assets/phoneicon.png";
 
 const Footer = () => {
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
+  const navLinks = [
+    { name: "Home", path: "/Home" },
+    { name: "About", path: "/About" },
+    { name: "Chef", path: "/Chef" },
+    { name: "Menu", path: "/Menu" },
+    { name: "Reservation", path: "/Reservation" },
+    { name: "Contact", path: "/Contact" }
+  ];
+
   return (
     <>
       <footer>
@@ -32,12 +47,20 @@ const Footer = () => {
               className="d-flex"
               style={{ gap: "52px", marginTop: "100px", marginLeft: "-21px" }}
             >
-              <Link to="/Home" className="bikulnewone" style={{ textDecoration: "none", color: "black" }}>Home</Link>
-              <Link to="/About" className="bikulnewone" style={{ textDecoration: "none", color: "black" }}>About</Link>
-              <Link to="/Chef" className="bikulnewone" style={{ textDecoration: "none", color: "black" }}>Chef</Link>
-              <Link to="/Menu" className="bikulnewone" style={{ textDecoration: "none", color: "black" }}>Menu</Link>
-              <Link to="/Reservation" className="bikulnewone" style={{ textDecoration: "none", color: "black" }}>Reservation</Link>
-              <Link to="/Contact" className="bikulnewone" style={{ textDecoration: "none", color: "black" }}>Contact</Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="bikulnewone"
+                  style={{
+                    color: isActive(link.path) ? "#E52B33" : "black",
+                    fontWeight: isActive(link.path) ? "bold" : "normal",
+                    transition: "all 0.3s ease"
+                  }}
+                >
+                  {link.name}
+                </Link>
+              ))}
             </div>
 
             {/* Contact Info */}

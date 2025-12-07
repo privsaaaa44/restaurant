@@ -350,6 +350,20 @@ p.abcf {
 span.ayaan {
     margin-left: -85px;
 }
+a.bikulnewone {
+    text-decoration: none !important;
+}
+
+.backtohome a,
+.backtohome a span svg {
+  transition: color 0.3s ease !important;
+}
+
+.backtohome a:hover,
+.backtohome a:hover span svg {
+  color: #e52b33 !important;
+}
+
 /* .social-icon {
   margin: 0 2px;
   font-size: 13px;
@@ -359,6 +373,10 @@ span.ayaan {
     p.text-justify.mt-2 {
         margin-left: 18px;
     }
+    
+    .d-flex.align-items-center.gap-3 {
+    margin-right: 27px !important;
+}
     .lastdiv {
   margin-top: 500px !important;
 }
