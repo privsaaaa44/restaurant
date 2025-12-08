@@ -200,7 +200,7 @@ const About = () => {
             marginTop: "422px",
           }}
         >
-          <div className="overlay"></div>
+          <div className="overlay timelineoverlay"></div>
 
           <div
             className="sb1mg aboutsectiontext"
