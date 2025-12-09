@@ -363,7 +363,11 @@ a.bikulnewone {
 .backtohome a:hover span svg {
   color: #e52b33 !important;
 }
-
+.p-3.menusectionone {
+    min-width: 100%;
+    margin-left: 0px !important;
+    height: 303px !important;
+}
 /* .social-icon {
   margin: 0 2px;
   font-size: 13px;
