@@ -1,4 +1,4 @@
-// import sb1 from "../assets/sb1.jpg"
+import errorimage from "../assets/errorimage.jpg"
 import AOS from "aos";
             import "aos/dist/aos.css";
             import { useEffect } from "react";
@@ -613,7 +613,7 @@ import AOS from "aos";
 <section
   className="position-relative absoluteimg"
   style={{
-
+    backgroundImage: `url(${errorimage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: "400px",
