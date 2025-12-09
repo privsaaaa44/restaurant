@@ -15,7 +15,7 @@ import "@fontsource/dancing-script/400.css";
 import "@fontsource/dancing-script/500.css";
 function App() {
   return (
-    <BrowserRouter basename="/website">
+    <BrowserRouter basename="/">
       <Navbar />
       <Routes>
         <Route path="/Home" element={<Home />} />

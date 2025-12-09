@@ -10,6 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import abs1 from '../assets/abs1.jpg';
 
+
 // Data for stats
 const stats = [
   { label: "Tasty Dishes", value: 100 },
@@ -64,13 +65,13 @@ const AnimatedCounter = ({ value }) => {
 
 // About section
 const About = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 500,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
+     useEffect(() => {
+               AOS.init({
+                 duration: 500, // animation duration
+                 easing: "ease-in-out", // animation easing
+                 once: true, // animation happens only once
+               });
+             }, []);
 
   return (
     <>
