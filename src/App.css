@@ -690,6 +690,8 @@ div#basic-navbar-nav {
 }
     form.text-center.menusectionform {
         margin-top: -387px !important;
+            margin-left: 22px !important;
+
     }
 
 h1.text-white.text-center.mt-5.menusectionh1 {
