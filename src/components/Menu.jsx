@@ -471,7 +471,7 @@ const Menu = () => {
               Book Your Table
             </h1>
 
-            <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap", marginBottom: "20px" }}>
+            <div className='inputnamephoneemail' style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap", marginBottom: "20px" }}>
               {/* Name Input */}
               <input
                 type="text"
@@ -508,7 +508,7 @@ const Menu = () => {
               />
             </div>
 
-            <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap", marginBottom: "20px" }}>
+            <div className='inputtimedateguestpicker' style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap", marginBottom: "20px" }}>
               {/* Check-in Date Picker */}
               <div className="position-relative menusectioninputdatediv" style={{ width: "280px" }}>
                 <div className="d-flex align-items-center position-relative menusectioninputdatedivsecond" style={{ width: "100%" }}>
