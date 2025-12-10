@@ -442,6 +442,9 @@ border-radius: 2px;
     background: #000000;
     opacity: .4;
 }
+.backtohome {
+  text-transform: uppercase;
+}
 img.img111 {
     border-radius: 69%;
     width: 80px;
