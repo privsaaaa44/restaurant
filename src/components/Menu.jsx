@@ -585,9 +585,9 @@ const Menu = () => {
             </div>
 
             {/* Submit Button */}
-            <button id="sumitbutton" type="submit" className="mt-4 btn btn-outline-light menusectionsubmitbutton" style={{ width: "auto", padding: "10px 40px" }}>
-              Book Your Table Now
-            </button>
+            <button id="sumitbutton" type="submit" className="mt-4 w-75 btn btn-outline-light menusectionbutton">
+                Book Your Table Now
+              </button>
           </form>
         </div>
       </div>
