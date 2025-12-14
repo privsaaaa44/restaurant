@@ -363,7 +363,7 @@ import AOS from "aos";
                 <div className="food-section text-center my-4">
                   <div className="d-flex align-items-center justify-content-center">
                     <div className="line"></div>
-                    <span className="px-3 food-title">1950</span>
+                    <span className="px-3 food-title">1951</span>
                     <div className="line"></div>
                   </div>
                 </div>
