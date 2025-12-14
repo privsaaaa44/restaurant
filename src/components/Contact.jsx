@@ -68,7 +68,7 @@ React.useEffect(()=>{
     valid = false;
   }
   if (!emailinput || !emailpattern.test(emailinput))  {
-    erremail.textContent ="Please enter a Valid email"
+    erremail.textContent ="Pease enter a Valid email"
     valid = false;
   }
   if (!subject)  {
