@@ -12,9 +12,102 @@ import abs1 from '../assets/abs1.jpg';
 import { LuPhone } from "react-icons/lu";
 import { CgMail } from "react-icons/cg";
 import { LuMapPin } from "react-icons/lu";
-
+import { useEffect } from 'react';
 
 const Contact = () => {
+React.useEffect(()=>{
+  let form = document.getElementById("jsform")
+  
+  // Name input
+  let nameInput = document.getElementById("contactname");
+  nameInput.addEventListener('input', function() {
+    document.getElementById("inputnameerror").textContent = '';
+  });
+
+  // Email input
+  let emailInput = document.getElementById("contactemail");
+  emailInput.addEventListener('input', function() {
+    document.getElementById("inputemailerror").textContent = '';
+  });
+
+  // Subject input
+  let subjectInput = document.getElementById("contactsubject");
+  subjectInput.addEventListener('input', function() {
+    document.getElementById("inputsubjecterror").textContent = '';
+  });
+
+  // Message input
+  let messageInput = document.getElementById("contactmessage");
+  messageInput.addEventListener('input', function() {
+    document.getElementById("inputmessageerror").textContent = '';
+  });
+
+ form.addEventListener("submit", function(e){
+  e.preventDefault()
+  let nameinput = document.getElementById("contactname").value;
+  let emailinput = document.getElementById("contactemail").value;
+  let subject = document.getElementById("contactsubject").value;
+  let message = document.getElementById("contactmessage").value;
+  let namepattern = /^[A-Za-z\s]+$/;
+  let emailpattern = /^[A-Za-z0-9._-]+@gmail\.com$/;
+  let errname = document.getElementById("inputnameerror");
+  let erremail = document.getElementById("inputemailerror");
+  let errsubject = document.getElementById("inputsubjecterror");
+  let errmessage = document.getElementById("inputmessageerror");
+
+  // تمام errors صاف کریں
+  errname.textContent = '';
+  erremail.textContent = '';
+  errsubject.textContent = '';
+  errmessage.textContent = '';
+
+  let valid = true;
+
+  if (!nameinput || !namepattern.test(nameinput))  {
+    errname.textContent = "Please enter a valid name"
+    valid = false;
+  }
+  if (!emailinput || !emailpattern.test(emailinput))  {
+    erremail.textContent ="Please enter a Valid email"
+    valid = false;
+  }
+  if (!subject)  {
+    errsubject.textContent = "Please enter a subject"
+    valid = false;
+  }
+  if (!message)  {
+    errmessage.textContent = "Please enter a Message"
+    valid = false;
+  }
+
+  if (!valid) {
+    return false;
+  }
+
+  const formData = {
+    name: nameinput,
+    email: emailinput,
+    subject: subject,
+    message: message,
+    timestamp: new Date().toLocaleString()
+  };
+  
+  let savedForms = localStorage.getItem("contactForms");
+  let formsArray = savedForms ? JSON.parse(savedForms) : [];
+  
+  formsArray.push(formData);
+  
+  localStorage.setItem("contactForms", JSON.stringify(formsArray));
+  
+  alert("کامیابی سے محفوظ ہو گیا!");
+  form.reset();
+  errname.textContent = '';
+  erremail.textContent = '';
+  errsubject.textContent = '';
+  errmessage.textContent = '';
+ })
+})
+
   return (
     <>
    <div className='about1div'>
@@ -159,14 +252,101 @@ const Contact = () => {
 <div>
   <section>
 
-    <div className='d-flex justify-content-center'>
+    <div className='d-flex justify-content-center pb-5 me-4 formcontactpage'>
         <div
       dangerouslySetInnerHTML={{
-        __html: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.1575019171455!2d67.0673732740705!3d24.926703842606077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ff7b51555cb%3A0x571f64852f8ac168!2sFlavour-X%20Restaurant!5e0!3m2!1sen!2s!4v1765472188713!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+        __html: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.1575019171455!2d67.0673732740705!3d24.926703842606077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ff7b51555cb%3A0x571f64852f8ac168!2sFlavour-X%20Restaurant!5e0!3m2!1sen!2s!4v1765472188713!5m2!1sen!2s" width="597" height="600" style="border:0;" allowfullscreen=""  referrerpolicy="no-referrer-when-downgrade"></iframe>`
       }}
       />
       <div>
-        <h1>Contact Us</h1>
+        <br />
+
+        <h1 className=''>Contact Us</h1>
+      <br />
+<form action="" className="contactpageform" id='jsform'>
+ <input
+  type="text"
+  id="contactname"
+  name="name"
+  placeholder="Your Name"
+  className="form-control p-2 py-2 px-2"
+  style={{
+    paddingLeft: "10px",
+    paddingRight: "10px",
+    fontSize: '16px',
+    color: '#000000', 
+    width: "425px",
+    height: "50px",
+    outline: "none",
+    border: "1px solid #333",
+    backgroundColor: "#ffffff",
+    borderRadius: "5px",
+  }}
+/> 
+<p id='inputnameerror' className='text-danger'></p>
+ <input
+  type="text"
+  id="contactemail"
+  name="email"
+  placeholder="Your Email"
+  className="form-control p-2 py-2 px-2 mt-3"
+  style={{
+    paddingLeft: "10px",
+    paddingRight: "10px",
+    fontSize: '16px',
+    color: '#000000', 
+    width: "425px",
+    height: "50px",
+    outline: "none",
+    border: "1px solid #333",
+    backgroundColor: "#ffffff",
+    borderRadius: "5px",
+  }}
+/> 
+<p id='inputemailerror' className='text-danger'></p>
+ <input
+  type="text"
+  id="contactsubject"
+  name="subject"
+  placeholder="Subject"
+  className="form-control p-2 py-2 px-2 mt-3"
+  style={{
+    paddingLeft: "10px",
+    paddingRight: "10px",
+    fontSize: '16px',
+    color: '#000000', 
+    width: "425px",
+    height: "50px",
+    outline: "none",
+    border: "1px solid #333",
+    backgroundColor: "#ffffff",
+    borderRadius: "5px",
+  }}
+/> 
+<p id='inputsubjecterror' className='text-danger'></p>
+<textarea
+  id="contactmessage"
+  name="message"
+  placeholder="Message"
+  className="form-control mt-3"
+  rows="6"
+  style={{
+    paddingLeft: "10px",
+    paddingRight: "10px",
+    fontSize: '16px',
+    color: '#000000',
+    width: "425px",
+    outline: "none",
+    border: "1px solid #333",
+    backgroundColor: "#ffffff",
+    borderRadius: "5px",
+    resize: "none",
+  }}
+/>
+<p id='inputmessageerror' className='text-danger'></p>
+<button type='submit' className='btn btn-outline-danger mt-3 w-75 text-center'>Send Message</button>
+</form>
+
       </div>
       </div> 
   </section>
@@ -174,16 +354,32 @@ const Contact = () => {
 <style>
   {
     `
+ 
     .rowcontactcards {
   gap: 20px;
 }
-
+input#contactname,
+input#contactemail,
+input#contactsubject,
+textarea#contactmessage {
+  outline: none !important;
+}
+input#contactname:focus,
+input#contactemail:focus,
+input#contactsubject:focus,
+textarea#contactmessage:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid #333 !important;
+}
+  .d-flex.justify-content-center.pb-5.me-4.formcontactpage {
+    gap: 45px !important;
+}
 .colcontactcard1,
 .colcontactcard2,
 .colcontactcard3 {
   flex: 0 0 300px !important;
   max-width: 300px !important;
-  // padding: 30px !important;
   height: 250px !important;
   align-items: center; 
   justify-content: center;
