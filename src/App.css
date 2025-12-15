@@ -351,8 +351,59 @@ img.footerlogo.mt-3 {
     .footerhr {
       width: 100% !important;
     }
+    section.contactcardssection {
+    margin-left: 65px !important;
+}
+.alignItems-center.text-center {
+    margin-top: 22px !important;
+}
+iframe {
+    margin-left: 10px !important;
+    width: 94.9%;
+    height: 491px !important;
+}
+h1.contactusheading {
+    margin-left: 10px !important;
+}
+form.contactpageform {
+    margin-left: 10px !important;
+    width: 78.9% !important;
+}
+form.contactpageform {
+    margin-left: 10px !important;
+    width: 78.9% !important;
+}
+button.btn.btn-outline-danger.mt-3.w-75.text-center {
+    margin-bottom: 29px !important;
+}
   }
     @media (max-width: 480px) {
+      section.contactcardssection {
+    margin-left: 65px !important;
+}
+h1.contactusheading {
+    margin-left: 10px !important;
+}
+form.contactpageform {
+    margin-left: 10px !important;
+    width: 78.9% !important;
+}
+form.contactpageform {
+    margin-left: 10px !important;
+    width: 78.9% !important;
+}
+button.btn.btn-outline-danger.mt-3.w-75.text-center {
+    margin-bottom: 29px !important;
+}
+.alignItems-center.text-center {
+    margin-top: 22px !important;
+}
+iframe {
+    margin-left: 10px !important;
+    width: 94.9%;
+    height: 491px !important;
+}
+
       .navbar1 img {
             width: 45px !important;
             margin-top: -7px !important;
