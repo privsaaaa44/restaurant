@@ -390,7 +390,12 @@ h1.text-white.text-center.mt-5.menusectionh1 {
     p.text-justify.mt-2 {
         margin-left: 18px;
     }
-    
+    .booking-popup {
+    text-align: left !important;
+}
+button.formclosepoppingbutton {
+    margin-left: 102px !important;
+} 
     .d-flex.align-items-center.gap-3 {
     margin-right: 27px !important;
 }

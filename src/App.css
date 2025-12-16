@@ -997,6 +997,9 @@ p.text-white.fs-6 {
 button.menusectionbutton {
     margin-right: 18px !important;
 }
+.icontent.ms-5.mt-5.aos-init.aos-animate {
+    margin-bottom: 57px !important;
+}
 }
 
 
@@ -1008,6 +1011,14 @@ button.menusectionbutton {
   margin-top: 350px !important;
 }
 @media (width: 390px) {
+      .stats-section.text-center.my-5 {
+     
+        margin-left: 216px !important;
+     }
+     
+.chef-info {
+    margin-left: 5px !important;
+}
 .hero-caption.carousel-caption {
     margin-left: 20px !important;
 }
@@ -1025,6 +1036,8 @@ h1.re.testominalheading {
     /* margin-right: -20px !important; */
     margin-left: 332px !important;
 }
+    h1.re2.fw-bold.happycustomerheading {
+        margin-left: 211px !important;}
 .row.text-center.aos-init.aos-animate {
     width: 100%;
     /* margin-right: -28px !important; */
@@ -1066,7 +1079,7 @@ h1.re.testominalheading {
 }
     .img111 {
            margin-left: 0px !important;
-    }
+    } 
     h3.jhshfbg {
         width: 100% !important;
         margin-left: -37px !important;
@@ -1077,4 +1090,55 @@ h1.re.testominalheading {
     p.priccepara {
         margin-right: 0px !important;
     }
+        .col-1.aos-init.aos-animate {
+        width: 392px !important;
+        /* height: 298px !important; */
+        /* margin-left: 10px !important; */
+        margin-right: u !important;
+        margin-right: 19px !important;
+    }
+    .chef-img {
+        /* object-fit: cover !important; */
+           margin-right: -72px !important;
+        margin-left: 4px !important;
+        /* margin-right: -51px !important; */
+        /* margin-left: -11px !important; */
+        /* background-position: center !important; */
+        /* background-repeat: no-repeat; */
+        /* margin-right: 29px !important; */
+        /* background: gray; */
+        /* margin: 0px -7px !important; */
+        /* backgroun-position: center; */
+        background-position: center center !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* width: 100% !important; */
+        height: 100vh !important;
+    }
+       .i1img {
+                     margin-left: -48px !important;
+
+         width: 196px !important;
+        height: 677px !important;
+    }
+    .i2img {
+              margin-right: 5px !important;
+              width: 183px !important;
+        height: 676px !important;
+
+    }
+    .row.row2, .jhshfbg, .NEWONEDABHJ, #newheading, .aDVOUH {
+        margin-left: 54px !important;
+        left: auto !important;
+        transform: none !important;
+    }
+    .icontent.ms-5.mt-5.aos-init.aos-animate {
+    margin-left: -58px !important;
+    margin-bottom: 57px !important;
+}
+p.yes.me-5 {
+    width: 115%;
+    /* margin-right: 21px !important; */
+    margin-left: -48px !important;
+}
 }

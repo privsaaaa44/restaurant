@@ -443,8 +443,29 @@ const Chef = () => {
                                     </div>
                                   </>
                                 )}
+<style>
+  {`
+ @media (width: 390px) { 
+ .d-flex.justify-content-center {
+    /* height: 171px !important; */
+    margin-top: 218px !important;
+}
+    form.text-center {
+        /* margin-bottom: 57px !important; */
+        margin-top: -417px !important;
+    }
+    .p-3 {
+        min-height: 60vh;
+         }
+footer {
+    margin-top: 247px !important;
+}
+ }
+  `}
+</style>
   </>
-  )
+
+)
 }
 
 export default Chef
