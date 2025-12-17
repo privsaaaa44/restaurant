@@ -1,247 +1,168 @@
-/* Additional targeted mobile fixes to improve alignment and override inline widths */
-@media (max-width: 991px) {
-  /* Allow menu rows to wrap on tablets */
-  .Row { flex-wrap: wrap; }
-}
-@media (max-width: 767px) {
-  /* booking-card: remove fixed width and stack nicely */
-  .booking-card {
-    width: 100% !important;
-    max-width: 520px;
-    margin: 0 auto;
-    padding: 1rem !important;
-    box-sizing: border-box;
-    height: auto !important;
-  }
-
-  /* ensure form inputs and selects expand to container width */
-  .booking-card input,
-  .booking-card select,
-  .booking-card .datepicker-input {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    display: block;
-  }
-
-  /* override inline DatePicker containers that had left margins */
-  .booking-card .position-relative {
-    margin-left: 0 !important;
-    width: 100% !important;
-  }
-
-  /* stack the booking card and about section */
-  .d-flex.justify-content-center { flex-direction: column; gap: 1rem; align-items: stretch; }
-
-  /* prevent miniaboutsection overlap caused by negative margin */
-  .miniaboutsection { margin-bottom: 0 !important; transform: none !important; }
-
-  /* menu items become full width */
-  .menu-item.p-2.Col { width: 100% !important; padding: 12px !important; margin: 8px 0 !important; }
-
-  /* hero caption centered and contained */
-  .hero-caption { width: 100% !important; left: 50% !important; transform: translate(-50%, -50%) !important; padding: 0 1rem !important; }
-
-  /* chef cards stack cleanly */
-  .col-1 { width: 100% !important; height: auto !important; margin-bottom: 1rem; }
-  .chef-img { width: 100% !important; height: auto !important; margin-left: 0 !important; background-size: cover !important; }
-
-  /* carousel indicators/spacing cleanup */
-  .carousel-indicators { bottom: 10px !important; }
-}
-
-/* Remove leftover left-margin and container padding on small screens */
-@media (max-width: 767px) {
-  html, body, #root {
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow-x: hidden !important;
-  }
-
-  .container {
-    max-width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  /* Reset any heavy left offsets used in desktop layout */
-  .row.row2, .jhshfbg, .NEWONEDABHJ, #newheading, .aDVOUH {
-    margin-left: 0 !important;
-    left: auto !important;
-    transform: none !important;
-  }
-
-  .d-flex.justify-content-center {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Make wide sections span full viewport width */
-  section.position-relative.absoluteimg, section.position-relative.absoluteimg.newone {
-    width: 100vw !important;
-    left: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  /* Ensure menu rows don't keep desktop gutters */
-  .Row { padding: 0 0.5rem !important; margin: 0 !important; }
-}
-@media (max-width: 575px) {
-  /* tighten paddings on small phones */
-  .booking-card { padding: 0.75rem !important; }
-  .hero-title { font-size: 1.9rem !important; }
-  .miniaboutsection { padding: 1rem !important; }
-}
-
-/* html, body {
+/* =================================
+   BASE STYLES (Desktop)
+   ================================= */
+* {
   font-family: 'Roboto', Arial, sans-serif !important;
-  
-  
-} */
- 
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Desktop styles */
 .col12 {
-    width: 44% !important;
-    height: 200px !important;
+  width: 44% !important;
+  height: 200px !important;
 }
+
 h1.hero-title.animate-slide-in {
-    margin-bottom: 98px;
-    font-family: 'Dancing Script', cursive !important;
-    font-size: 136.6px;
-    font-weight: 400 !important;
-    color: #fff !important;
+  margin-bottom: 98px;
+  font-family: 'Dancing Script', cursive !important;
+  font-size: 136.6px;
+  font-weight: 400 !important;
+  color: #fff !important;
 }
-.socail-icon1234{
-              width: 35px !important;
-              height: 35px !important;
-              display: flex !important;
-              justify-content: center !important;
-              align-items: center !important;
-              background-color: #e52b34 !important;
-              border-radius: 50% !important;
-              margin: 5px 0 !important;
+
+.socail-icon1234 {
+  width: 35px !important;
+  height: 35px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #e52b34 !important;
+  border-radius: 50% !important;
+  margin: 5px 0 !important;
 }
-    
 
 .bikulnewone:hover {
-color: #e52b34 !important;
+  color: #e52b34 !important;
 }
+
 footer {
   border-top: 1px solid black;
   padding-top: 50px;
   padding-bottom: 50px;
 }
-* {
-  font-family: 'Roboto', Arial, sans-serif !important;
-  /* background-color: black; */
-}
+
 .nav-links:hover {
   color: #e52b34;
 }
+
 .miniaboutsection {
-  /* background-image: url("/mnt/data/2e70281f-2763-40a3-8f12-7aa603f55ef7.png"); */
-  background-size: contain; /* changed from cover */
+  background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
-  height: 550px; 
+  height: 550px;
   width: 700px;
 }
+
 .navbar-scrolled {
   background-color: black !important;
   transition: background-color 0.3s ease;
 }
+
 .p-3 {
-    margin-left: 56px;
-} 
+  margin-left: 56px;
+}
 
 .absoluteimg {
-    position: relative !important;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-width: 100%;
-max-width: 100%;
-    /* height: 391px; */
-
-  
+  position: relative !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 100%;
+  max-width: 100%;
 }
-.menu-item2:hover    {
+
+.menu-item2:hover {
   color: #e52b34 !important;
   border-color: #e52b34 !important;
 }
 
 .menu-item:hover {
-  border: 1px dashed #e52b34 !important; 
+  border: 1px dashed #e52b34 !important;
 }
+
 .icon-left {
-    position: absolute;
-    top: -123px;
-    left: -20px;
-    width: 70px !important;
-    height: 70px !important;
-     filter: grayscale(100%);
-     
-     
-    }
+  position: absolute;
+  top: -123px;
+  left: -20px;
+  width: 70px !important;
+  height: 70px !important;
+  filter: grayscale(100%);
+}
+
 span.lemon {
   margin-left: -31px;
 }
+
 .icon-right {
-    position: absolute;
-    top: -123px;
-    right: -31px;
-    width: 70px !important;
-    height: 70px !important;
+  position: absolute;
+  top: -123px;
+  right: -31px;
+  width: 70px !important;
+  height: 70px !important;
 }
 
 .menu-item {
-  border: 1px  dashed #d1d1d1;
+  border: 1px dashed #d1d1d1;
   padding-bottom: 15px;
-  margin-bottom: 15px; 
-}
-.menu-item.p-2.py-2.px-2.col-4 {
-    padding: 21px !important;
-}
-.ing{
-    display: flex !important;
-    justify-content: space-between;
+  margin-bottom: 15px;
 }
 
+.menu-item.p-2.py-2.px-2.col-4 {
+  padding: 21px !important;
+}
+
+.ing {
+  display: flex !important;
+  justify-content: space-between;
+}
 
 .hello {
-      display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-        margin-top: 0;
-    margin-bottom: 1rem;
-width: 60%;
-font-size: 16px;
-    line-height: 2;
-    font-weight: 400;
-    color: gray;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  width: 60%;
+  font-size: 16px;
+  line-height: 2;
+  font-weight: 400;
+  color: gray;
 }
+
 .d-flex.justify-content-center {
-    gap: 69px;
+  gap: 69px;
 }
+
 p.text-justify.areone {
-    margin-left: 1px;
-    margin-right: 60px;
+  margin-left: 1px;
+  margin-right: 60px;
 }
+
 .home-hero-img {
   height: 100vh;
   object-fit: cover;
+  display: block;
+  width: 100%;
 }
 
 .hero-title {
   font-size: 4rem;
   font-weight: 600;
-
 }
 
 .carousel-image-wrapper {
@@ -254,344 +175,839 @@ p.text-justify.areone {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* black with 40% opacity */
-  z-index: 1; /* behind the caption */
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 .carousel-caption {
-  z-index: 2; /* text above overlay */
+  z-index: 2;
 }
 
-.home-hero-img {
-  display: block;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-
-  nav.navbar1.px-3.navbar.navbar-expand-lg.navbar-light {
-      /* border-radius: 5px; */
-      height: 72px;
-      background-color: transparent ;
-      width: 100% !important;
-  }
-}
 .menu-toggle-btn:hover {
   box-shadow: none !important;
 }
 
 .menu-toggle-btn {
-font-size: 20px !important;
+  font-size: 20px !important;
 }
+
 img.footerlogo.mt-3 {
-    width: 131px !important;
+  width: 131px !important;
 }
-/* @media (max-width: 1000px) {
-  .yes {
-    margin-left: 19px !important;
+
+.aboutpageheading {
+  font-size: 40px !important;
+  font-weight: 400 !important;
+  margin-top: 350px !important;
+}
+
+/* =================================
+   TABLET (max-width: 991px)
+   ================================= */
+@media (max-width: 991px) {
+  .Row {
+    flex-wrap: wrap;
   }
-  
-} */
- 
-  @media (max-width: 768px) {
-    .food-title {
-    color: #e52b34 !important;
-}
-   .w-100 {
-        width: 100% !important;
-        height: auto !important; /* Let height adjust automatically */
-        margin-left: 0 !important;
-    }  .carousel.slide.carousel-fade {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        width: 90% !important; /* Use percentage for responsiveness */
-    /* }    h1.hero-title.animate-slide-in {
-        margin-left: 0 !important;
-        text-align: center; 
-        font-size: 1.5rem; 
-    }    span.px-3.food-title { */
-        margin-left: 0 !important;
-        display: block; /* Make it take full width */
-        text-align: center;
-        font-size: 1rem;
-    }
-
- .carousel-indicators {
-    margin-bottom: 351px !important;
-    margin-left: 17px !important;
-}
-    /* remove all left shifts */
-    * {
-      left: 0 !important;
-      margin-left: 0 !important;
-      max-width: 100% !important;
-    }
-  
-    .jhshfbg,
-    .row2,
-    #newheading,
-    .NEWONEDABHJ {
-      position: static !important;
-    }
-  .lastsectionimg {
-    display: none !important;
-}
-    /* fix images and blocks */
-    img, .i1img, .i2img, .chefimg1 {
-      width: 100% !important;
-      height: auto !important;
-    }
-  
-    /* fix text blocks */
-    p.helloiamfirstone,
-    .menu-item.p-2.Col {
-      width: 100% !important;
-    }
-  
-    .footerhr {
-      width: 100% !important;
-    }
-    section.contactcardssection {
-    margin-left: 65px !important;
-}
-.alignItems-center.text-center {
-    margin-top: 22px !important;
-}
-iframe {
-    margin-left: 10px !important;
-    width: 94.9%;
-    height: 491px !important;
-}
-h1.contactusheading {
-    margin-left: 10px !important;
-}
-form.contactpageform {
-    margin-left: 10px !important;
-    width: 78.9% !important;
-}
-form.contactpageform {
-    margin-left: 10px !important;
-    width: 78.9% !important;
-}
-button.btn.btn-outline-danger.mt-3.w-75.text-center {
-    margin-bottom: 29px !important;
-}
-  }
-    @media (max-width: 480px) {
-      section.contactcardssection {
-    margin-left: 65px !important;
-}
-h1.contactusheading {
-    margin-left: 10px !important;
-}
-form.contactpageform {
-    margin-left: 10px !important;
-    width: 78.9% !important;
-}
-form.contactpageform {
-    margin-left: 10px !important;
-    width: 78.9% !important;
-}
-button.btn.btn-outline-danger.mt-3.w-75.text-center {
-    margin-bottom: 29px !important;
-}
-.alignItems-center.text-center {
-    margin-top: 22px !important;
-}
-iframe {
-    margin-left: 10px !important;
-    width: 94.9%;
-    height: 491px !important;
 }
 
-      .navbar1 img {
-            width: 45px !important;
-            margin-top: -7px !important;
-        }
-        .lastsectionimg {
-    display: none !important;
-}
-        .w-100 {
-        width: 100% !important;
-        height: 894px !important;
-        /* margin-left: 0px !important; */
-      }.carousel.slide.carousel-fade {
-        margin-left: 21px !important;
-        width: 527px !important;
-    }
-    /* h1.hero-title.animate-slide-in {
-     margin-left: 197px !important;
-         font-size: 46px !important;
-        margin-top: 105px;
-        width: 100%;  
-    } */
-    span.px-3.food-title {
-        margin-left: 372px !important;
-         margin-top: -80px !important;
-    }
- .carousel-indicators {
-    margin-bottom: 351px !important;
-    margin-left: 17px !important;
-}
-    
-    }
-    /* Responsive Styles */
-
-/* Tablet Styles (768px and below) */
+/* =================================
+   TABLET (max-width: 768px)
+   ================================= */
 @media (max-width: 768px) {
+  /* Reset all positioning */
+  html, body, #root {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* Navbar */
+  nav.navbar1.px-3.navbar.navbar-expand-lg.navbar-light {
+    height: 72px;
+    background-color: transparent;
+    width: 100% !important;
+  }
+
+  /* Hero section */
   .hero-title {
     font-size: 2.5rem !important;
+    text-align: center;
+    margin-left: 0 !important;
   }
-  
+
   .food-title {
+    color: #e52b34 !important;
     font-size: 1.8rem !important;
+    margin-left: 0 !important;
+    display: block;
+    text-align: center;
   }
-  
-  .re {
-    font-size: 14px !important;
+
+  /* Carousel */
+  .w-100 {
+    width: 100% !important;
+    height: auto !important;
+    margin-left: 0 !important;
   }
-  
-  .re2 {
-    font-size: 1.8rem !important;
+
+  .carousel.slide.carousel-fade {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 90% !important;
   }
-  
+
+  .carousel-indicators {
+    margin-bottom: 20px !important;
+    margin-left: 0 !important;
+  }
+
+  /* Booking card */
+  .booking-card {
+    width: 100% !important;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 1rem !important;
+    box-sizing: border-box;
+    height: auto !important;
+  }
+
+  .booking-card input,
+  .booking-card select,
+  .booking-card .datepicker-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    display: block;
+  }
+
+  .booking-card .position-relative {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* About section */
+  .miniaboutsection {
+    margin-bottom: 0 !important;
+    transform: none !important;
+    min-height: 400px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
   .hello {
     font-size: 14px !important;
     line-height: 1.6 !important;
+    width: 100% !important;
   }
-  
-  /* Menu items adjustment */
+
+  /* Menu section */
   .menu-item {
     margin: 10px 0 !important;
+    width: 100% !important;
   }
-  
+
+  .menu-item.p-2.Col {
+    width: 100% !important;
+    padding: 12px !important;
+    margin: 8px 0 !important;
+  }
+
   .img111 {
     width: 70px !important;
     height: 70px !important;
   }
-  
-  /* Carousel caption adjustment */
-  .carousel-caption {
-    padding-bottom: 30px !important;
+
+  /* Chef section */
+  .col-1 {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 1rem;
   }
-  
-  /* Chef section adjustment */
+
   .chef-img {
-    width: 150px !important;
-    height: 150px !important;
+    width: 100% !important;
+    height: auto !important;
+    margin-left: 0 !important;
+    background-size: cover !important;
+    min-height: 300px;
   }
-  
+
   .firstchefname {
     font-size: 1.1rem !important;
   }
-  
+
   .firstchefname1 {
     font-size: 0.9rem !important;
   }
-  
+
   .firstchefname3 {
     font-size: 0.85rem !important;
   }
+
+  /* Images */
+  img, .i1img, .i2img, .chefimg1 {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .lastsectionimg {
+    display: none !important;
+  }
+
+  /* Sections */
+  .d-flex.justify-content-center {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  section.position-relative.absoluteimg,
+  section.position-relative.absoluteimg.newone {
+    width: 100% !important;
+    left: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .Row {
+    padding: 0 0.5rem !important;
+    margin: 0 !important;
+  }
+
+  .jhshfbg,
+  .row2,
+  #newheading,
+  .NEWONEDABHJ {
+    position: static !important;
+    margin-left: 0 !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  .row.row2, .jhshfbg, .NEWONEDABHJ, #newheading, .aDVOUH {
+    margin-left: 0 !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  /* Hero caption */
+  .hero-caption {
+    width: 100% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Carousel */
+  .carousel-caption {
+    padding-bottom: 30px !important;
+  }
+
+  /* Typography */
+  .re {
+    font-size: 14px !important;
+  }
+
+  .re2 {
+    font-size: 1.8rem !important;
+  }
+
+  p, .hello, .helloiamfirstone {
+    line-height: 1.6 !important;
+  }
+
+  .footerhr {
+    width: 100% !important;
+  }
+
+  /* Contact page */
+  section.contactcardssection {
+    margin-left: 0 !important;
+    padding: 0 15px !important;
+  }
+
+  .alignItems-center.text-center {
+    margin-top: 22px !important;
+  }
+
+  iframe {
+    margin-left: 0 !important;
+    width: 100% !important;
+    height: 400px !important;
+  }
+
+  h1.contactusheading {
+    margin-left: 0 !important;
+    padding: 0 15px;
+  }
+
+  form.contactpageform {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 0 15px !important;
+  }
+
+  button.btn.btn-outline-danger.mt-3.w-75.text-center {
+    margin-bottom: 29px !important;
+  }
+
+  /* Utilities */
+  .text-center-mobile {
+    text-align: center !important;
+  }
+
+  .container-padding-mobile {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .booking-form-container {
+    padding: 20px 15px !important;
+  }
+
+  /* Parallax fix */
+  .absoluteimg {
+    background-attachment: scroll;
+  }
+
+  .p-3 {
+    margin-left: 0 !important;
+    padding: 1rem !important;
+  }
 }
 
-/* Mobile Styles (576px and below) */
+/* =================================
+   MOBILE (max-width: 576px)
+   ================================= */
 @media (max-width: 576px) {
   .hero-title {
     font-size: 2rem !important;
+    padding: 0 1rem;
   }
-  
+
   .food-title {
     font-size: 1.5rem !important;
   }
-  
+
   .re2 {
     font-size: 1.5rem !important;
   }
-  
+
   .miniaboutsection {
     min-height: 400px !important;
     padding: 1.5rem !important;
   }
-  
-  /* Booking form adjustments */
+
+  .booking-card {
+    padding: 0.75rem !important;
+  }
+
   .datepicker-input {
     font-size: 14px !important;
   }
-  
-  /* Menu section adjustments */
+
   .menu-item {
     padding: 15px !important;
   }
-  
+
+  .menu-item h1 {
+    font-size: 18px !important;
+  }
+
   .img111 {
     width: 60px !important;
     height: 60px !important;
   }
-  
-  /* Chef section */
+
   .chef-img {
-    width: 120px !important;
-    height: 120px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 250px;
   }
-  
-  /* Testimonial section */
+
   .carousel-item p {
     font-size: 0.9rem !important;
     padding: 0 10px !important;
   }
-  
-  /* Perfect ingredients section */
+
   .i1img, .i2img {
     height: 200px !important;
   }
-  
+
   .helloiamfirstone {
     font-size: 14px !important;
   }
-}
 
-/* Small Mobile Styles (375px and below) */
-@media (max-width: 375px) {
-  .hero-title {
-    font-size: 1.8rem !important;
-  }
-  
-  .re2 {
-    font-size: 1.3rem !important;
-  }
-  
-  .menu-item h1 {
-    font-size: 18px !important;
-  }
-  
-  .img111 {
-    width: 50px !important;
-    height: 50px !important;
-  }
-  
-  .chef-img {
-    width: 100px !important;
-    height: 100px !important;
-  }
-  
-  /* Input fields */
   input, select {
     font-size: 13px !important;
   }
-  
+
   #sumitbutton {
     font-size: 14px !important;
     padding: 8px 15px !important;
   }
+
+  .btn-responsive {
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .chef-card {
+    margin-bottom: 30px !important;
+  }
 }
 
-/* Ensure images are responsive */
-img {
-  max-width: 100%;
-  height: auto;
+/* =================================
+   SMALL MOBILE (max-width: 480px)
+   ================================= */
+@media (max-width: 480px) {
+  /* Critical fixes */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .container, section, .row, div {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: 2rem !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .food-title {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    text-align: center !important;
+  }
+
+  /* Carousel */
+  .carousel-overlay {
+    left: 0 !important;
+    width: 100% !important;
+  }
+
+  .w-100 {
+    width: 100% !important;
+    height: auto !important;
+    margin-left: 0 !important;
+  }
+
+  img.d-block.w-100.home-hero-img {
+    min-height: 100vh !important;
+  }
+
+  .carousel.slide.carousel-fade {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .carousel-indicators {
+    margin-bottom: 21px !important;
+    margin-left: 0 !important;
+    gap: 11px;
+  }
+
+  /* Navbar */
+  .navbar1 img {
+    width: 45px !important;
+    margin-top: -7px !important;
+  }
+
+  div#basic-navbar-nav {
+    width: 100% !important;
+  }
+
+  /* Booking */
+  .bookingoverlay {
+    margin-left: 0 !important;
+  }
+
+  button.formclosepoppingbutton {
+    margin-left: 0 !important;
+  }
+
+  .booking-popup {
+    margin-left: 0 !important;
+    text-align: center !important;
+    width: 90% !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  select.text-white.p-2.px-2.datepicker-input {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .position-relative.mt-3,
+  .position-relative.mt-3.mx-auto {
+    margin-left: 0 !important;
+  }
+
+  svg.newicon {
+    margin-left: 0 !important;
+  }
+
+  .line {
+    display: none;
+  }
+
+  /* Menu section */
+  .menu-item.p-2.Col.aos-init.aos-animate {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+  }
+
+  .p-3.menusectionone {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    min-height: auto !important;
+  }
+
+  form.text-center.menusectionform {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  h1.text-white.text-center.mt-5.menusectionh1 {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  /* About section */
+  .miniaboutsection.aos-init.aos-animate {
+    margin-bottom: 2rem !important;
+    height: auto !important;
+    min-height: 400px !important;
+    margin-left: 0 !important;
+    padding: 1rem !important;
+  }
+
+  .p-3 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+  }
+
+  section.position-relative.absoluteimg {
+    margin-top: 2rem !important;
+    height: auto !important;
+    min-height: 300px !important;
+  }
+
+  .aos-init.aos-animate {
+    margin-top: 1rem !important;
+  }
+
+  form.text-center {
+    padding-top: 0 !important;
+  }
+
+  .re.aboutheading {
+    margin-bottom: 1rem !important;
+    font-size: 2rem !important;
+  }
+
+  .hello.aboutpara {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+
+  /* Specialties */
+  .sb1h1 {
+    margin-left: 0 !important;
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .sb1h11 {
+    margin-left: 0 !important;
+    width: 100% !important;
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+
+  .specialties.heading {
+    margin-bottom: 1rem !important;
+    font-size: 2rem !important;
+  }
+
+  h3.jhshfbg {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  span.lemon {
+    margin-left: 0 !important;
+  }
+
+  p.abcf {
+    margin-left: 0 !important;
+  }
+
+  span.ayaan {
+    margin-left: 0 !important;
+  }
+
+  .img111 {
+    width: 60px !important;
+    height: 60px !important;
+    margin-left: 0 !important;
+  }
+
+  p.priccepara {
+    margin-right: 0 !important;
+  }
+
+  section.position-relative.absoluteimg.newone {
+    margin-top: 2rem !important;
+    height: auto !important;
+    min-height: 400px !important;
+  }
+
+  /* Testimonials */
+  .re.testominalheading {
+    margin-left: 0 !important;
+    margin-top: 2rem !important;
+    font-size: 2rem !important;
+    text-align: center;
+  }
+
+  h1.re2.fw-bold.happycustomerheading {
+    margin-left: 0 !important;
+    width: 100% !important;
+    font-size: 2rem !important;
+    margin-top: 1rem !important;
+    text-align: center;
+  }
+
+  .contenb.aos-init.aos-animate {
+    margin-top: 0 !important;
+  }
+
+  img.rounded-circle.img-fluid.shadow-1-strong {
+    width: 80px !important;
+  }
+
+  .col-md-12 {
+    margin-left: 0 !important;
+  }
+
+  p.lead.font-italic.mx-4.mx-md-5.text-justify {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0 1rem;
+  }
+
+  button.carousel-control-next,
+  button.carousel-control-prev {
+    display: none !important;
+  }
+
+  span.visually-hidden {
+    display: none !important;
+  }
+
+  /* Chef section */
+  h1.re.text-center.chefheading {
+    font-size: 2rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .col-1.aos-init.aos-animate {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .chef-img {
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 400px;
+  }
+
+  .row.row2 {
+    display: flex !important;
+    flex-direction: column;
+    gap: 1rem !important;
+  }
+
+  /* Secrets section */
+  h1.re.thisisoursecretsheading {
+    margin-bottom: 1rem !important;
+    font-size: 2rem !important;
+  }
+
+  .icontent.ms-5.mt-5.aos-init.aos-animate {
+    margin-left: 0 !important;
+    margin-bottom: 2rem !important;
+    padding: 0 1rem;
+  }
+
+  .homenavbar {
+    padding-top: 20px !important;
+  }
+
+  .i1img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px !important;
+    margin-left: 0 !important;
+  }
+
+  .i2img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px !important;
+    margin-right: 0 !important;
+  }
+
+  p.helloiamfirstone.text-justify.lh-lg.text-secondary.w-auto {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+
+  /* About page */
+  section.firstsection {
+    height: auto !important;
+    min-height: 50vh !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 2rem 1rem !important;
+  }
+
+  .abouttextsection {
+    margin-left: 0 !important;
+  }
+
+  section.position-relative.absoluteimg.timelinsection {
+    margin-top: 2rem !important;
+    height: auto !important;
+    min-height: 400px !important;
+  }
+
+  .stats-section.text-center.my-5 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    gap: 1rem !important;
+  }
+
+  p.text-white.fs-6 {
+    font-size: 14px !important;
+  }
+
+  .inputnamephoneemail {
+    margin-right: 0 !important;
+  }
+
+  .inputtimedateguestpicker {
+    margin-left: 0 !important;
+  }
+
+  button.menusectionbutton {
+    margin-right: 0 !important;
+  }
+
+  /* Contact page */
+  section.contactcardssection {
+    margin-left: 0 !important;
+    padding: 0 15px;
+  }
+
+  h1.contactusheading {
+    margin-left: 0 !important;
+  }
+
+  form.contactpageform {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  iframe {
+    margin-left: 0 !important;
+    width: 100% !important;
+    height: 300px !important;
+  }
+
+  .alignItems-center.text-center {
+    margin-top: 22px !important;
+  }
+
+  button.btn.btn-outline-danger.mt-3.w-75.text-center {
+    margin-bottom: 29px !important;
+  }
 }
 
-/* Utility classes */
+/* =================================
+   EXTRA SMALL (max-width: 375px)
+   ================================= */
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 1.8rem !important;
+  }
+
+  .re2 {
+    font-size: 1.3rem !important;
+  }
+
+  .menu-item h1 {
+    font-size: 16px !important;
+  }
+
+  .img111 {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .chef-img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px;
+  }
+
+  .booking-card {
+    padding: 0.75rem !important;
+  }
+}
+
+/* =================================
+   UTILITIES
+   ================================= */
 .d-none-mobile {
   display: none !important;
 }
@@ -602,553 +1018,6 @@ img {
   }
 }
 
-/* Responsive text alignment */
-@media (max-width: 768px) {
-  .text-center-mobile {
-    text-align: center !important;
-  }
-}
-
-/* Container padding for mobile */
-@media (max-width: 768px) {
-  .container-padding-mobile {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-}
-
-/* Menu grid responsiveness */
-@media (max-width: 992px) {
-  .menu-grid-item {
-    margin-bottom: 30px !important;
-  }
-}
-
-/* Chef card responsiveness */
-@media (max-width: 576px) {
-  .chef-card {
-    margin-bottom: 30px !important;
-  }
-}
-
-/* Ensure booking form is properly spaced on mobile */
-@media (max-width: 768px) {
-  .booking-form-container {
-    padding: 20px 15px !important;
-  }
-}
-
-/* Responsive button sizes */
-@media (max-width: 576px) {
-  .btn-responsive {
-    padding: 8px 20px !important;
-    font-size: 14px !important;
-  }
-}
-
-/* Adjust line heights for better mobile readability */
-@media (max-width: 768px) {
-  p, .hello, .helloiamfirstone {
-    line-height: 1.6 !important;
-  }
-}
-
-/* Responsive carousel controls */
-@media (max-width: 576px) {
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 40px !important;
-    height: 40px !important;
-  }
-}
-
-
-@media (max-width: 480px) {
-  html, body {
-    overflow-x: hidden;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-   /* h1.hero-title.animate-slide-in {
-        margin-left: -4px !important;
-        font-size: 46px !important;
-        margin-top: 149px !important;
-        width: 100% !important;
-    }  */
-    .bookingoverlay {
-  margin-left: 11px !important;
-}
-    button.formclosepoppingbutton {
-    margin-left: 76px !important;
-}
-      .menu-item.p-2.Col.aos-init.aos-animate {
-        margin-left: 10px !important;
-        margin-right: 10px !important;
-        margin-bottom: 41px !important;
-    }
-    .booking-popup {
-    margin-left: 232px !important;
-    text-align: left !important;
-}
-        span.px-3.food-title {
-        margin-left: 15px !important;
-        margin-top: -85px !important;
-    }
-    select.text-white.p-2.px-2.datepicker-input {
-    margin-left: -8px !important;
-    margin-right: 10px !important;
-}
-
-    .position-relative.mt-3 {
-    margin-left: 91px !important;
-}
-svg.newicon {
-    /* margin-left: 8px; */
-    margin-left: 255px !important;
-}
-    .line {
-    display: none;
-}
-      .carousel-overlay {
-        position: absolute;
-        top: 0;
-        left: 16px !important;
-        width: 451px !important;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 1;
-        /* right: 48px !important; */
-    }
-.container, section, .row {
-    max-width: 100%;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-        .carousel-indicators {
-        margin-bottom: 21px !important;
-        margin-left: 43px !important;
-        gap: 11px;
-    }
-        .w-100 {
-        width: 100% !important;
-        height: auto !important;
-        margin-left: 21px !important;
-        width: 100px !important;
-        width: 116% !important;
-    }
-    img.d-block.w-100.home-hero-img {
-    min-height: 100vh !important;
-}
-
-div#basic-navbar-nav {
-    width: 441px !important;
-}
-.p-3.menusectionone {
-    margin-top: 0px !important;
-    padding-top: 0px !important;
-    min-height: 58vh !important;
-}
-    form.text-center.menusectionform {
-        margin-top: -387px !important;
-            margin-left: 22px !important;
-
-    }
-
-h1.text-white.text-center.mt-5.menusectionh1 {
-    width: 100% !important;
-    margin-left: -60px !important;
-}
-form.text-center.menusectionform {
-    margin-top: 0px !important;
-}
-  .miniaboutsection.aos-init.aos-animate {
-        margin-bottom: 1321px !important;
-    }
-    .p-3 {
-        /* margin-top: 798px !important; */
-             margin-top: 1349px !important;
-    padding-top: 388px !important;
-    min-height: 100vh;
-    width: 100% !important;
-    margin: 0;
-    padding: 0 !important;
-}
-    section.position-relative.absoluteimg {
-        margin-top: 455px !important;
-    }
-    .aos-init.aos-animate {
-    /* margin-bottom: 45px !important; */
-    margin-top: 31px !important;
-}
-    form.text-center {
-        padding-top: 399px !important;
-    }
-.re.aboutheading {
-    /* margin-top: -7px !important; */
-    margin-bottom: -25px !important;
-    font-size: 40px !important;
-}
-.hello.aboutpara {
-    width: 309px !important;
-    font-size: 14px !important;
-}
-.miniaboutsection.aos-init.aos-animate {
-    /* width: 454px !important; */
-    height: 978px !important;
-    background-size: cover;
-    background-position: right;
-    /* margin-right: -37px !important; */
-    margin-top: -1px !important;
-    background-repeat: no-repeat;
-    min-height: 52vh !important;
-            margin-left: 9px !important;
-
-}
-
-section.position-relative.absoluteimg {
-    /* width: 84px !important; */
-    height: 366px !important;
-}
-.sb1h1 {
-    margin-left: 222px !important;
-    width: 100%;
-}
-.sb1h11 {
-    margin-left: 234px !important;
-    width: 100%;
-    font-size: 32px !important;
-}
-.specialties.heading {
-    /* margin-top: 12px !important; */
-    margin-bottom: -19px !important;
-    font-size: 40px !important;
-}
-h3.jhshfbg {
-    width: 169px !important;
-    margin-left: -15px !important;
-
-
-}
-span.lemon {
-    margin-left: -31px !important;
-}p.abcf {
-    margin-left: -19px !important;
-}span.ayaan {
-    margin-left: -85px !important;
-}    .img111 {
-        width: 80px !important;
-        height: 80px !important;
-        margin-left: 16px !important;
-    }p.priccepara {
-    margin-right: 16px !important;
-} section.position-relative.absoluteimg.newone {
-    margin-top: -31px !important;
-    height: 697px !important;
-}.re.testominalheading {
-    /* text-align: center !important; */
-    /* margin-left: 52px !important; */
-    /* margin-top: 18px !important; */
-     margin-left: 365px !important;
-    margin-top: 363px !important;
-    font-size: 40px !important;
-}h1.re2.fw-bold.happycustomerheading {
-    margin-left: 230px !important;
-    width: 100% !important;
-    font-size: 40px !important;
-    font-weight: 900 !important;
-    margin-top: -9px !important;
-}.contenb.aos-init.aos-animate {
-    margin-top: -303px !important;
-}img.rounded-circle.img-fluid.shadow-1-strong {
-    width: 100px !important;
-}    .col-md-12 {
-        margin-left: 247px !important;
-    }p.lead.font-italic.mx-4.mx-md-5.text-justify {
-    width: 64% !important;
-    margin-left: 76px !important;
-}button.carousel-control-next {
-    display: none !important;
-}span.visually-hidden {
-    display: none !important;
-}span.visually-hidden {
-    display: none !important;
-}button.carousel-control-prev {
-    display: none !important;
-}h1.re.text-center.chefheading {
-    font-size: 40px !important;
-    margin-top: -54px !important;
-}
-.p-3.menusectionone {
-    margin-top: 0px !important;
-    padding-top: 0px !important;
-    min-height: 58vh !important;
-}
-
-h1.text-white.text-center.mt-5.menusectionh1 {
-    width: 100%;
-    margin-left: -60px !important;
-}
-    form.text-center.menusectionform {
-        margin-top: -390px !important;
-    }
-   .col-1.aos-init.aos-animate {
-        width: 100% !important;
-        /* height: 298px !important; */
-        margin-left: -18px !important;
-        margin-right: u !important;
-    }       .chef-img {
-      margin: 0px -5px !important;
-        width: 100% !important;
-        height: 625px !important;
-        /* align-items: center !important; */
-        /* object-fit: cover !important; */
-        /* margin-right: -72px !important; */
-        /* margin-left: -13px !important; */
-        /* margin-right: -51px !important; */
-        /* margin-left: -11px !important; */
-        /* background-position: center !important; */
-        /* background-repeat: no-repeat; */
-        /* margin-right: 29px !important; */
-        /* background: gray; */
-        /* margin: 0px -7px !important; */
-    }.row.row2 {
-    display: flex !important;
-    /* flex-direction: row; */
-    gap: -27px;
-    gap: -13px !important;
-    align-content: stretch;
-    align-items: center;
-    gap: -17px !important;
-    gap: 0px !important;
-}
-h1.re.thisisoursecretsheading {
-    /* margin-top: 22px !important; */
-    margin-bottom: -20px !important;
-    font-size: 40px !important;
-}
-.icontent.ms-5.mt-5.aos-init.aos-animate {
-    /* margin-right: -16px !important; */
-    margin-left: 26px !important;
-}
-.homenavbar {
-  padding-top: 50px !important;
-}
-.i1img {
-    width: 210px !important;
-    height: 677px !important;
-    /* margin-left: 44px !important; */
-    margin-left: 8px !important;
-}.i2img {
-    width: 204px !important;
-    height: 676px !important;
-    /* margin-right: 35px !important; */
-    margin-right: 8px !important;
-}
-h1.re.thisisoursecretsheading {
-    /* margin-top: 22px !important; */
-    margin-bottom: -20px !important;
-    font-size: 40px !important;
-}
-p.helloiamfirstone.text-justify.lh-lg.text-secondary.w-auto {
-    width: 379px !important;
-    font-size: 14px !important;
-    /* margin-left: 3px !important; */
-    /* margin-right: -35px !important; */
-}
-
-section.firstsection {
-    height: 69vh !important;
-    width: 100% !important;
-    margin: 0;
-    padding: 0;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat;
-    margin-left: 11px !important;
-}
-.abouttextsection {
-      margin-left: 221px !important;
-
-}section.position-relative.absoluteimg.timelinsection {
-            margin-top: 40px !important;
-    background-position: center !important;
-    height: 100vh !important;
-    /* position: static !important; */
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* flex-wrap: wrap; */
-    /* align-content: flex-end; */
-    /* justify-content: flex-start; */
-    /* align-items: flex-end; */
-}
-.stats-section.text-center.my-5 {
-    display: flex;
-    justify-content: center;
-    gap: 4px !important;
-    width: 100% !important;
-    flex-direction: column;
-        margin-left: 244px !important;
-        margin-top: -260px !important;
-}
-
-p.text-white.fs-6 {
-    font-size: 16px !important;
-    display: inline-block !important;
-    white-space: nowrap;
-}
-.inputnamephoneemail {
-    margin-right: 29px !important;
-}
-.inputtimedateguestpicker {
-    margin-left: 41px !important;
-}
-button.menusectionbutton {
-    margin-right: 18px !important;
-}
-.icontent.ms-5.mt-5.aos-init.aos-animate {
-    margin-bottom: 57px !important;
-}
-}
-
-
-
-
-.aboutpageheading {
-  font-size: 40px !important;
-  font-weight: 400 !important;
-  margin-top: 350px !important;
-}
-@media (width: 390px) {
-      .stats-section.text-center.my-5 {
-     
-        margin-left: 216px !important;
-     }
-     
-.chef-info {
-    margin-left: 5px !important;
-}
-.hero-caption.carousel-caption {
-    margin-left: 20px !important;
-}
-form.text-center {
-    /* margin-bottom: 57px !important; */
-    margin-top: -64px !important;
-}
-.position-relative.mt-3.mx-auto {
-    margin-left: 71px !important;
-}
-.position-relative.mt-3 {
-    margin-left: 71px !important;
-}
-h1.re.testominalheading {
-    /* margin-right: -20px !important; */
-    margin-left: 332px !important;
-}
-    h1.re2.fw-bold.happycustomerheading {
-        margin-left: 211px !important;}
-.row.text-center.aos-init.aos-animate {
-    width: 100%;
-    /* margin-right: -28px !important; */
-    margin-left: -18px !important;
-}
-
-    .miniaboutsection.aos-init.aos-animate {
-        /* width: 454px !important; */
-        height: 978px !important;
-        background-size: cover;
-        background-position: right;
-        /* margin-right: -37px !important; */
-        margin-top: -1px !important;
-        background-repeat: no-repeat;
-        min-height: 58vh !important;
-        margin-left: 23px !important;
-                padding-left: 0px !important;
-                padding-top: 17px !important;
-
-    }
-    section.position-relative.absoluteimg {
-    margin-top: 413px !important;
-}
-    .sb1h1 {
-        /* margin-left: 222px !important; */
-        width: 96%;
-    }
-        .sb1h11 {
-        /* margin-left: 234px !important; */
-        width: 88%;
-        font-size: 25px !important;
-    }
-        section.position-relative.absoluteimg {
-        /* width: 84px !important; */
-        height: 313px !important;
-    }
-    .sb1mg {
-    margin-top: 12px !important;
-}
-    .img111 {
-           margin-left: 0px !important;
-    } 
-    h3.jhshfbg {
-        width: 100% !important;
-        margin-left: -37px !important;
-    }
-    p.abcf {
-        margin-left: -10px !important;
-    }
-    p.priccepara {
-        margin-right: 0px !important;
-    }
-        .col-1.aos-init.aos-animate {
-        width: 392px !important;
-        /* height: 298px !important; */
-        /* margin-left: 10px !important; */
-        margin-right: u !important;
-        margin-right: 19px !important;
-    }
-    .chef-img {
-        /* object-fit: cover !important; */
-           margin-right: -72px !important;
-        margin-left: 4px !important;
-        /* margin-right: -51px !important; */
-        /* margin-left: -11px !important; */
-        /* background-position: center !important; */
-        /* background-repeat: no-repeat; */
-        /* margin-right: 29px !important; */
-        /* background: gray; */
-        /* margin: 0px -7px !important; */
-        /* backgroun-position: center; */
-        background-position: center center !important;
-        background-size: cover;
-        background-repeat: no-repeat;
-        /* width: 100% !important; */
-        height: 100vh !important;
-    }
-       .i1img {
-                     margin-left: -48px !important;
-
-         width: 196px !important;
-        height: 677px !important;
-    }
-    .i2img {
-              margin-right: 5px !important;
-              width: 183px !important;
-        height: 676px !important;
-
-    }
-    .row.row2, .jhshfbg, .NEWONEDABHJ, #newheading, .aDVOUH {
-        margin-left: 54px !important;
-        left: auto !important;
-        transform: none !important;
-    }
-    .icontent.ms-5.mt-5.aos-init.aos-animate {
-    margin-left: -58px !important;
-    margin-bottom: 57px !important;
-}
-p.yes.me-5 {
-    width: 115%;
-    /* margin-right: 21px !important; */
-    margin-left: -48px !important;
-}
+.menu-grid-item {
+  margin-bottom: 30px !important;
 }
