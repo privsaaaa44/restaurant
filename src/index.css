@@ -105,23 +105,7 @@ img {
     margin-top: -7px !important;
 }
 
-@media (max-width: 480px) {
-  
-}
-@media (max-width: 480px) {
 
-  .contactsimple p {
-    font-size: 12px !important;
-  }
-
-  .navbar1 img {
-    width: 60px !important;
-  }
-
-  .nav-links .nav-link {
-    font-size: 14px !important;
-  }
-}
 
 .NEWONEDABHJ {
     POSITION: absolute;
@@ -540,77 +524,4 @@ input:focus {
 /* optional: अगर logo पर contrast चाहिए तो छोटे tweaks */
 .navbar-before .navbar-brand img { filter: none; }
 .navbar-sticky .navbar-brand img { filter: none; }
-/* Mobile dropdown menu styling */
-@media (max-width: 767px) {
-  .navbar-collapse {
-    background-color: black !important; /* black background */
-    width: 100%;                        /* match navbar container width */
-    position: absolute;                  /* make it appear below the navbar */
-    left: 0;                             /* align with navbar start */
-    top: 100%;                           /* just below navbar */
-    padding: 0.5rem 1rem;                /* optional padding */
-    z-index: 20;
-  }
-
-  .navbar-collapse .nav-link {
-    color: gray !important;             /* gray text */
-    text-align: left;                    /* left aligned */
-    padding: 0.5rem 0;                  /* spacing between links */
-  }
-}
-/* Mobile layout for carousel */
-@media (max-width: 767px) {
-  .home-hero-img {
-    height: 100vh; /* full viewport height */
-    object-fit: cover;
-  }
-
-  .carousel-overlay {
-    background: rgba(0, 0, 0, 0.4); /* dark overlay for readability */
-  }
-
-  .hero-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 90%;
-    padding: 0 10px;
-  }
-
-  .hero-title {
-    font-size: 2rem; /* adjust as needed */
-    margin-bottom: 1rem;
-    color: #fff;
-  }
-
-  .food-section {
-    display: flex;
-    flex-direction: column; /* stack line + text + line vertically */
-    align-items: center;
-    margin: 1rem 0;
-  }
-
-  .food-title {
-    font-size: 1.2rem;
-    color: #fff;
-    margin: 0.5rem 0;
-  }
-
-  .line {
-    width: 60%; /* full width line for mobile stacked layout */
-    height: 2px;
-    background: #fff;
-    margin: 0.2rem 0;
-  }
-}
-
-
-
-
-
-
-/* carousel and hero styles are defined in App.css to keep carousel layout
-   centralized. Index.css keeps structural rules only. */
 
