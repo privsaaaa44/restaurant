@@ -208,6 +208,11 @@ img.footerlogo.mt-3 {
   .Row {
     flex-wrap: wrap;
   }
+  
+  .footer-logo {
+
+        margin-bottom: 26px !important;
+    }
 }
 
 /* =================================
@@ -221,6 +226,9 @@ img.footerlogo.mt-3 {
     margin: 0 !important;
     overflow-x: hidden !important;
   }
+  .footer-logo {
+        margin-bottom: 26px !important;
+    }
 
   .container {
     max-width: 100% !important;
@@ -493,7 +501,10 @@ img.footerlogo.mt-3 {
   .hero-title {
     font-size: 2rem !important;
     padding: 0 1rem;
-  }
+  }  .footer-logo {
+        margin-bottom: 26px !important;
+    }
+
 
   .food-title {
     font-size: 1.5rem !important;
@@ -577,6 +588,10 @@ img.footerlogo.mt-3 {
    SMALL MOBILE (max-width: 480px)
    ================================= */
 @media (max-width: 480px) {
+    .footer-logo {
+        margin-bottom: 26px !important;
+    }
+
   /* Critical fixes */
   html, body {
     overflow-x: hidden !important;
@@ -980,6 +995,10 @@ img.footerlogo.mt-3 {
   .hero-title {
     font-size: 1.8rem !important;
   }
+    .footer-logo {
+        margin-bottom: 26px !important;
+    }
+
 
   .re2 {
     font-size: 1.3rem !important;
@@ -1016,6 +1035,10 @@ img.footerlogo.mt-3 {
   .d-none-mobile {
     display: block !important;
   }
+    .footer-logo {
+        margin-bottom: 26px !important;
+    }
+
   
 }
 /* Mobile menu full width */
@@ -1029,6 +1052,10 @@ img.footerlogo.mt-3 {
     background-color: black;
     z-index: 999;
   }
+
+    .footer-logo {
+        margin-bottom: 26px !important;
+    }
 
   .navbar-collapse {
     width: 100% !important;
