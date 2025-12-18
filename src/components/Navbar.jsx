@@ -103,7 +103,7 @@ function AppNavbar() {
           </Navbar.Toggle>
 
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto nav-links text-center text-lg-start">
+            <Nav className="ms-auto nav-links text-center text-lg-start" id="navbartextcenter">
               {[
                 { name: "Home", path: "/Home" },
                 { name: "About", path: "/About" },
