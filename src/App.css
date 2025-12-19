@@ -684,6 +684,12 @@ img.footerlogo.mt-3 {
   svg.newicon {
     margin-left: 0 !important;
   }
+  .booking-popup {
+    text-align: left !important;
+}
+button.formclosepoppingbutton {
+    margin-left: 36.5% !important;
+}
 
   .line {
     display: none;
