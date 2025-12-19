@@ -679,7 +679,7 @@ img.footerlogo.mt-3 {
 
   .position-relative.mt-3,
   .position-relative.mt-3.mx-auto {
-    margin-left: 0 !important;
+    margin-left: 40px !important;
   }
 
   svg.newicon {
