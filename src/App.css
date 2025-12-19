@@ -495,6 +495,7 @@ img.footerlogo.mt-3 {
       min-height: 100vh;
 
   }
+
 }
 
 /* =================================
@@ -749,7 +750,7 @@ img.footerlogo.mt-3 {
   }
 
   form.text-center {
-    padding-top: 0 !important;
+    padding-top: 334px !important;
   }
 
   .re.aboutheading {
