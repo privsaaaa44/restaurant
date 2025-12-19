@@ -1030,7 +1030,7 @@ import AOS from "aos";
     gap: 1rem;
     align-items: stretch;
     width: 100% !important;
-    margin-top: 231px !important; 
+    margin-top: 228px !important; 
     padding: 0 !important;
   }
   }
