@@ -71,6 +71,7 @@ footer {
 
 .p-3 {
   margin-left: 56px;
+
 }
 
 .absoluteimg {
@@ -208,6 +209,11 @@ img.footerlogo.mt-3 {
   .Row {
     flex-wrap: wrap;
   }
+  
+  .footer-logo {
+
+        margin-bottom: 26px !important;
+    }
 }
 
 /* =================================
@@ -221,6 +227,9 @@ img.footerlogo.mt-3 {
     margin: 0 !important;
     overflow-x: hidden !important;
   }
+  .footer-logo {
+        margin-bottom: 26px !important;
+    }
 
   .container {
     max-width: 100% !important;
@@ -483,7 +492,11 @@ img.footerlogo.mt-3 {
   .p-3 {
     margin-left: 0 !important;
     padding: 1rem !important;
+      min-height: 100vh;
   }
+  form.text-center {
+    margin-top: 433px !important;
+}
 }
 
 /* =================================
@@ -493,7 +506,10 @@ img.footerlogo.mt-3 {
   .hero-title {
     font-size: 2rem !important;
     padding: 0 1rem;
-  }
+  }  .footer-logo {
+        margin-bottom: 26px !important;
+    }
+
 
   .food-title {
     font-size: 1.5rem !important;
@@ -577,6 +593,10 @@ img.footerlogo.mt-3 {
    SMALL MOBILE (max-width: 480px)
    ================================= */
 @media (max-width: 480px) {
+    .footer-logo {
+        margin-bottom: 26px !important;
+    }
+
   /* Critical fixes */
   html, body {
     overflow-x: hidden !important;
@@ -717,6 +737,7 @@ img.footerlogo.mt-3 {
     width: 100% !important;
     margin: 0 !important;
     padding: 1rem !important;
+    
   }
 
   section.position-relative.absoluteimg {
@@ -980,6 +1001,10 @@ img.footerlogo.mt-3 {
   .hero-title {
     font-size: 1.8rem !important;
   }
+    .footer-logo {
+        margin-bottom: 26px !important;
+    }
+
 
   .re2 {
     font-size: 1.3rem !important;
@@ -1016,10 +1041,15 @@ img.footerlogo.mt-3 {
   .d-none-mobile {
     display: block !important;
   }
+    .footer-logo {
+        margin-bottom: 26px !important;
+    }
+
   
 }
 /* Mobile menu full width */
 @media (max-width: 768px) {
+  
   #basic-navbar-nav {
     width: 100% !important;
     position: fixed;
@@ -1029,6 +1059,10 @@ img.footerlogo.mt-3 {
     background-color: black;
     z-index: 999;
   }
+
+    .footer-logo {
+        margin-bottom: 26px !important;
+    }
 
   .navbar-collapse {
     width: 100% !important;
