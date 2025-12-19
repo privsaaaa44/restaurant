@@ -232,10 +232,11 @@ const Chef = () => {
                         </div>
                       </section>
                     </div>
-                                <div className="booking-section d-flex justify-content-center align-items-center py-5">
-                                        <div className="booking-card p-3">
+                                <div className="d-flex justify-content-center" style={{ background: "#fff", height: "550px" }}>
+                                        <div className="p-3 " style={{ width: "380px", background: "#E52B33"}}>
                                   <form
-                                  className="text-center booking-form"
+                                  className="text-center"
+                                  style={{ marginRight: "2px", fontSize: "14px" }}
                                   onSubmit={handleSubmit}
                                 >
                                           <h1 className="text-white text-center mt-5" style={{ fontSize: "22px", marginRight: "91px" }}>    Book Your Table
@@ -244,43 +245,47 @@ const Chef = () => {
                                   <input
                                     type="text"
                                     id="nameInput"
-                                    className="text-white p-2 py-2 px-2 mt-2 booking-input"
+                                    className="text-white p-2 py-2 px-2 mt-2"
                                     pattern="[A-Za-z\s]+"
                                     title="Only letters and spaces are allowed"
                                     required
                                     placeholder="Name"
+                                    style={{ width: "280px" }}
                                   />
                     
                                   {/* Email Input */}
                                   <input
                                     type="email"
                                     id="emailInput"
-                                    className="text-white p-2 py-2 px-2 mt-3 booking-input"
+                                    className="text-white p-2 py-2 px-2 mt-3"
                                     title="Please enter a valid email ending with .com"
                                     required
                                     placeholder="Email"
+                                    style={{ width: "280px" }}
                                   />
                     
                                   {/* Phone Input */}
                                   <input
                                     type="tel"
                                     id="phoneInput"
-                                    className="text-white p-2 py-2 px-2 mt-3 booking-input"
+                                    className="text-white p-2 py-2 px-2 mt-3"
                                     pattern="[0-9]{11}"
                                     title="Please enter an 11-digit phone number"
                                     required
                                     placeholder="Phone"
+                                    style={{ width: "280px" }}
                                   />
                     
                                   {/* Check-in Date Picker */}
-                                  <div className="position-relative mt-3 mx-auto input-field-wrapper">
-                                    <div className="d-flex align-items-center position-relative">
+                                  <div className="position-relative mt-3 mx-auto" style={{ width: "280px"}}>
+                                    <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
                                       <DatePicker
                                         selected={startDate}
                                         onChange={(date) => setStartDate(date)}
                                         placeholderText="Check in"
-                                        className="text-white p-2 pe-5 px-2 datepicker-input booking-input"
+                                        className="text-white p-2 pe-5 px-2 datepicker-input"
                                         minDate={new Date()}
+                                        style={{ flex: 1 }}
                                       />
                                       <FaRegCalendarAlt className="newicon"
                                         style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none" }}
@@ -290,8 +295,8 @@ const Chef = () => {
                                   </div>
                     
                                   {/* Time Picker */}
-                                  <div className="position-relative mt-3 input-field-wrapper">
-                                    <div className="d-flex align-items-center position-relative">
+                                  <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
+                                    <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
                                       <DatePicker
                                         selected={startTime}
                                         onChange={(time) => setStartTime(time)}
@@ -301,13 +306,14 @@ const Chef = () => {
                                         timeCaption="Time"
                                         dateFormat="h:mm aa"
                                         placeholderText="Select time"
-                                        className="text-white p-2 pe-5 px-2 datepicker-input booking-input"
+                                        className="text-white p-2 pe-5 px-2 datepicker-input"
                                         minTime={
                                           startDate && startDate.toDateString() === new Date().toDateString()
                                             ? new Date()
                                             : new Date().setHours(9, 0)
                                         }
                                         maxTime={new Date().setHours(22, 0)}
+                                        style={{ flex: 1 }}
                                       />
                                       <FaRegClock className="newicon"
                                         style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none", fontSize: "16px" }}
@@ -317,10 +323,10 @@ const Chef = () => {
                                   </div>
                     
                                   {/* Guests Select */}
-                                  <div className="position-relative mt-3" style={{ width: "100%" }}>
+                                  <div className="position-relative mt-3" style={{ width: "280px", marginLeft: "33px" }}>
                                     <div className="d-flex align-items-center position-relative" style={{ width: "100%" }}>
                                       <select
-                                        className="text-white p-2 px-2 datepicker-input booking-input"
+                                        className="text-white p-2 px-2 datepicker-input"
                                         value={guests}
                                         onChange={(e) => setGuests(e.target.value)}
                                         style={{
@@ -351,7 +357,7 @@ const Chef = () => {
                     
                                         </div>
                                         <div className="miniaboutsection"  data-aos="fade-up"
-                                  data-aos-delay="200"   style={{ backgroundImage: `url(${chef})` }}>
+                                  data-aos-delay="200"   style={{ backgroundImage: `url(${chef})`, marginBottom: "-100px" }}>
                                       <div style={{marginTop: "100px"}} data-aos="fade-up"  data-aos-delay="200">
                                   <h1 className="re aboutheading">About</h1>
                                   <h1 className="re2 welcomeheading">Welcome to <br /> Flavora</h1>
@@ -432,7 +438,6 @@ const Chef = () => {
                                 >
                                   Close
                                 </button>
-                    
                     
                                     </div>
                                   </>
