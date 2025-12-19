@@ -677,8 +677,7 @@ img.footerlogo.mt-3 {
     margin-right: 0 !important;
   }
 
-  .position-relative.mt-3,
-  .position-relative.mt-3.mx-auto {
+  .position-relative.mt-3 {
     margin-left: 11% !important;
   }
 
