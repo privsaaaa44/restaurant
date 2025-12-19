@@ -209,49 +209,45 @@ Book A Table Now</h1>
                         <input
                           type="text"
                           id="nameInput"
-                          className="text-white p-2 py-2 px-2 menusectioninputname reservationinputname"
+                          className="text-white p-2 py-2 px-2 menusectioninputname reservationinputname booking-input"
                           pattern="[A-Za-z\s]+"
                           title="Only letters and spaces are allowed"
                           required
                           placeholder="Name"
-                          style={{ width: "280px" }}
                         />
           
                         {/* Email Input */}
                         <input
                           type="email"
                           id="emailInput"
-                          className="text-white p-2 py-2 px-2 menusectioninputemail reservationinputemail"
+                          className="text-white p-2 py-2 px-2 menusectioninputemail reservationinputemail booking-input"
                           title="Please enter a valid email ending with .com"
                           required
                           placeholder="Email"
-                          style={{ width: "280px" }}
                         />
           
                         {/* Phone Input */}
                         <input
                           type="tel"
                           id="phoneInput"
-                          className="text-white p-2 py-2 px-2 menusectioninputphone reservationinputphone"
+                          className="text-white p-2 py-2 px-2 menusectioninputphone reservationinputphone booking-input"
                           pattern="[0-9]{11}"
                           title="Please enter an 11-digit phone number"
                           required
                           placeholder="Phone"
-                          style={{ width: "280px" }}
                         />
                       </div>
           
                       <div className='inputtimedateguestpicker reservationinputtimedateguestpicker' style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap", marginBottom: "20px" }}>
                         {/* Check-in Date Picker */}
-                        <div className="position-relative menusectioninputdatediv reservationinputdatediv" style={{ width: "280px" }}>
-                          <div className="d-flex align-items-center position-relative menusectioninputdatedivsecond reservationinputdatedivsecond" style={{ width: "100%" }}>
+                        <div className="position-relative menusectioninputdatediv reservationinputdatediv input-field-wrapper">
+                          <div className="d-flex align-items-center position-relative menusectioninputdatedivsecond reservationinputdatedivsecond">
                             <DatePicker
                               selected={startDate}
                               onChange={(date) => setStartDate(date)}
                               placeholderText="Check in"
-                              className="text-white p-2 pe-5 px-2 datepicker-input menusectioninputdate reservationinputdate"
+                              className="text-white p-2 pe-5 px-2 datepicker-input menusectioninputdate reservationinputdate booking-input"
                               minDate={new Date()}
-                              style={{ flex: 1, width: "100%" }}
                             />
                             <FaRegCalendarAlt className="newicon menusectioninputdateicon reservationinputdateicon"
                               style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none" }}
@@ -261,8 +257,8 @@ Book A Table Now</h1>
                         </div>
           
                         {/* Time Picker */}
-                        <div className="position-relative menusectioninputtimediv reservationinputtimediv" style={{ width: "280px" }}>
-                          <div className="d-flex align-items-center position-relative menusectioninputtimedivsecond reservationinputtimedivsecond" style={{ width: "100%" }}>
+                        <div className="position-relative menusectioninputtimediv reservationinputtimediv input-field-wrapper">
+                          <div className="d-flex align-items-center position-relative menusectioninputtimedivsecond reservationinputtimedivsecond">
                             <DatePicker
                               selected={startTime}
                               onChange={(time) => setStartTime(time)}
@@ -272,14 +268,13 @@ Book A Table Now</h1>
                               timeCaption="Time"
                               dateFormat="h:mm aa"
                               placeholderText="Select time"
-                              className="text-white p-2 pe-5 px-2 datepicker-input menusectioninputtime reservationinputtime"
+                              className="text-white p-2 pe-5 px-2 datepicker-input menusectioninputtime reservationinputtime booking-input"
                               minTime={
                                 startDate && startDate.toDateString() === new Date().toDateString()
                                   ? new Date()
                                   : new Date().setHours(9, 0)
                               }
                               maxTime={new Date().setHours(22, 0)}
-                              style={{ flex: 1, width: "100%" }}
                             />
                             <FaRegClock className="newicon menusectioninputtimeicon reservationinputtimeicon"
                               style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none", fontSize: "16px" }}
@@ -289,10 +284,10 @@ Book A Table Now</h1>
                         </div>
           
                         {/* Guests Select */}
-                        <div className="position-relative menusectioninputguestdiv reservationinputguestdiv" style={{ width: "280px" }}>
-                          <div className="d-flex align-items-center position-relative menusectioninputguestdivsecond reservationinputguestdivsecond" style={{ width: "100%" }}>
+                        <div className="position-relative menusectioninputguestdiv reservationinputguestdiv input-field-wrapper">
+                          <div className="d-flex align-items-center position-relative menusectioninputguestdivsecond reservationinputguestdivsecond">
                             <select
-                              className="text-white p-2 px-2 datepicker-input menusectioninputguest reservationinputguest"
+                              className="text-white p-2 px-2 datepicker-input menusectioninputguest reservationinputguest booking-input"
                               value={guests}
                               onChange={(e) => setGuests(e.target.value)}
                               style={{

@@ -493,10 +493,8 @@ img.footerlogo.mt-3 {
     margin-left: 0 !important;
     padding: 1rem !important;
       min-height: 100vh;
+
   }
-  form.text-center {
-    margin-top: 433px !important;
-}
 }
 
 /* =================================
@@ -709,7 +707,7 @@ img.footerlogo.mt-3 {
   .p-3.menusectionone {
     margin-top: 0 !important;
     padding-top: 0 !important;
-    min-height: auto !important;
+    min-height: 100vh !important;
   }
 
   form.text-center.menusectionform {

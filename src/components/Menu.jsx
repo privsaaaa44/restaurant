@@ -460,7 +460,7 @@ const Menu = () => {
       </section>
 
       {/* BOOKING FORM */}
-      <div className="p-3 menusectionone" style={{ width: "100%", background: "#E52B33", display: "flex", justifyContent: "center", padding: "60px 20px" }}>
+      <div className="p-3 menusectionone booking-section" style={{ padding: "60px 20px" }}>
         <div style={{ maxWidth: "1200px", width: "100%" }}>
           <form 
             className="text-center menusectionform"
@@ -476,49 +476,45 @@ const Menu = () => {
               <input
                 type="text"
                 id="nameInput"
-                className="text-white p-2 py-2 px-2 menusectioninputname"
+                className="text-white p-2 py-2 px-2 menusectioninputname booking-input"
                 pattern="[A-Za-z\s]+"
                 title="Only letters and spaces are allowed"
                 required
                 placeholder="Name"
-                style={{ width: "280px" }}
               />
 
               {/* Email Input */}
               <input
                 type="email"
                 id="emailInput"
-                className="text-white p-2 py-2 px-2 menusectioninputemail"
+                className="text-white p-2 py-2 px-2 menusectioninputemail booking-input"
                 title="Please enter a valid email ending with .com"
                 required
                 placeholder="Email"
-                style={{ width: "280px" }}
               />
 
               {/* Phone Input */}
               <input
                 type="tel"
                 id="phoneInput"
-                className="text-white p-2 py-2 px-2 menusectioninputphone"
+                className="text-white p-2 py-2 px-2 menusectioninputphone booking-input"
                 pattern="[0-9]{11}"
                 title="Please enter an 11-digit phone number"
                 required
                 placeholder="Phone"
-                style={{ width: "280px" }}
               />
             </div>
 
             <div className='inputtimedateguestpicker' style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap", marginBottom: "20px" }}>
               {/* Check-in Date Picker */}
-              <div className="position-relative menusectioninputdatediv" style={{ width: "280px" }}>
-                <div className="d-flex align-items-center position-relative menusectioninputdatedivsecond" style={{ width: "100%" }}>
+              <div className="position-relative menusectioninputdatediv input-field-wrapper">
+                <div className="d-flex align-items-center position-relative menusectioninputdatedivsecond">
                   <DatePicker
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}
                     placeholderText="Check in"
-                    className="text-white p-2 pe-5 px-2 datepicker-input menusectioninputdate"
+                    className="text-white p-2 pe-5 px-2 datepicker-input menusectioninputdate booking-input"
                     minDate={new Date()}
-                    style={{ flex: 1, width: "100%" }}
                   />
                   <FaRegCalendarAlt className="newicon menusectioninputdateicon"
                     style={{ position: "absolute", right: "10px", color: "white", pointerEvents: "none" }}
@@ -528,8 +524,8 @@ const Menu = () => {
               </div>
 
               {/* Time Picker */}
-              <div className="position-relative menusectioninputtimediv" style={{ width: "280px" }}>
-                <div className="d-flex align-items-center position-relative menusectioninputtimedivsecond" style={{ width: "100%" }}>
+              <div className="position-relative menusectioninputtimediv input-field-wrapper">
+                <div className="d-flex align-items-center position-relative menusectioninputtimedivsecond">
                   <DatePicker
                     selected={startTime}
                     onChange={(time) => setStartTime(time)}
@@ -556,10 +552,10 @@ const Menu = () => {
               </div>
 
               {/* Guests Select */}
-              <div className="position-relative menusectioninputguestdiv" style={{ width: "280px" }}>
-                <div className="d-flex align-items-center position-relative menusectioninputguestdivsecond" style={{ width: "100%" }}>
+              <div className="position-relative menusectioninputguestdiv input-field-wrapper">
+                <div className="d-flex align-items-center position-relative menusectioninputguestdivsecond">
                   <select
-                    className="text-white p-2 px-2 datepicker-input menusectioninputguest"
+                    className="text-white p-2 px-2 datepicker-input menusectioninputguest booking-input"
                     value={guests}
                     onChange={(e) => setGuests(e.target.value)}
                     style={{
