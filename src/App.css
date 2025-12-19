@@ -371,14 +371,7 @@ img.footerlogo.mt-3 {
   }
 
   /* Sections */
-  .d-flex.justify-content-center {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: stretch;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+ 
 
   section.position-relative.absoluteimg,
   section.position-relative.absoluteimg.newone {
@@ -492,7 +485,7 @@ img.footerlogo.mt-3 {
   .p-3 {
     margin-left: 0 !important;
     padding: 1rem !important;
-      min-height: 100vh;
+      min-height: 65vh;
 
   }
 
@@ -749,9 +742,7 @@ img.footerlogo.mt-3 {
     margin-top: 1rem !important;
   }
 
-  form.text-center {
-    padding-top: 334px !important;
-  }
+  
 
   .re.aboutheading {
     margin-bottom: 1rem !important;

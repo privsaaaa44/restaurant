@@ -359,9 +359,9 @@ import AOS from "aos";
                         <div className="carousel-overlay"></div>
                   <Carousel.Caption className="hero-caption">
               <div data-aos="fade-up">
-                <h1 className="hero-title animate-slide-in">Cooking Since</h1>
+                <h1 className="hero-title animate-slide-in cookingsince">Cooking Since</h1>
                 <div className="food-section text-center my-4">
-                  <div className="d-flex align-items-center justify-content-center">
+                  <div className="d-flex align-items-center justify-content-center food">
                     <div className="line"></div>
                     <span className="px-3 food-title">1950</span>
                     <div className="line"></div>
@@ -382,7 +382,7 @@ import AOS from "aos";
               <div data-aos="fade-up">
                 <h1 className="hero-title animate-slide-in">Best Quality</h1>
                 <div className="food-section text-center my-4">
-                  <div className="d-flex align-items-center justify-content-center">
+                  <div className="d-flex align-items-center justify-content-center food">
                     <div className="line"></div>
                     <span className="px-3 food-title">FOOD</span>
                     <div className="line"></div>
@@ -396,7 +396,7 @@ import AOS from "aos";
                   </Carousel>
             </section>
             </div>
-                  <div className="d-flex justify-content-center" style={{ background: "#fff", height: "550px" }}>
+                  <div className="d-flex justify-content-center allform" style={{ background: "#fff", height: "550px" }}>
                     <div className="p-3 " style={{ width: "380px", background: "#E52B33"}}>
               <form
               className="text-center"
@@ -1022,8 +1022,22 @@ import AOS from "aos";
                   </div>
                   </section>
                 </div>
+          <style>
+  {`
+  @media (max-width: 768px){
+   .d-flex.justify-content-center.allform {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    width: 100% !important;
+    margin-top: 231px !important; 
+    padding: 0 !important;
+  }
+  }
+  `}
+</style>  
                 </>
-                
+              
               );
             };
 
