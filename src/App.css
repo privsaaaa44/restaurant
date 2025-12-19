@@ -71,6 +71,7 @@ footer {
 
 .p-3 {
   margin-left: 56px;
+
 }
 
 .absoluteimg {
@@ -491,7 +492,11 @@ img.footerlogo.mt-3 {
   .p-3 {
     margin-left: 0 !important;
     padding: 1rem !important;
+      min-height: 100vh;
   }
+  form.text-center {
+    margin-top: 433px !important;
+}
 }
 
 /* =================================
@@ -732,6 +737,7 @@ img.footerlogo.mt-3 {
     width: 100% !important;
     margin: 0 !important;
     padding: 1rem !important;
+    
   }
 
   section.position-relative.absoluteimg {
@@ -1043,6 +1049,7 @@ img.footerlogo.mt-3 {
 }
 /* Mobile menu full width */
 @media (max-width: 768px) {
+  
   #basic-navbar-nav {
     width: 100% !important;
     position: fixed;
