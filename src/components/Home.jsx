@@ -327,7 +327,7 @@ import AOS from "aos";
               setBookingDetails(booking);
 
               // Save booking to localStorage
-              localStorage.setItem("lastBooking", JSON.stringify(booking));
+              localStorage.setItem("lastBooking", JSON.stringify(booking));                                 
               console.log("Booking saved:", booking); // Debug
 
               // Show popup
@@ -1034,6 +1034,9 @@ import AOS from "aos";
     padding: 0 !important;
   }
   }
+  p.text-justify.mt-2 {
+    margin-bottom: 34px !important;
+}
   `}
 </style>  
                 </>
