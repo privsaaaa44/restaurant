@@ -1120,7 +1120,54 @@ import AOS from "aos";
     padding: 0 10px;
   }
 }
-  
+    /* Carousel caption positioning for mobile */
+  @media (max-width: 768px) {
+    .hero-caption {
+      bottom: 25% !important;
+      top: auto !important;
+    }
+    
+    .hero-title {
+      font-size: 43px !important;
+    }
+    
+    .food-title {
+      font-size: 18px !important;
+    }
+
+    /* Remove white gap above form section */
+    .d-flex.justify-content-center.allform {
+      margin-top: 0 !important;
+    }
+
+    #home-banner {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-caption {
+      bottom: 25% !important;
+    }
+    
+    .hero-title {
+      font-size: 43px !important;
+    }
+    
+    .food-title {
+      font-size: 18px !important;
+    }
+  }
+
+  @media (max-width: 768px){
+   .d-flex.justify-content-center.allform {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  }  
   `}
 </style>  
                 </>
