@@ -113,6 +113,9 @@
             {/* Mobile left-aligned styling */}
             <style jsx>{`
               @media (max-width: 768px) {
+                    p.text-justify.mt-2 {
+    margin-bottom: 34px !important;
+}
                 .row3 {
                   flex-direction: column !important;
                   align-items: flex-start !important;

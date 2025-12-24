@@ -1034,8 +1034,90 @@ import AOS from "aos";
     padding: 0 !important;
   }
   }
-  p.text-justify.mt-2 {
-    margin-bottom: 34px !important;
+/* Add these styles to your CSS file or in a <style> tag */
+
+/* Form container responsive styling */
+@media (max-width: 768px) {
+  .d-flex.justify-content-center.allform {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    height: auto !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Form wrapper - full width red background */
+  .d-flex.justify-content-center.allform .p-3 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 30px 20px !important;
+  }
+
+  /* Form itself should be centered */
+  .d-flex.justify-content-center.allform form {
+    max-width: 380px;
+    margin: 0 auto !important;
+  }
+
+  /* Heading alignment */
+  .d-flex.justify-content-center.allform h1 {
+    margin-right: 0 !important;
+    text-align: center;
+    margin-left: 0 !important;
+  }
+
+  /* All form inputs full width within form container */
+  .d-flex.justify-content-center.allform input {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Date picker containers */
+  .d-flex.justify-content-center.allform .position-relative {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .d-flex.justify-content-center.allform .position-relative .d-flex {
+    width: 100% !important;
+  }
+
+  .d-flex.justify-content-center.allform .datepicker-input {
+    width: 100% !important;
+  }
+
+  /* Select dropdown */
+  .d-flex.justify-content-center.allform select.datepicker-input {
+    width: 100% !important;
+  }
+
+  /* Submit button */
+  .d-flex.justify-content-center.allform button#sumitbutton {
+    width: 100% !important;
+  }
+
+  /* Mini about section - hide on mobile or stack below */
+  .miniaboutsection {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 30px 20px !important;
+    margin-top: 0 !important;
+  }
+
+  .pe-5 {
+    padding-right: 13rem !important;
+}
+}
+
+@media (max-width: 480px) {
+  .d-flex.justify-content-center.allform form {
+    max-width: 100%;
+    padding: 0 10px;
+  }
 }
   `}
 </style>  
