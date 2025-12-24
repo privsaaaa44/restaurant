@@ -140,36 +140,52 @@ function AppNavbar() {
       <style>
         {`
         a.mx-3.nav-links.text-danger.nav-link {
-   color: #E52B33 !important;
-}
+          color: #E52B33 !important;
+        }
 
-a.mx-3.nav-links.text-danger.nav-link {
-    text-decoration: none !important;
-}
-          @media (max-width: 767px) {
-            .navbar1 {
-              width: 100% !important;
-              left: 0 !important;
-              transform: none !important;
-              top: 0 !important;
-              box-shadow: none !important;
-              background-color: ${scrolled ? "white" : "black"} !important;
-            }
-            .navbar-container {
-              max-width: 100% !important;
-              padding-left: 0 !important;
-              padding-right: 0 !important;
-            }
-            div#basic-navbar-nav {
-              background-color: ${scrolled ? "white" : "black"} !important;
-            }
-            a.mx-3.nav-links.text-dark.nav-link {
-              color: ${scrolled ? "black" : "gray"} !important;
-            }
-            .nav-links a {
-              color: white !important;
-            }
+        a.mx-3.nav-links.text-danger.nav-link {
+          text-decoration: none !important;
+        }
+        
+        @media (max-width: 767px) {
+          .navbar1 {
+            width: 100% !important;
+            left: 0 !important;
+            transform: none !important;
+            top: 0 !important;
+            box-shadow: none !important;
+            background-color: ${scrolled ? "white" : "black"} !important;
+            z-index: 10 !important;
           }
+          
+          .navbar-container {
+            max-width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
+          
+          div#basic-navbar-nav {
+            background-color: ${scrolled ? "white" : "black"} !important;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+          }
+          
+          a.mx-3.nav-links.text-dark.nav-link {
+            color: ${scrolled ? "black" : "gray"} !important;
+          }
+          
+          .nav-links a {
+            color: white !important;
+          }
+          
+          .contactsimple {
+            z-index: 5 !important;
+          }
+        }
         `}
       </style>
     </>

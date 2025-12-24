@@ -1066,6 +1066,7 @@ import AOS from "aos";
     margin-right: 0 !important;
     text-align: center;
     margin-left: 0 !important;
+    text-align: left;
   }
 
   /* All form inputs full width within form container */
@@ -1119,6 +1120,7 @@ import AOS from "aos";
     padding: 0 10px;
   }
 }
+  
   `}
 </style>  
                 </>
