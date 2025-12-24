@@ -1066,7 +1066,7 @@ import AOS from "aos";
     margin-right: 0 !important;
     text-align: center;
     margin-left: 0 !important;
-    text-align: left;
+    text-align: left !important;
   }
 
   /* All form inputs full width within form container */
