@@ -1122,6 +1122,9 @@ import AOS from "aos";
       
         text-align: left !important;
         margin-left: 22% !important;
+    }    p.abcf {
+             text-align: left !important;
+        margin-left: 22% !important;
     }
 }
     /* Carousel caption positioning for mobile */
@@ -1153,7 +1156,9 @@ import AOS from "aos";
     .hero-caption {
       bottom: 25% !important;
     }
-    
+    	    .menu-item.p-2.Col.aos-init.aos-animate {
+padding: 11% !important;
+}
     .hero-title {
       font-size: 43px !important;
     }
