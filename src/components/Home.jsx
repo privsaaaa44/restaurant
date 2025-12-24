@@ -1118,7 +1118,11 @@ import AOS from "aos";
   .d-flex.justify-content-center.allform form {
     max-width: 100%;
     padding: 0 10px;
-  }
+  }    h3.jhshfbg {
+      
+        text-align: left !important;
+        margin-left: 22% !important;
+    }
 }
     /* Carousel caption positioning for mobile */
   @media (max-width: 768px) {

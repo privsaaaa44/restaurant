@@ -485,7 +485,7 @@ img.footerlogo.mt-3 {
   .p-3 {
     margin-left: 0 !important;
     padding: 1rem !important;
-      min-height: 62vh;
+      min-height: 60vh;
 
   }
   @media (max-width: 768px){
