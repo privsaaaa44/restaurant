@@ -1369,10 +1369,7 @@ section.position-relative.absoluteimg.newone {
     padding-left: 18% !important;
     padding-right: 17% !important;
 }
-    .d-flex.justify-content-between.footer-bottom {
-    margin-top: -24% !important;
-    margin-bottom: -8% !important;
-}
+ 
   .oursecretssection .row2 {
     flex-direction: column;
     align-items: center;

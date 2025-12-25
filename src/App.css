@@ -731,7 +731,10 @@ img.footerlogo.mt-3 {
 @media (max-width: 480px) {
     .footer-logo {
         margin-bottom: 26px !important;
-    }
+    }   .d-flex.justify-content-between.footer-bottom {
+    margin-top: -24% !important;
+    margin-bottom: -8% !important;
+}
 
   /* Critical fixes */
   html, body {
