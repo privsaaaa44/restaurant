@@ -740,7 +740,7 @@ import AOS from "aos";
                 const mapping = [
                   { title: "Dessert", data: dessertItems },
                   { title: "Wine", data: wineItems },
-                  { title: "Drink & Tea", data: drinkTeaItems }
+                  { title: "Drink", data: drinkTeaItems }
                 ];
 
                 const { title, data } = mapping[colIndex];

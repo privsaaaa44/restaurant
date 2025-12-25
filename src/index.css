@@ -377,6 +377,9 @@ h1.text-white.text-center.mt-5.menusectionh1 {
     .booking-popup {
     text-align: left !important;
 }
+h1.hero-title.animate-slide-in {
+  margin-bottom: 93px !important;
+}
 button.formclosepoppingbutton {
     margin-left: 102px !important;
 } 

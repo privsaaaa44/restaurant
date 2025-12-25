@@ -24,7 +24,6 @@ img {
 }
 
 h1.hero-title.animate-slide-in {
-  margin-bottom: -4px;
   font-family: 'Dancing Script', cursive !important;
   font-size: 136.6px;
   font-weight: 400 !important;
@@ -622,7 +621,9 @@ img.footerlogo.mt-3 {
     max-width: 100%;
     padding: 0 10px;
   }
-  
+  .p-3 {
+    min-height: 65vh !important;
+  }
   .miniaboutsection .welcomeheading {
     font-size: 20px !important;
   }
