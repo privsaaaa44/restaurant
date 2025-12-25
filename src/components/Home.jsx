@@ -859,8 +859,8 @@ import AOS from "aos";
                         {/* Inner */}
                         <div className="carousel-inner">
                           {/* Single item */}
-                          <div className="carousel-item active">
-                            <p className="lead font-italic mx-4 mx-md-5 text-justify">
+                          <div className="carousel-item active newwaydiv">
+                            <p className="lead font-italic mx-4 mx-md-5 text-justify newway">
                           Far far away, behind the word mountains, far from the countries
                           <br /> Vokalia and Consonantia, there live the blind texts.
                             </p>
@@ -879,7 +879,7 @@ import AOS from "aos";
 
                           {/* Single item */}
                           <div className="carousel-item">
-                              <p className="lead font-italic mx-4 mx-md-5 text-justify">
+                              <p className="lead font-italic mx-4 mx-md-5 text-justify newway">
                           Far far away, behind the word mountains, far from the countries
                           <br /> Vokalia and Consonantia, there live the blind texts.
                             </p>
@@ -898,7 +898,7 @@ import AOS from "aos";
 
                           {/* Single item */}
                           <div className="carousel-item">
-                          <p className="lead font-italic mx-4 mx-md-5 text-justify">
+                          <p className="lead font-italic mx-4 mx-md-5 text-justify newway">
                           Far far away, behind the word mountains, far from the countries
                           <br /> Vokalia and Consonantia, there live the blind texts.
                             </p>
@@ -1363,11 +1363,15 @@ padding: 11% !important;
 section.position-relative.absoluteimg.newone {
     height: 80vh !important;
 }
-    p.lead.font-italic.mx-4.mx-md-5.text-justify {
+    p.lead.font-italic.mx-4.mx-md-5.text-justify.newway {
     /* margin-left: 35px !important; */
     /* margin-right: 10px !important; */
     padding-left: 18% !important;
     padding-right: 17% !important;
+}
+    .d-flex.justify-content-between.footer-bottom {
+    margin-top: -24% !important;
+    margin-bottom: -8% !important;
 }
   .oursecretssection .row2 {
     flex-direction: column;
