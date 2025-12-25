@@ -1363,6 +1363,12 @@ padding: 11% !important;
 section.position-relative.absoluteimg.newone {
     height: 80vh !important;
 }
+    p.lead.font-italic.mx-4.mx-md-5.text-justify {
+    /* margin-left: 35px !important; */
+    /* margin-right: 10px !important; */
+    padding-left: 18% !important;
+    padding-right: 17% !important;
+}
   .oursecretssection .row2 {
     flex-direction: column;
     align-items: center;
