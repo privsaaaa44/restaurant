@@ -1063,7 +1063,7 @@ button.formclosepoppingbutton {
   /* About page */
   section.firstsection {
     height: auto !important;
-    min-height: 50vh !important;
+    min-height: 60vh !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 2rem 1rem !important;
