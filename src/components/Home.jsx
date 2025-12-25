@@ -1369,7 +1369,7 @@ section.position-relative.absoluteimg.newone {
     padding-left: 18% !important;
     padding-right: 17% !important;
 }
- 
+    
   .oursecretssection .row2 {
     flex-direction: column;
     align-items: center;
@@ -1378,7 +1378,7 @@ section.position-relative.absoluteimg.newone {
 
   .i1img, .i2img {
     width: 100% !important;
-    height: 250px !important;
+    height: 100vh !important;
     background-size: cover !important;
     background-position: center !important;
     margin: 0 !important;
@@ -1418,7 +1418,7 @@ section.position-relative.absoluteimg.newone {
 /* Small mobile styles (max-width: 480px) */
 @media (max-width: 480px) {
   .i1img, .i2img {
-    height: 200px !important;
+    height: 100vh !important;
   }
 
   .icontent {
@@ -1449,7 +1449,7 @@ section.position-relative.absoluteimg.newone {
 /* Extra small mobile (max-width: 360px) */
 @media (max-width: 360px) {
   .i1img, .i2img {
-    height: 180px !important;
+    height: 100vh !important;
   }
 
   .perfectingredientsheading {
@@ -1459,8 +1459,371 @@ section.position-relative.absoluteimg.newone {
   .secretpara {
     font-size: 12px !important;
   }
+}/* Our Secrets Section - Responsive Styles */
+
+/* Tablet styles (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .oursecretssection .row2 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .i1img, .i2img {
+    width: 50% !important;
+    height: 100vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .icontent {
+    width: 100% !important;
+    max-width: 700px !important;
+    margin: 30px auto !important;
+    padding: 0 30px !important;
+  }
+
+  .thisisoursecretsheading {
+    font-size: 18px !important;
+  }
+
+  .perfectingredientsheading {
+    font-size: 34px !important;
+  }
+
+  .secretpara {
+    width: 100% !important;
+    font-size: 15px !important;
+  }
 }
-  `}
+
+/* Mobile styles (max-width: 768px) */
+@media (max-width: 768px) {
+  .oursecretssection {
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  .oursecretssection .row2 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Chef image LEFT - exactly 50% width, tall height */
+  .i1img {
+    width: 50% !important;
+    height: 400px !important;
+    background-size: cover !important;
+    background-position: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    order: 1 !important;
+    flex: 0 0 50% !important;
+  }
+
+  /* Restaurant image RIGHT - exactly 50% width, tall height */
+  .i2img {
+    width: 50% !important;
+    height: 400px !important;
+    background-size: cover !important;
+    background-position: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    order: 2 !important;
+    flex: 0 0 50% !important;
+  }
+
+  /* Content below - full width 100% */
+  .icontent {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 30px 20px !important;
+    order: 3 !important;
+    background: white !important;
+    flex: 0 0 100% !important;
+  }
+
+  .thisisoursecretsheading {
+    font-size: 14px !important;
+    text-align: left !important;
+    margin-bottom: 10px !important;
+    color: #e52b34 !important;
+  }
+
+  .perfectingredientsheading {
+    font-size: 28px !important;
+    text-align: left !important;
+    margin-bottom: 15px !important;
+    color: #000 !important;
+  }
+
+  .secretpara {
+    width: 100% !important;
+    font-size: 14px !important;
+    text-align: left !important;
+    padding: 0 !important;
+    line-height: 1.7 !important;
+    margin-bottom: 20px !important;
+    color: #666 !important;
+  }
+
+  .secretbutton {
+    display: inline-block !important;
+    margin: 0 !important;
+    width: auto !important;
+    padding: 10px 25px !important;
+    background: transparent !important;
+    border: 1px solid #e52b34 !important;
+    color: #e52b34 !important;
+  }
+}
+
+/* Small mobile styles (max-width: 480px) */
+@media (max-width: 480px) {
+  .oursecretssection {
+    padding: 30px 0 !important;
+  }
+
+  .i1img, .i2img {
+    height: 100vh !important;
+  }
+
+  .icontent {
+    padding: 25px 15px !important;
+  }
+
+  .thisisoursecretsheading {
+    font-size: 13px !important;
+  }
+
+  .perfectingredientsheading {
+    font-size: 24px !important;
+  }
+
+  .secretpara {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  .secretbutton {
+    font-size: 14px !important;
+    padding: 8px 20px !important;
+  }
+}
+
+/* Extra small mobile (max-width: 360px) */
+@media (max-width: 360px) {
+  .i1img, .i2img {
+    height: 100vh !important;
+  }
+
+  .icontent {
+    padding: 20px 12px !important;
+  }
+
+  .thisisoursecretsheading {
+    font-size: 12px !important;
+  }
+
+  .perfectingredientsheading {
+    font-size: 22px !important;
+  }
+
+  .secretpara {
+    font-size: 12px !important;
+  }
+
+  .secretbutton {
+    font-size: 13px !important;
+    padding: 7px 18px !important;
+  }
+}
+/* Our Secrets Section - Responsive Styles */
+
+/* Tablet styles (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .oursecretssection .row2 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .i1img, .i2img {
+    width: 50% !important;
+    height:100vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .icontent {
+    width: 100% !important;
+    max-width: 700px !important;
+    margin: 30px auto !important;
+    padding: 0 30px !important;
+  }
+
+  .thisisoursecretsheading {
+    font-size: 18px !important;
+  }
+
+  .perfectingredientsheading {
+    font-size: 34px !important;
+  }
+
+  .secretpara {
+    width: 100% !important;
+    font-size: 15px !important;
+  }
+}
+
+/* Mobile styles (max-width: 768px) */
+@media (max-width: 768px) {
+  .oursecretssection {
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  .oursecretssection .row2 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Chef image LEFT - exactly 50% width, tall height */
+  .i1img {
+    width: 50% !important;
+    height: 100vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    order: 1 !important;
+    flex: 0 0 50% !important;
+  }
+
+  /* Restaurant image RIGHT - exactly 50% width, tall height */
+  .i2img {
+    width: 50% !important;
+    height: 400px !important;
+    background-size: cover !important;
+    background-position: center !important;
+    margin: 0 !important;
+    margin-left: -10% !important;
+    padding: 0 !important;
+    order: 2 !important;
+    flex: 0 0 50% !important;
+  }
+
+  /* Content below - full width 100% */
+  .icontent {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 30px 20px !important;
+    order: 3 !important;
+    background: white !important;
+    flex: 0 0 100% !important;
+  }
+
+  .thisisoursecretsheading {
+    font-size: 14px !important;
+    text-align: left !important;
+    margin-bottom: 10px !important;
+    color: #e52b34 !important;
+  }
+
+  .perfectingredientsheading {
+    font-size: 28px !important;
+    text-align: left !important;
+    margin-bottom: 15px !important;
+    color: #000 !important;
+  }
+
+  .secretpara {
+    width: 100% !important;
+    font-size: 14px !important;
+    text-align: left !important;
+    padding: 0 !important;
+    line-height: 1.7 !important;
+    margin-bottom: 20px !important;
+    color: #666 !important;
+  }
+
+  .secretbutton {
+    display: inline-block !important;
+    margin: 0 !important;
+    width: auto !important;
+    padding: 10px 25px !important;
+    background: transparent !important;
+    border: 1px solid #e52b34 !important;
+    color: #e52b34 !important;
+  }
+}
+
+/* Small mobile styles (max-width: 480px) */
+@media (max-width: 480px) {
+  .oursecretssection {
+    padding: 30px 0 !important;
+  }
+
+  .i1img, .i2img {
+    height: 100vh!important;
+  }
+
+  .icontent {
+    padding: 25px 15px !important;
+  }
+
+  .thisisoursecretsheading {
+    font-size: 13px !important;
+  }
+
+  .perfectingredientsheading {
+    font-size: 24px !important;
+  }
+
+  .secretpara {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  .secretbutton {
+    font-size: 14px !important;
+    padding: 8px 20px !important;
+  }
+}
+
+/* Extra small mobile (max-width: 360px) */
+@media (max-width: 360px) {
+  .i1img, .i2img {
+    height: 100vh !important;
+  }
+
+  .icontent {
+    padding: 20px 12px !important;
+  }
+
+  .thisisoursecretsheading {
+    font-size: 12px !important;
+  }
+
+  .perfectingredientsheading {
+    font-size: 22px !important;
+  }
+
+  .secretpara {
+    font-size: 12px !important;
+  }
+
+  .secretbutton {
+    font-size: 13px !important;
+    padding: 7px 18px !important;
+  }
+}  `}
 </style>  
                 </>
               
