@@ -719,7 +719,7 @@ padding: 11% !important;
 section.position-relative.absoluteimg.newone {
     height: 80vh !important;
 }
-    p.lead.font-italic.mx-4.mx-md-5.text-justify.newway {
+    p.lead.font-italic.mx-4.mx-md-5.text-justify {
     /* margin-left: 35px !important; */
     /* margin-right: 10px !important; */
     padding-left: 18% !important;
