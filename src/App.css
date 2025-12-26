@@ -884,7 +884,7 @@ button.formclosepoppingbutton {
   }
 
   section.position-relative.absoluteimg {
-    margin-top: 2rem !important;
+    margin-top: 5% !important;
     height: auto !important;
     min-height: 300px !important;
   }

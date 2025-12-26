@@ -1033,6 +1033,7 @@ import AOS from "aos";
     margin-top: 228px !important; 
     padding: 0 !important;
   }
+    
   }
 /* Add these styles to your CSS file or in a <style> tag */
 

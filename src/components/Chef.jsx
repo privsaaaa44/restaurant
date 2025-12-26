@@ -442,27 +442,114 @@ const Chef = () => {
                                     </div>
                                   </>
                                 )}
-<style>
-  {`
- @media (width: 390px) { 
- .d-flex.justify-content-center {
-    /* height: 171px !important; */
-    margin-top: 218px !important;
+
+
+
+
+
+   <style>
+    
+    {`/* Extra small mobile (max-width: 360px) */
+@media (max-width: 360px) {
+  .i1img, .i2img {
+    height: 100vh !important;
+  }
+
+  .icontent {
+    padding: 20px 12px !important;
+  }
+
+  .thisisoursecretsheading {
+    font-size: 12px !important;
+  }
+
+  .perfectingredientsheading {
+    font-size: 22px !important;
+  }
+
+  .secretpara {
+    font-size: 12px !important;
+  }
+
+  .secretbutton {
+    font-size: 13px !important;
+    padding: 7px 18px !important;
+  }
 }
-    form.text-center {
-        /* margin-bottom: 57px !important; */
-        margin-top: -417px !important;
-    }
-    .p-3 {
-        min-height: 60vh;
-         }
-footer {
-    margin-top: 247px !important;
+
+/* Responsive styles for Book Your Table form and miniaboutsection */
+@media (max-width: 768px) {
+  /* Main container - stack vertically */
+  .d-flex.justify-content-center[style*="height: 550px"] {
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 0 !important;
+  }
+
+  /* Red form section - full width on mobile */
+  .d-flex.justify-content-center[style*="height: 550px"] > .p-3 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 30px 20px !important;
+  }
+
+  /* Form itself centered */
+  .d-flex.justify-content-center[style*="height: 550px"] form {
+    max-width: 380px;
+    margin: 0 auto !important;
+  }
+
+  /* Miniaboutsection - full width below form */
+  .miniaboutsection {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 40px 20px !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .miniaboutsection > div {
+    margin-top: 0 !important;
+  }
+
+  .miniaboutsection .aboutheading {
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+
+  .miniaboutsection .welcomeheading {
+    font-size: 28px !important;
+    text-align: left !important;
+    line-height: 1.3 !important;
+  }
+
+  .miniaboutsection .aboutpara {
+    font-size: 14px !important;
+    text-align: center !important;
+    line-height: 1.6 !important;
+    margin-top: 15px !important;
+  }
 }
- }
-  `}
-</style>
-  </>
+
+@media (max-width: 480px) {
+  .miniaboutsection {
+    padding: 30px 15px !important;
+  }
+
+  .miniaboutsection .aboutheading {
+    font-size: 13px !important;
+  }
+
+  .miniaboutsection .welcomeheading {
+    font-size: 24px !important;
+  }
+
+  .miniaboutsection .aboutpara {
+    font-size: 13px !important;
+  }
+}  `}</style>    </>
 
 )
 }

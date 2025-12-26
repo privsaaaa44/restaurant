@@ -39,7 +39,6 @@ const handleInputChange = (e) => {
     [id.replace('contact', '').toLowerCase()]: value
   }));
   
-  // Error صاف کریں جب user type کرے
   setErrors(prev => ({
     ...prev,
     [id.replace('contact', '').toLowerCase()]: ''
@@ -54,7 +53,6 @@ const handleSubmit = (e) => {
   const newErrors = {};
   let isValid = true;
 
-  // Validations
   if (!formData.name || !namePattern.test(formData.name)) {
     newErrors.name = "Please enter a valid name";
     isValid = false;
@@ -78,7 +76,6 @@ const handleSubmit = (e) => {
     return false;
   }
 
-  // Save to localStorage
   const formDataWithTime = {
     ...formData,
     timestamp: new Date().toLocaleString()
@@ -90,11 +87,9 @@ const handleSubmit = (e) => {
   formsArray.push(formDataWithTime);
   localStorage.setItem("contactForms", JSON.stringify(formsArray));
   
-  // Show popup
   setPopupmessage("");
   setShowPopup(true);
   
-  // Reset form
   setFormData({
     name: '',
     email: '',
@@ -112,7 +107,6 @@ const handleSubmit = (e) => {
   return (
     <>
    <div className='about1div'>
-         {/* ABOUT BANNER SECTION */}
          <section
            className='firstsection'
            style={{
@@ -256,12 +250,12 @@ const handleSubmit = (e) => {
   <section>
 
     <div className='d-flex justify-content-center pb-5 me-4 formcontactpage'>
-        <div
+        <div className='map-container'
       dangerouslySetInnerHTML={{
         __html: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.1575019171455!2d67.0673732740705!3d24.926703842606077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ff7b51555cb%3A0x571f64852f8ac168!2sFlavour-X%20Restaurant!5e0!3m2!1sen!2s!4v1765472188713!5m2!1sen!2s" width="597" height="600" style="border:0;" allowfullscreen=""  referrerpolicy="no-referrer-when-downgrade"></iframe>`
       }}
       />
-      <div>
+      <div className='form-container'>
         <br />
 
         <h1 className='contactusheading'>Contact Us</h1>
@@ -274,7 +268,7 @@ const handleSubmit = (e) => {
   placeholder="Your Name"
   value={formData.name}
   onChange={handleInputChange}
-  className="form-control p-2 py-2 px-2"
+  className="form-control p-2 py-2 px-2 contact-input"
   style={{
     paddingLeft: "10px",
     paddingRight: "10px",
@@ -296,7 +290,7 @@ const handleSubmit = (e) => {
   placeholder="Your Email"
   value={formData.email}
   onChange={handleInputChange}
-  className="form-control p-2 py-2 px-2 mt-3"
+  className="form-control p-2 py-2 px-2 mt-3 contact-input"
   style={{
     paddingLeft: "10px",
     paddingRight: "10px",
@@ -318,7 +312,7 @@ const handleSubmit = (e) => {
   placeholder="Subject"
   value={formData.subject}
   onChange={handleInputChange}
-  className="form-control p-2 py-2 px-2 mt-3"
+  className="form-control p-2 py-2 px-2 mt-3 contact-input"
   style={{
     paddingLeft: "10px",
     paddingRight: "10px",
@@ -339,7 +333,7 @@ const handleSubmit = (e) => {
   placeholder="Message"
   value={formData.message}
   onChange={handleInputChange}
-  className="form-control mt-3"
+  className="form-control mt-3 contact-input"
   rows="6"
   style={{
     paddingLeft: "10px",
@@ -458,7 +452,59 @@ textarea#contactmessage:focus {
 padding-top: 100px;
 padding-bottom: 100px;
 background-color: #FAFAFA;
-}    
+}
+
+/* Responsive CSS for Map and Form */
+@media (max-width: 768px) {
+  .d-flex.justify-content-center.pb-5.me-4.formcontactpage {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+    margin-right: 0 !important;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .map-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .map-container iframe {
+    width: 100% !important;
+    height: 400px !important;
+  }
+
+  .form-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 15px;
+  }
+
+  .contact-input {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .contactusheading {
+    font-size: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-container iframe {
+    height: 300px !important;
+  }
+
+  .contactusheading {
+    font-size: 40px !important;
+  }
+
+  .contact-input {
+    font-size: 14px !important;
+  }
+}
+    
 `
   }
 </style>
