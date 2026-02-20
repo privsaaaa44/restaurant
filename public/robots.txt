@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /private/
+Allow: /
+
+Sitemap:https://flavoura-best-resturant-in-pak.vercel.app/sitemap.xml

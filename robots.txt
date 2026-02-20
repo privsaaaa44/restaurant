@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /private/
-Allow: /
-
-Sitemap: https://flavoura-best-resturant-in-pak/sitemap.xml
